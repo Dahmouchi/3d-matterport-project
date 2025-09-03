@@ -54,8 +54,19 @@ className="bg-gradient-to-r py-4 px-8 from-orange-500 to-red-600 hover:from-oran
         </div>
 
         {/* Mobile Button */}
+        <div className="md:hidden flex items-center gap-4">
+          <div
+            onClick={() =>
+              theme === "dark" ? setTheme("light") : setTheme("dark")
+            }
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-black/20 text-gray-200 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black/20 transition"
+          >
+            <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+            <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+            <span className="sr-only">Toggle theme</span>
+          </div>
         <button
-          className="md:hidden text-white/80 hover:text-white"
+          className=" text-white/80 hover:text-white"
           onClick={() => setOpen(!open)}
         >
           {open ? (
@@ -90,6 +101,7 @@ className="bg-gradient-to-r py-4 px-8 from-orange-500 to-red-600 hover:from-oran
             </svg>
           )}
         </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
