@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -13,6 +14,7 @@ import {
   Youtube,
   ArrowUp
 } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -92,13 +94,9 @@ const Footer = () => {
               >
                 {/* Logo */}
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="relative">
-                    <Rotate3d className="w-10 h-10 text-blue-400" />
-                    <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg"></div>
-                  </div>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                    Matterport3D
-                  </span>
+                 <Link href="/" className="text-xl font-bold tracking-tight text-white">
+          <img src="/logo.png" alt="" className="h-14 w-auto" />
+        </Link>
                 </div>
 
                 <p className="text-gray-300 mb-6 leading-relaxed">
@@ -110,16 +108,16 @@ const Footer = () => {
                 {/* Contact Info */}
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 text-gray-300">
-                    <Phone className="w-5 h-5 text-blue-400" />
-                    <span>+33 1 23 45 67 89</span>
+                    <Phone className="w-5 h-5 text-orange-400" />
+                    <span>+212 6 23 45 67 89</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
-                    <Mail className="w-5 h-5 text-blue-400" />
-                    <span>contact@matterport3d.fr</span>
+                    <Mail className="w-5 h-5 text-orange-400" />
+                    <span>contact@matterport3d.ma</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
-                    <MapPin className="w-5 h-5 text-blue-400" />
-                    <span>123 Avenue des Champs-Élysées, 75008 Paris</span>
+                    <MapPin className="w-5 h-5 text-orange-400" />
+                    <span>123 Avenue Agdal Rabat </span>
                   </div>
                 </div>
 
@@ -134,7 +132,7 @@ const Footer = () => {
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.1 }}
-                      className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500 rounded-full flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300"
+                      className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 rounded-full flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300"
                     >
                       {social.icon}
                     </motion.a>
@@ -202,7 +200,7 @@ const Footer = () => {
                 placeholder="Votre adresse email"
                 className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
               />
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 S&apos;abonner
               </button>
             </div>
@@ -230,7 +228,7 @@ const Footer = () => {
               onClick={scrollToTop}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 rounded-full flex items-center justify-center text-white transition-all duration-300"
+              className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full flex items-center justify-center text-white transition-all duration-300"
             >
               <ArrowUp className="w-5 h-5" />
             </motion.button>

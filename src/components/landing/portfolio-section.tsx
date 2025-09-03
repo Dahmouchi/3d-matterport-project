@@ -25,7 +25,7 @@ const PortfolioSection = () => {
       category: "Résidentiel",
       location: "Cannes, France",
       date: "2024",
-      image: "/api/placeholder/600/400",
+      image: "/images/steps/capture.webp",
       description: "Numérisation 3D complète d'une villa de luxe de 500m² avec piscine et jardins.",
       stats: { rooms: 12, area: "500m²", points: "2.4M" },
       tags: ["Luxe", "Piscine", "Jardin", "Vue mer"]
@@ -115,7 +115,7 @@ const PortfolioSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+    <section className="pb-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
@@ -131,13 +131,13 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold dark:text-white text-black mb-6">
             Nos{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
               Réalisations
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-3xl mx-auto">
             Découvrez comment nous avons transformé des espaces exceptionnels 
             en expériences 3D immersives pour nos clients
           </p>
@@ -190,13 +190,13 @@ const PortfolioSection = () => {
                 {/* Project Info */}
                 <div className="space-y-6">
                   <div>
-                    <Badge className="mb-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                    <Badge className="mb-3 bg-gradient-to-r from-orange-500 to-red-500 text-white">
                       {projects[currentProject].category}
                     </Badge>
-                    <h3 className="text-3xl font-bold text-white mb-4">
+                    <h3 className="text-3xl font-bold dark:text-white text-black mb-4">
                       {projects[currentProject].title}
                     </h3>
-                    <p className="text-gray-300 text-lg leading-relaxed">
+                    <p className="dark:text-gray-300 text-gray-500 text-lg leading-relaxed">
                       {projects[currentProject].description}
                     </p>
                   </div>
@@ -234,13 +234,13 @@ const PortfolioSection = () => {
             {/* Navigation Buttons */}
             <button
               onClick={prevProject}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors z-10"
+              className="absolute left-4 bottom-0 transform -translate-y-1/2 w-12 h-12 dark:bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextProject}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors z-10"
+              className="absolute right-4 bottom-0 transform -translate-y-1/2 w-12 h-12 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -270,7 +270,7 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h3 className="text-3xl font-bold text-white text-center mb-12">
+          <h3 className="text-3xl font-bold dark:text-white text-black text-center mb-12">
             Ce que disent nos clients
           </h3>
 
@@ -283,7 +283,7 @@ const PortfolioSection = () => {
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border-gray-700">
+                <Card className="bg-gradient-to-br dark:from-gray-800/50 dark:to-gray-900/50 from-gray-800/10 to-gray-900/10 border-gray-700">
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-4 mb-6">
                       <img
@@ -292,10 +292,10 @@ const PortfolioSection = () => {
                         className="w-16 h-16 rounded-full object-cover"
                       />
                       <div>
-                        <h4 className="text-xl font-semibold text-white">
+                        <h4 className="text-xl font-semibold dark:text-white">
                           {testimonials[currentTestimonial].name}
                         </h4>
-                        <p className="text-gray-400">
+                        <p className="dark:text-gray-400 text-gray-600">
                           {testimonials[currentTestimonial].role}
                         </p>
                         <p className="text-blue-400 text-sm">
@@ -310,7 +310,7 @@ const PortfolioSection = () => {
                       ))}
                     </div>
 
-                    <blockquote className="text-gray-300 text-lg leading-relaxed mb-4">
+                    <blockquote className="dark:text-gray-300 text-gray-500 text-lg leading-relaxed mb-4">
                       &quot;{testimonials[currentTestimonial].text}&quot;
                     </blockquote>
 

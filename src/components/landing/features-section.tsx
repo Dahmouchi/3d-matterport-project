@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -77,7 +78,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-grid-16" />
       
@@ -90,13 +91,13 @@ const FeaturesSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6">
             Fonctionnalités{" "}
-            <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
               Révolutionnaires
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-3xl mx-auto">
             Découvrez les technologies de pointe qui font de notre plateforme 
             la solution 3D la plus avancée du marché
           </p>
@@ -113,7 +114,7 @@ const FeaturesSection = () => {
           <HoverEffect items={features} />
         </motion.div>
 
-        {/* Advanced Features with 3D Cards */}
+        {/* Advanced Features with 3D Cards 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,28 +159,9 @@ const FeaturesSection = () => {
               </CardBody>
             </CardContainer>
           ))}
-        </motion.div>
+        </motion.div>*/}
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 border border-blue-500/20">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Prêt à transformer vos espaces ?
-            </h3>
-            <p className="text-gray-300 mb-6">
-              Rejoignez plus de 10,000 professionnels qui font confiance à notre technologie
-            </p>
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
-              Démarrer Gratuitement
-            </button>
-          </div>
-        </motion.div>
+       
       </div>
     </section>
   );

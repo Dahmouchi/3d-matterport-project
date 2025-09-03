@@ -6,21 +6,29 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 import { WobbleCard } from "@/components/ui/wobble-card";
-import React from "react";
-import {
-  Navbar,
-  NavBody,
-  NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
-import { useState } from "react";
+import React, { useMemo } from "react";
+
 import Carousel from "@/components/ui/carousel";
+
+import MatterportHero from "@/components/Hero";
+import Navbar from "@/components/Nav";
+
+
 const Hello = () => {
+  const modelId = "UoqjwziqrZs"; // Replace with your actual Matterport model ID
+    const mpUrl = useMemo(() => {
+      const base = "https://my.matterport.com/show/";
+      const params = new URLSearchParams({
+        m: modelId,
+        play: "1",
+        brand: "0",
+        qs: "1",
+        title: "0",
+        dh: "1",
+      }).toString();
+      return `${base}?${params}`;
+    }, [modelId]);
+  
   const words = `Oxygen gets you high. In a catastrophic emergency, we're taking giant, panicked breaths. Suddenly you become euphoric, docile. You accept your fate. It's all right here. Emergency water landing, six hundred miles an hour. Blank faces, calm as Hindu cows
 `;
   const wordss = [
@@ -45,20 +53,7 @@ const Hello = () => {
       className: "text-blue-500 dark:text-blue-500",
     },
   ];
-  const navItems = [
-    {
-      name: "Features",
-      link: "#features",
-    },
-    {
-      name: "Pricing",
-      link: "#pricing",
-    },
-    {
-      name: "Contact",
-      link: "#contact",
-    },
-  ];
+
   const slideData = [
     {
       title: "Mystic Mountains",
@@ -81,12 +76,16 @@ const Hello = () => {
       src: "https://images.unsplash.com/photo-1679420437432-80cfbf88986c?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="flex flex-col gap-10">
-     <div className="relative overflow-hidden w-full h-full py-20">
-      <Carousel slides={slideData} />
-    </div>
+      <Navbar />
+      <MatterportHero />
+      
+    
+      <div className="relative overflow-hidden w-full h-full py-20">
+        <Carousel slides={slideData} />
+      </div>
       <div className="h-[40rem] relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
         <div className="w-full absolute inset-0 h-screen">
           <SparklesCore
@@ -99,69 +98,21 @@ const Hello = () => {
             particleColor="#FFFFFF"
           />
         </div>
-        <TypewriterEffectSmooth words={wordss} />
+        <div className="w-full h-full flex items-center justify-between">
+          <div>
+            <TypewriterEffectSmooth words={wordss} />
 
-        <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
-          Build great products
-        </h1>
-      </div>
-        <div className="relative w-full">
-      <Navbar>
-        {/* Desktop Navigation */}
-        <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
+              Build great products
+            </h1>
           </div>
-        </NavBody>
- 
-        {/* Mobile Navigation */}
-        <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo />
-            <MobileNavToggle
-              isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
- 
-          <MobileNavMenu
-            isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
-              </a>
-            ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
-            </div>
-          </MobileNavMenu>
-        </MobileNav>
-      </Navbar> 
-      {/* Navbar */}
-    </div>
+          
+        </div>
+      </div>
+      <div className="relative w-full">
+        
+        {/* Navbar */}
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
         <WobbleCard
           containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]"
@@ -232,14 +183,14 @@ const Hello = () => {
             </>
           }
         >
-          <img
-            src={`/linear.webp`}
-            alt="hero"
-            height={720}
-            width={1400}
-            className="mx-auto rounded-2xl object-cover h-full object-left-top"
-            draggable={false}
-          />
+          <iframe
+                  key={mpUrl}
+                  src={mpUrl}
+                  allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
+                  allowFullScreen
+                  className="mx-auto w-full rounded-2xl object-cover h-full object-left-top"
+                  title="Matterport 360 Tour"
+                />
         </ContainerScroll>
       </div>
       <TextGenerateEffect words={words} className="text-white" />
