@@ -294,7 +294,7 @@ export default function MatterportHero({
               </div>
 
               {/* RIGHT: Canvas (kept same size) */}
-              <div className="mx-auto md:mx-0 place-items-center  w-full h-full rounded-2xl border  dark:bg-black/40 p-4 shadow-xl backdrop-blur">
+              <div className="mx-auto md:mx-0 place-items-center  w-full h-full rounded-2xl border  dark:bg-slate-900 bg-slate-50 p-4 shadow-xl backdrop-blur">
                 <Canvas
                   camera={{
                     position: [8, 2, 2],
