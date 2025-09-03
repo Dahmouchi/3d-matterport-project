@@ -123,17 +123,13 @@ const ProcessSection = () => {
 
           <div className="space-y-3">
             {step.details.map((detail, detailIndex) => (
-              <motion.div
-                key={detailIndex}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: detailIndex * 0.1 }}
-                viewport={{ once: true }}
+              <div
+                key={detailIndex}               
                 className="flex items-center space-x-3"
               >
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
                 <span className="dark:text-gray-300 text-gray-600">{detail}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -143,11 +139,8 @@ const ProcessSection = () => {
   <div className={`aspect-square rounded-2xl bg-gradient-to-br ${step.color} p-1`}>
     <div className="relative w-full h-full overflow-hidden rounded-xl">
       {/* Ken Burns subtle zoom */}
-      <motion.div
-        initial={{ scale: 1.06 }}
-        whileInView={{ scale: 1 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-        viewport={{ once: true }}
+      <div
+       
         className="absolute inset-0"
       >
         <Image
@@ -161,7 +154,7 @@ const ProcessSection = () => {
             ? { placeholder: "blur" as const, blurDataURL: step.image.blurDataURL }
             : {})}
         />
-      </motion.div>
+      </div>
 
       {/* Soft top gradient overlay for contrast */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />

@@ -120,11 +120,8 @@ const CTASection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+           
             className="relative"
           >
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-2xl">
@@ -223,9 +220,8 @@ const CTASection = () => {
                   </Button>
                 </form>
               ) : (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                <div
+                
                   className="text-center py-8"
                 >
                   <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
@@ -235,29 +231,22 @@ const CTASection = () => {
                   <p className="text-gray-300">
                     Nous vous contacterons dans les plus brefs délais.
                   </p>
-                </motion.div>
+                </div>
               )}
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Info & Quick Actions */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
+          
             className="space-y-8"
           >
             {/* Contact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {contactInfo.map((info, index) => (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
+                
                   className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-orange-500/50 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-3 mb-3">
@@ -270,33 +259,31 @@ const CTASection = () => {
                   </div>
                   <p className="dark:text-gray-300 text-gray-50 font-medium">{info.value}</p>
                   <p className="dark:text-gray-500 text-slate-50 text-sm">{info.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Quick Action Buttons */}
             <div className="space-y-4">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <button
+               
                 className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               >
                 <Phone className="w-5 h-5" />
                 <span>Appeler maintenant</span>
-              </motion.button>
+              </button>
 
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <button
+              
                 className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3"
               >
                 <Mail className="w-5 h-5" />
                 <span>Envoyer un email</span>
-              </motion.button>
+              </button>
             </div>
 
          
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom Stats 

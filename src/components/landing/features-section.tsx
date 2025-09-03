@@ -104,15 +104,12 @@ const FeaturesSection = () => {
         </motion.div>
 
         {/* Main Features Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+        <div
+         
           className="mb-20"
         >
           <HoverEffect items={features} />
-        </motion.div>
+        </div>
 
         {/* Advanced Features with 3D Cards 
         <motion.div
