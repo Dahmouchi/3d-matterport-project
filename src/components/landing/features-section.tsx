@@ -27,31 +27,31 @@ const FeaturesSection = () => {
     {
       title: "Visite Virtuelle Immersive",
       description: "Explorez vos espaces en 3D avec une navigation fluide et intuitive. Expérience utilisateur exceptionnelle.",
-      link: "#",
+      link: "#ff",
       icon: <Eye className="w-8 h-8" />,
     },
     {
       title: "Partage Instantané",
       description: "Partagez vos créations 3D en un clic sur toutes les plateformes. Intégration sociale complète.",
-      link: "#",
+      link: "#aa",
       icon: <Share2 className="w-8 h-8" />,
     },
     {
       title: "Traitement Rapide",
       description: "IA avancée pour un traitement ultra-rapide de vos scans. Résultats en quelques heures seulement.",
-      link: "#",
+      link: "#dd",
       icon: <Zap className="w-8 h-8" />,
     },
     {
       title: "Sécurité Maximale",
       description: "Vos données sont protégées par un chiffrement de niveau militaire. Confidentialité absolue.",
-      link: "#",
+      link: "#gg",
       icon: <Shield className="w-8 h-8" />,
     },
     {
       title: "Compatible Mobile",
       description: "Accédez à vos scans 3D depuis n'importe quel appareil. Responsive design optimisé.",
-      link: "#",
+      link: "#hhh",
       icon: <Smartphone className="w-8 h-8" />,
     },
   ];

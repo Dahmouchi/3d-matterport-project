@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, ADLaM_Display } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/next-themes";
+import { AOSInit } from "@/components/aos";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
-
+const adlamn = ADLaM_Display({
+  variable: "--font-adlamn",
+  subsets: ["latin"],
+  weight: "400",
+});
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -26,19 +31,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}  ${adlamn.variable} antialiased`}
       >
-
-         <ThemeProvider
+        {children}
+        {/*<ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
-            {children}
-          </ThemeProvider>
+           
+          </ThemeProvider>*/}
+           <AOSInit />
       </body>
     </html>
   );
 }
-

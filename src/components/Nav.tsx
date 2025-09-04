@@ -5,102 +5,102 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { setTheme, theme } = useTheme();
 
   return (
-    <motion.nav
-      initial={{ y: -60, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-black/30 backdrop-blur-lg"
+    <nav
+      data-aos="fade-down"
+      className="fixed top-0 rounded-b-2xl px-16 z-40 border-b border-white/10 bg-white shadow w-11/12  "
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
+      <div className="mx-auto flex w-full items-center justify-between px-6 py-4  gap-12">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold tracking-tight text-white">
-          <img src="/logo.png" alt="" className="h-14 w-auto" />
+          <img src="/images/logov1.png" alt="" className="h-14 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden items-center gap-8 md:flex">
-          <NavItem href="#hero">Home</NavItem>
-          <NavItem href="#about">About</NavItem>
-          <NavItem href="#how-it-works">How it works</NavItem>
-          <NavItem href="#contact">Contact</NavItem>
+        <div className="hidden items-center gap-8 md:flex font-semibold">
+          <motion.a
+            href={"#hero"}
+            className="text-gray-700 hover:text-black transition-colors duration-200 relative group"
+          >
+            Home
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
+          </motion.a>
+          <motion.a
+            href={"#about"}
+            className="text-gray-700 hover:text-black transition-colors duration-200 relative group"
+          >
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
+          </motion.a>
+          <motion.a
+            href={"#how-it-works"}
+            className="text-gray-700 hover:text-black transition-colors duration-200 relative group"
+          >
+            How it works
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
+          </motion.a>
+          <motion.a
+            href={"#contact"}
+            className="text-gray-700 hover:text-black transition-colors duration-200 relative group"
+          >
+            Contact
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
+          </motion.a>
         </div>
 
-        {/* CTA */}
+        {/* CTA 
         <div className="hidden md:flex items-center gap-2">
-          <div
-            onClick={() =>
-              theme === "dark" ? setTheme("light") : setTheme("dark")
-            }
-            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-black/20 text-gray-200 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black/20 transition"
-          >
-            <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-            <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-            <span className="sr-only">Toggle theme</span>
-          </div>
+          
 
           <Button
 className="bg-gradient-to-r py-4 px-8 from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white  rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"          >
             Launch Tour
           </Button>
-        </div>
+        </div>*/}
 
         {/* Mobile Button */}
         <div className="md:hidden flex items-center gap-4">
-          <div
-            onClick={() =>
-              theme === "dark" ? setTheme("light") : setTheme("dark")
-            }
-            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-black/20 text-gray-200 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black/20 transition"
+          <button
+            className=" text-white/80 hover:text-black"
+            onClick={() => setOpen(!open)}
           >
-            <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-            <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-            <span className="sr-only">Toggle theme</span>
-          </div>
-        <button
-          className=" text-white/80 hover:text-white"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
+            {open ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
 
@@ -120,15 +120,13 @@ className="bg-gradient-to-r py-4 px-8 from-orange-500 to-red-600 hover:from-oran
             Contact
           </NavItem>
           <div>
-            <Button
-              className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-            >
+            <Button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Launch Tour
             </Button>
           </div>
         </div>
       )}
-    </motion.nav>
+    </nav>
   );
 }
 

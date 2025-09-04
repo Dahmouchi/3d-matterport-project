@@ -104,14 +104,14 @@ const CTASection = () => {
             <Sparkles className="w-16 h-16 text-orange-400" />
           </motion.div>
 
-          <h2 className="text-4xl md:text-6xl font-bold dark:text-white text-black mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-white  mb-6">
             Transformons Votre{" "}
             <span className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
               Vision
             </span>{" "}
             en Réalité 3D
           </h2>
-          <p className="text-xl text-gray-500 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Prêt à révolutionner votre façon de présenter vos espaces ?
             Contactez-nous dès aujourd&apos;hui pour un devis personnalisé et
             gratuit.

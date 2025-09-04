@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import MatterportHero from "@/components/Hero";
 import CTASection from "@/components/landing/cta-section";
@@ -9,6 +10,8 @@ import Navbar from "@/components/Nav";
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Boxes } from "@/components/ui/background-boxes";
+import HeroSection from "@/components/landing/Hero";
+import Demo from "@/components/landing/Demo";
 
 const LandingPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,7 +31,9 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen dark:bg-slate-950 text-white overflow-x-hidden">
       {/* Navigation */}
-      <Navbar />
+      <div className="flex justify-center w-full relative">
+        <Navbar />
+      </div>
 
       {/* Main Content */}
       <main>
@@ -71,11 +76,11 @@ const LandingPage = () => {
 
           {/* Hero Section */}
           <section id="home">
-            <MatterportHero />
+            <HeroSection />
           </section>
 
           {/* Process Section */}
-          <ProcessSection />
+          <Demo />
 
           {/* Features Section */}
           <section id="services">
@@ -89,7 +94,7 @@ const LandingPage = () => {
 
           {/* CTA Section */}
         </section>
-        <div className="h-fit relative w-full overflow-hidden bg-slate-200 dark:bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+        <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
 
           <Boxes />
           <section id="contact">
