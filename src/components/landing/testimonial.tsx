@@ -7,7 +7,7 @@ export function AnimatedTestimonialsDemo() {
       "Grâce aux visites virtuelles, nous avons réduit les déplacements de nos clients de plus de moitié. C’est une vraie révolution pour l’immobilier au Maroc.",
     name: "Yassine El Idrissi",
     designation: "Directeur d’agence immobilière à Casablanca",
-    src: "https://static.vecteezy.com/system/resources/previews/046/010/545/non_2x/user-icon-simple-design-free-vector.jpg", // portrait style pro
+    src: "https://plus.unsplash.com/premium_photo-1682144187125-b55e638cf286?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8", // portrait style pro
   },
   {
     quote:
