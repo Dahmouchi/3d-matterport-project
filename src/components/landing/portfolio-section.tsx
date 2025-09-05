@@ -2,12 +2,10 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   ChevronLeft, 
   ChevronRight, 
-  Star, 
   Play,
   ExternalLink,
   MapPin,
@@ -16,7 +14,6 @@ import {
 
 const PortfolioSection = () => {
   const [currentProject, setCurrentProject] = useState(0);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const projects = [
     {
@@ -65,38 +62,7 @@ const PortfolioSection = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      id: 1,
-      name: "Marie Dubois",
-      role: "Architecte d'intérieur",
-      company: "Studio MD Design",
-      avatar: "/api/placeholder/80/80",
-      rating: 5,
-      text: "La qualité des scans 3D est exceptionnelle. Mes clients peuvent maintenant visualiser leurs projets avant même le début des travaux. Un outil révolutionnaire pour notre métier.",
-      project: "Villa Moderne Cannes"
-    },
-    {
-      id: 2,
-      name: "Pierre Martin",
-      role: "Directeur Commercial",
-      company: "BMW France",
-      avatar: "/api/placeholder/80/80",
-      rating: 5,
-      text: "Nos ventes ont augmenté de 40% depuis l'intégration de la visite virtuelle. Les clients peuvent explorer nos véhicules dans un environnement immersif unique.",
-      project: "Showroom BMW Paris"
-    },
-    {
-      id: 3,
-      name: "Sophie Laurent",
-      role: "Conservatrice",
-      company: "Château de Versailles",
-      avatar: "/api/placeholder/80/80",
-      rating: 5,
-      text: "Une précision remarquable pour la préservation de notre patrimoine. Cette technologie nous permet de partager l'histoire avec le monde entier.",
-      project: "Château de Versailles"
-    }
-  ];
+ 
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length);
@@ -106,16 +72,10 @@ const PortfolioSection = () => {
     setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
   };
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
 
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
   return (
-    <section className="pb-20 relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
@@ -262,83 +222,7 @@ const PortfolioSection = () => {
           </div>
         </div>
 
-        {/* Testimonials */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
-          <h3 className="text-3xl font-bold dark:text-white text-black text-center mb-12">
-            Ce que disent nos clients
-          </h3>
-
-          <div className="relative">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTestimonial}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Card className="bg-gradient-to-br dark:from-gray-800/50 dark:to-gray-900/50 from-gray-800/10 to-gray-900/10 border-gray-700">
-                  <CardContent className="p-8">
-                    <div className="flex items-center space-x-4 mb-6">
-                      <img
-                        src={testimonials[currentTestimonial].avatar}
-                        alt={testimonials[currentTestimonial].name}
-                        className="w-16 h-16 rounded-full object-cover"
-                      />
-                      <div>
-                        <h4 className="text-xl font-semibold dark:text-white">
-                          {testimonials[currentTestimonial].name}
-                        </h4>
-                        <p className="dark:text-gray-400 text-gray-600">
-                          {testimonials[currentTestimonial].role}
-                        </p>
-                        <p className="text-blue-400 text-sm">
-                          {testimonials[currentTestimonial].company}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex space-x-1 mb-4">
-                      {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-
-                    <blockquote className="dark:text-gray-300 text-gray-500 text-lg leading-relaxed mb-4">
-                      &quot;{testimonials[currentTestimonial].text}&quot;
-                    </blockquote>
-
-                    <div className="text-sm text-gray-500">
-                      Projet: {testimonials[currentTestimonial].project}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Testimonial Navigation */}
-            <div className="flex justify-center space-x-4 mt-6">
-              <button
-                onClick={prevTestimonial}
-                className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center text-white transition-colors"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={nextTestimonial}
-                className="w-10 h-10 bg-gray-700 hover:bg-gray-600 rounded-full flex items-center justify-center text-white transition-colors"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
-        </motion.div>
+       
       </div>
     </section>
   );

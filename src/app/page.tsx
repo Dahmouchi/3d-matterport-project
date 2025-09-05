@@ -12,6 +12,8 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Boxes } from "@/components/ui/background-boxes";
 import HeroSection from "@/components/landing/Hero";
 import Demo from "@/components/landing/Demo";
+import AboutUsSteps from "@/components/landing/about";
+import { AnimatedTestimonialsDemo } from "@/components/landing/testimonial";
 
 const LandingPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -81,21 +83,24 @@ const LandingPage = () => {
 
           {/* Process Section */}
           <Demo />
-
-          {/* Features Section */}
+          <section id="about">
+            <AboutUsSteps />
+          </section>
+          {/* Features Section 
           <section id="services">
             <FeaturesSection />
-          </section>
+          </section>*/}
 
           {/* Portfolio Section */}
           <section id="portfolio">
             <PortfolioSection />
           </section>
-
+          <section>
+            <AnimatedTestimonialsDemo />
+          </section>
           {/* CTA Section */}
         </section>
-        <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
-
+        <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
           <Boxes />
           <section id="contact">
             <CTASection />

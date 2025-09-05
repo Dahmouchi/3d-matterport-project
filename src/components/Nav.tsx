@@ -6,19 +6,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import * as React from "react";
 import { Button } from "./ui/button";
+import { Phone } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav
-      data-aos="fade-down"
-      className="fixed top-0 rounded-b-2xl px-16 z-40 border-b border-white/10 bg-white shadow w-11/12  "
-    >
+    <nav className="fixed top-3 rounded-full lg:px-4 px-2 z-40 border-b-2 border-t-gray-200 border-t border-[#f6ba13] bg-white shadow w-11/12  ">
       <div className="mx-auto flex w-full items-center justify-between px-6 py-4  gap-12">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold tracking-tight text-white">
-          <img src="/images/logov1.png" alt="" className="h-14 w-auto" />
+          <img src="/images/logov1.png" alt="" className="lg:h-14 h-8 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
@@ -44,29 +42,22 @@ export default function Navbar() {
             How it works
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
           </motion.a>
-          <motion.a
-            href={"#contact"}
-            className="text-gray-700 hover:text-black transition-colors duration-200 relative group"
-          >
-            Contact
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
-          </motion.a>
         </div>
 
-        {/* CTA 
+        {/* CTA */}
         <div className="hidden md:flex items-center gap-2">
-          
-
-          <Button
-className="bg-gradient-to-r py-4 px-8 from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white  rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"          >
-            Launch Tour
-          </Button>
-        </div>*/}
+          <div className="button12 text-white font-semibold rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 ">
+            Prendre RDV
+          </div>
+          <div className="button13 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400  text-white text-center flex items-center justify-center">
+            <Phone />
+          </div>
+        </div>
 
         {/* Mobile Button */}
         <div className="md:hidden flex items-center gap-4">
           <button
-            className=" text-white/80 hover:text-black"
+            className=" text-black hover:text-black"
             onClick={() => setOpen(!open)}
           >
             {open ? (
@@ -106,19 +97,19 @@ className="bg-gradient-to-r py-4 px-8 from-orange-500 to-red-600 hover:from-oran
 
       {/* Mobile Menu */}
       {open && (
-        <div className="flex flex-col space-y-3 px-6 pb-6 pt-2 md:hidden">
-          <NavItem href="#hero" onClick={() => setOpen(false)}>
+        <div className="flex flex-col space-y-3 px-6 pb-6 pt-2 md:hidden text-black">
+          <Link href="#hero" onClick={() => setOpen(false)}>
             Home
-          </NavItem>
-          <NavItem href="#about" onClick={() => setOpen(false)}>
+          </Link>
+          <Link href="#about" onClick={() => setOpen(false)}>
             About
-          </NavItem>
-          <NavItem href="#how-it-works" onClick={() => setOpen(false)}>
+          </Link>
+          <Link href="#how-it-works" onClick={() => setOpen(false)}>
             How it works
-          </NavItem>
-          <NavItem href="#contact" onClick={() => setOpen(false)}>
+          </Link>
+          <Link href="#contact" onClick={() => setOpen(false)}>
             Contact
-          </NavItem>
+          </Link>
           <div>
             <Button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
               Launch Tour

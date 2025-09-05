@@ -1,16 +1,21 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ContainerScroll } from "../ui/container-scroll-animation";
+import { MapPin, Users, PiggyBank, BarChart3, PlayCircle } from "lucide-react";
+import { CometCard } from "../ui/comet-card";
+import { div } from "motion/react-client";
+import { Play } from "next/font/google";
 
 const Demo = () => {
+
   const modelId = "UoqjwziqrZs"; // Replace with your actual Matterport model ID
   const mpUrl = useMemo(() => {
     const base = "https://my.matterport.com/show/";
     const params = new URLSearchParams({
       m: modelId,
-      play: "1",
+      play:  "0",
       brand: "0",
       qs: "1",
       title: "0",
@@ -18,48 +23,111 @@ const Demo = () => {
     }).toString();
     return `${base}?${params}`;
   }, [modelId]);
+  const stats = [
+    {
+      number: "1",
+      title: "-50 % de déplacements",
+      text: "Grâce aux visites virtuelles interactives.",
+      icon: MapPin,
+    },
+    {
+      number: "2",
+      title: "+80 % d’engagement client",
+      text: "Des espaces qui captivent et retiennent l’attention.",
+      icon: Users,
+    },
+    {
+      number: "3",
+      title: "70 % d’économies",
+      text: "Sur les frais de relevés terrain et la création de fichiers BIM.",
+      icon: PiggyBank,
+    },
+  ];
 
+ 
+  
   return (
-    <section className=" relative overflow-hidden bg-[#EDE3D2] py-6">
+    <section className=" relative overflow-hidden bg-white  py-6 px-4">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mt-16"
+        className="text-center lg:mt-16 mt-8"
       >
         <h2 className="text-4xl md:text-6xl font-bold dark:text-white mb-6 text-black">
-          Notre{" "}
-          <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-            Processus
+          Pourquoi
+          <span className="bg-gradient-to-r pl-2 from-orange-400 to-orange-600 bg-clip-text text-transparent">
+            la visite virtuelle 3D
           </span>{" "}
-          Simplifié
+          change tout ?
         </h2>
-        <p className="text-xl dark:text-gray-300 text-gray-500 max-w-3xl mx-auto">
+        <p className="lg:text-xl text-md dark:text-gray-300 text-gray-500 max-w-3xl mx-auto">
           De la capture à la diffusion, découvrez comment nous transformons vos
           espaces en expériences 3D immersives en quelques étapes simples
         </p>
       </motion.div>
-      <div className="h-[60rem]  md:h-[60rem] flex items-center justify-center relative p-2 md:p-20">
-        <div
-          className="py-10 w-full relative h-full"
-          style={{
-            perspective: "1000px",
-          }}
-        >
-          <iframe
-            key={mpUrl}
-            src={mpUrl}
-            allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
-            allowFullScreen
-            className="mx-auto w-full rounded-2xl object-cover h-full object-left-top"
-            title="Matterport 360 Tour"
-          />
+     
+     <section className="relative overflow-hidden py-14 lg:py-24 lg:px-6 px-4">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        {/* Left column — Steps */}
+        <div className="space-y-8">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              viewport={{ once: true }}
+              className="flex items-start space-x-5 group"
+            >
+              {/* Number circle */}
+              <div className="relative flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r text-white from-[#f6ba13] to-orange-400 font-bold grid place-items-center shadow-md ring-4 ring-white/20">
+                  {stat.number}
+                </div>
+                {/* connector line (desktop) */}
+                {i < stats.length - 1 && (
+                  <div className="hidden md:block absolute left-1/2 top-12 -translate-x-1/2 h-10 w-[2px] bg-black/30" />
+                )}
+              </div>
+
+              {/* Text */}
+              <div className="transition-transform duration-200 group-hover:-translate-y-0.5">
+                <h3 className="text-gray-700 lg:font-black text-2xl font-bold lg:text-3xl flex items-center gap-2">
+                  <span>{stat.title}</span>
+                </h3>
+                <p className="text-orange-400 text-md lg:text-lg font-light mt-1">{stat.text}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Right column — Matterport player with Play overlay */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          viewport={{ once: true }}
+          className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10"
+        >
+
+          <div className="aspect-[16/9]">
+           <iframe
+                src={mpUrl}
+                className="absolute inset-0 w-full h-full"
+                title="Matterport Virtual Tour"
+                allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen; autoplay"
+                allowFullScreen
+               
+              /></div>
+        </motion.div>
       </div>
+    </section>
     </section>
   );
 };
 
 export default Demo;
+
