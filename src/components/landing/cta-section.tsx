@@ -48,13 +48,13 @@ const CTASection = () => {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Téléphone",
-      value: "+33 1 23 45 67 89",
+      value: "06 64 09 10 68",
       description: "Lun-Ven 9h-18h",
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "contact@matterport3d.fr",
+      value: "Contact@build360.ma ",
       description: "Réponse sous 2h",
     },
   ];

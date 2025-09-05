@@ -95,7 +95,7 @@ const Footer = () => {
                 {/* Logo */}
                 <div className="flex items-center space-x-3 mb-6">
                  <Link href="/" className="text-xl font-bold tracking-tight text-white">
-          <img src="/logo.png" alt="" className="h-14 w-auto" />
+          <img src="/images/logov1white.png" alt="" className="h-14 w-auto" />
         </Link>
                 </div>
 
@@ -109,16 +109,13 @@ const Footer = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Phone className="w-5 h-5 text-orange-400" />
-                    <span>+212 6 23 45 67 89</span>
+                    <span>06 64 09 10 68</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Mail className="w-5 h-5 text-orange-400" />
-                    <span>contact@matterport3d.ma</span>
+                    <span> Contact@build360.ma </span>
                   </div>
-                  <div className="flex items-center space-x-3 text-gray-300">
-                    <MapPin className="w-5 h-5 text-orange-400" />
-                    <span>123 Avenue Agdal Rabat </span>
-                  </div>
+                 
                 </div>
 
                 {/* Social Links */}

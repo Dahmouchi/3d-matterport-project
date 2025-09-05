@@ -1,4 +1,5 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { motion } from "framer-motion";
 
 export function AnimatedTestimonialsDemo() {
   const testimonials = [
@@ -27,17 +28,26 @@ export function AnimatedTestimonialsDemo() {
 
   return <div>
      <div className="text-center max-w-3xl mx-auto ">
-    
-      <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-black">
-        Ils nous font confiance au{" "}
-        <span className="bg-gradient-to-r from-orange-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
-          Maroc
-        </span>
-      </h2>
-      <p className="mt-3 text-slate-500">
-        Découvrez comment notre concept transforme l’immobilier et la
+     <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-center lg:mt-16 mt-8"
+      >
+        <h2 className="text-4xl md:text-6xl font-bold dark:text-white mb-6 text-black">
+          Ils nous font confiance au{" "}
+          <span className="bg-gradient-to-r pl-2 from-orange-400 to-orange-600 bg-clip-text text-transparent">
+             Maroc
+          </span>{" "}
+          
+        </h2>
+        <p className="lg:text-xl text-md dark:text-gray-300 text-gray-500 max-w-3xl mx-auto">
+           Découvrez comment notre concept transforme l’immobilier et la
         construction grâce à des expériences immersives et interactives.
-      </p>
+        </p>
+      </motion.div>
+    
     </div>
     <AnimatedTestimonials testimonials={testimonials} />
   </div>;

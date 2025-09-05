@@ -34,7 +34,7 @@ export default function AboutUsSteps() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#f6ba13] via-orange-400 to-orange-600 py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#f6ba13] via-orange-400 to-orange-600 lg:py-20 py-10">
       {/* background accents */}
       <div className="pointer-events-none absolute -top-32 -right-32 h-80 w-80 rounded-full bg-indigo-600/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-fuchsia-600/10 blur-3xl" />
@@ -57,16 +57,7 @@ export default function AboutUsSteps() {
           </p>
 
           {/* value chips */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {["Transparence", "Innovation", "Excellence", "Impact"].map((chip) => (
-              <span
-                key={chip}
-                className="rounded-full border border-white/10 bg-white/15 px-3 py-1 text-xs text-slate-50"
-              >
-                {chip}
-              </span>
-            ))}
-          </div>
+ 
 
           {/* CTA */}
           <div className="mt-8 flex items-center gap-3">
@@ -78,7 +69,7 @@ export default function AboutUsSteps() {
             </a>
             <a
               href="#case-studies"
-              className="inline-flex items-center justify-center rounded-xl border border-white/15 px-4 py-2.5 text-slate-200 hover:bg-white/5 transition"
+              className="inline-flex items-center justify-center rounded-xl border border-white/50 px-4 py-2.5 text-white hover:bg-white/5 transition"
             >
               Voir nos réalisations
             </a>

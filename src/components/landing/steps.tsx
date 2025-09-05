@@ -58,35 +58,34 @@ export default function ProcessSteps() {
   ];
 
   return (
-    <section className="relative overflow-hidden  py-20">
+    <section className="relative overflow-hidden  py-10">
       {/* Brand accents */}
       <div className="pointer-events-none absolute hidden lg:block -top-24 -right-24 h-80 w-80 rounded-full bg-[#f6ba13]/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-orange-500/10 blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto"
-        >
-         
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-black">
-           Comment  {" "}
-            <span className="text-[#f6ba13] font-medium">
-              Build
-            </span>
-            360
-            Procéde,
-          </h2>
-          <p className="mt-3 text-slate-500">
-            Un parcours clair et transparent, de la prise de rendez-vous à la
+         <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center lg:mt-16 mt-8"
+              >
+                <h2 className="text-4xl md:text-6xl font-bold dark:text-white mb-6 text-black">
+                   Comment  {" "}
+                  <span className="bg-gradient-to-r pl-2 from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                    Build
+                  </span>
+                  360
+            Procéde
+                </h2>
+                <p className="lg:text-xl text-md dark:text-gray-300 text-gray-500 max-w-3xl mx-auto">
+                   Un parcours clair et transparent, de la prise de rendez-vous à la
             livraison, avec un accompagnement continu.
-          </p>
-        </motion.div>
-
+                </p>
+              </motion.div>
+       
         {/* Timeline */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="relative">

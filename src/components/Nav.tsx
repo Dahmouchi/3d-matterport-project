@@ -8,7 +8,17 @@ import { Phone } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+const navLinks = [
+  { title: "Accueil", href: "#home" },
+  { title: "À propos", href: "#about" },
+  { title: "Comment ça marche", href: "#how-it-works" },
+];
+const navLinks1 = [
+  { title: "Accueil", href: "#home" },
+  { title: "À propos", href: "#about" },
+  { title: "Comment ça marche", href: "#how-it-works" },
+  { title: "Contact", href: "#contact" },
+];
   return (
     <nav className="fixed top-3 rounded-full  lg:px-4 px-2 z-40 border-b-2 border-t-gray-200 border-t border-[#f6ba13] bg-white shadow w-11/12">
       <div className="mx-auto flex w-full items-center justify-between px-6 py-4 gap-12">
@@ -19,13 +29,13 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden items-center gap-8 md:flex font-semibold">
-          {["Home", "About", "How it works"].map((item) => (
+          {navLinks.map((item) => (
             <motion.a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
+              key={item.href}
+              href={`${item.href}`}
               className="text-gray-700 hover:text-black transition-colors duration-200 relative group"
             >
-              {item}
+              {item.title}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
             </motion.a>
           ))}
@@ -110,20 +120,20 @@ export default function Navbar() {
                 />
               </Link>
             </div>
-            {["Home", "About", "How it works", "Contact"].map((item, i) => (
+            {navLinks1.map((item, i) => (
               <motion.div
-                key={item}
+                key={item.href}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 className="z-50 relative"
               >
                 <Link
-                  href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
+                  href={`${item.href}`}
                   onClick={() => setOpen(false)}
                   className="text-2xl font-semibold hover:text-orange-500 transition-colors"
                 >
-                  {item}
+                  {item.title}
                 </Link>
               </motion.div>
             ))}
