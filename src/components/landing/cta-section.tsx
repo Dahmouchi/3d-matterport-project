@@ -238,7 +238,7 @@ const CTASection = () => {
                   {/* Détails complémentaires */}
                   <div>
                     <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Lien vers l’annonce / site web (si existant)
+                      Lien de site web (si existant)
                     </label>
                     <Input
                       type="url"
@@ -246,20 +246,20 @@ const CTASection = () => {
                       value={formData.link}
                       onChange={handleInputChange}
                       className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13]"
-                      placeholder="https://..."
+                      placeholder="votre site web"
                     />
                   </div>
 
                   <div>
                     <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Message libre
+                      Message 
                     </label>
                     <Textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13] min-h-[120px]"
-                      placeholder="Ajoutez des précisions sur votre projet..."
+                      placeholder="informations supplémentaires ..."
                     />
                   </div>
 

@@ -26,11 +26,8 @@ export function AnimatedTestimonialsDemo() {
 ];
 
   return <div>
-     <div className="text-center max-w-3xl mx-auto mb-12">
-      <div className="inline-flex items-center gap-2 rounded-full border border-orange-400/30 bg-orange-500/10 px-4 py-1 text-sm text-orange-400">
-        <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
-        Témoignages
-      </div>
+     <div className="text-center max-w-3xl mx-auto ">
+    
       <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-black">
         Ils nous font confiance au{" "}
         <span className="bg-gradient-to-r from-orange-400 via-pink-400 to-red-400 bg-clip-text text-transparent">

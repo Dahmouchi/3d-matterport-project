@@ -4,7 +4,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { Phone } from "lucide-react";
 
 export default function Navbar() {

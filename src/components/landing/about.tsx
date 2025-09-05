@@ -48,10 +48,7 @@ export default function AboutUsSteps() {
           transition={{ duration: 0.6 }}
           className="relative"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/20 px-3 py-1 text-xs text-white">
-            <span className="h-1.5 w-1.5 rounded-full bg-white" />
-            À propos de nous
-          </div>
+         
           <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
             Notre approche, <span className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 bg-clip-text text-transparent">étape par étape</span>
           </h2>

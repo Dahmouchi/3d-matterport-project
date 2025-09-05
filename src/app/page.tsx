@@ -14,6 +14,7 @@ import HeroSection from "@/components/landing/Hero";
 import Demo from "@/components/landing/Demo";
 import AboutUsSteps from "@/components/landing/about";
 import { AnimatedTestimonialsDemo } from "@/components/landing/testimonial";
+import ProcessSteps from "@/components/landing/steps";
 
 const LandingPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,11 +46,7 @@ const LandingPage = () => {
           className="relative isolate overflow-hidden dark:bg-slate-950 bg-white text-white"
         >
           {/* Background gradients */}
-          <div className="pointer-events-none absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-[radial-gradient(60rem_60rem_at_10%_10%,rgba(99,102,241,0.25),transparent_60%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(50rem_50rem_at_90%_30%,rgba(236,72,153,0.20),transparent_60%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(40rem_40rem_at_50%_100%,rgba(34,197,94,0.15),transparent_60%)]" />
-          </div>
+         
           {/* Animated Spotlight */}
           <motion.div
             style={{ x, y, translateX: "-50%", translateY: "-50%" }}
@@ -91,7 +88,9 @@ const LandingPage = () => {
           <section id="services">
             <FeaturesSection />
           </section>*/}
-
+          <section id="services">
+            <ProcessSteps />
+          </section>*
           {/* Portfolio Section */}
           <section id="portfolio">
             <PortfolioSection />
