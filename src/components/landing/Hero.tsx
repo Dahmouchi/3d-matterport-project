@@ -117,7 +117,7 @@ const HeroSection = () => {
             }}
             src="/images/test.png"
             alt=""
-            className="w-[700px] bottom-0 right-0 h-auto absolute "
+            className="w-11/12 bottom-0 right-0 h-auto absolute "
           />
         </div>
       </div>
