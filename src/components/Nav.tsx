@@ -12,7 +12,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-3 rounded-full lg:px-4 px-2 z-40 border-b-2 border-t-gray-200 border-t border-[#f6ba13] bg-white shadow w-11/12  ">
+    <nav className="fixed top-3 lg:rounded-full rounded-2xl lg:px-4 px-2 z-40 border-b-2 border-t-gray-200 border-t border-[#f6ba13] bg-white shadow w-11/12  ">
       <div className="mx-auto flex w-full items-center justify-between px-6 py-4  gap-12">
         {/* Logo */}
         <Link href="/" className="text-xl font-bold tracking-tight text-white">
@@ -45,14 +45,14 @@ export default function Navbar() {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-2">
+        <Link href={"#contact"} className="hidden md:flex items-center gap-2">
           <div className="button12 text-white font-semibold rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 ">
             Prendre RDV
           </div>
           <div className="button13 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400  text-white text-center flex items-center justify-center">
             <Phone />
           </div>
-        </div>
+        </Link>
 
         {/* Mobile Button */}
         <div className="md:hidden flex items-center gap-4">

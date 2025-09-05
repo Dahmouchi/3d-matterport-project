@@ -6,6 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+import Link from "next/link";
 
 const HeroSection = () => {
   const logos = [
@@ -72,9 +73,10 @@ const HeroSection = () => {
           className="col-span-2 flex flex-col justify-center  max-w-3xl lg:pl-16 p-2 mt-6 gap-4"
           
         >
-          <div className="text-left">
-            <TypewriterEffectSmooth words={words}  className="lg:text-5xl text-3xl font-bold  font-adlamn italic  uppercase"/>
-           
+          <div className="lg:text-left text-center ">
+          <div className="flex justify-center lg:justify-start">
+                        <TypewriterEffectSmooth words={words}  className="lg:text-5xl  text-2xl font-bold  font-adlamn italic  uppercase"/>
+</div>           
 
             <h1 className="lg:text-5xl text-3xl  font-adlamn italic lg:leading-16">
               Vos Espaces en
@@ -84,25 +86,25 @@ const HeroSection = () => {
               , Vivants et Immersifs
             </h1>
           </div>
-          <h1 className="text-xl font-light ">
+          <h1 className="text-xl font-light lg:text-left text-center">
             Redéfinissez la façon dont vos clients découvrent vos biens, hôtels
             et projets au MONDE ENTIER
           </h1>
-          <div className="flex gap-4">
-            <div className=" flex justify-between itcems-center  w-fit max-w-md mt-4 bg-[#FCA311] rounded-full text-center pl-6 pr-2 py-2 gap-8">
+          <div className="flex lg:flex-row flex-col lg:justify-start items-center justify-center lg:gap-4">
+            <Link href={"#contact"}  className=" flex justify-between itcems-center  w-fit max-w-md mt-4 bg-[#FCA311] rounded-full text-center pl-6 pr-2 py-2 gap-8">
               <div className="text-xl text-white font-adlamn">
                 Remplissez le formulaire
               </div>
               <div className="h-8 w-8 rounded-full bg-orange-300 text-white text-center flex items-center justify-center">
                 <ArrowRight />
               </div>
-            </div>
-            <div className=" flex justify-between itcems-center w-fit max-w-md mt-4 border border-[#FCA311]/50 rounded-full text-center pl-2 pr-6 py-2 gap-4">
+            </Link>
+            <Link href={"#demo"}  className=" flex justify-between itcems-center w-fit max-w-md mt-4 border border-[#FCA311]/50 rounded-full text-center pl-2 pr-6 py-2 gap-4">
               <div className="h-8 w-8 rounded-full bg-[#FCA311] text-white text-center flex items-center justify-center">
                 <Play />
               </div>
               <div className="text-xl  font-adlamn">Demo</div>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="  bg-gradient-to-r  from-[#f6ba13] to-orange-400  p-8 shadow-lg flex flex-col justify-center h-full">

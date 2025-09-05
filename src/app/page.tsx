@@ -82,7 +82,8 @@ const LandingPage = () => {
           </section>
 
           {/* Process Section */}
-          <Demo />
+          <section id="demo"> <Demo /></section>
+         
           <section id="about">
             <AboutUsSteps />
           </section>

@@ -38,7 +38,7 @@ const Demo = () => {
     },
     {
       number: "3",
-      title: "70 % d’économies",
+      title: "+70 % d’économies",
       text: "Sur les frais de relevés terrain et la création de fichiers BIM.",
       icon: PiggyBank,
     },
