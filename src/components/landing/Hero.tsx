@@ -115,14 +115,23 @@ const HeroSection = () => {
               duration: 4,
               ease: "easeInOut",
             }}
-            src="/images/test.png"
+            src="/images/test3.png"
             alt=""
-            className="lg:w-[700px] w-11/12 bottom-0 right-0 h-auto absolute "
+            className="lg:w-[470px] z-50 w-11/12 lg:block hidden bottom-0 right-1/6 h-auto absolute "
           />
+           <motion.img
+            animate={{ y: [0, 10, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 4,
+              ease: "easeInOut",
+            }}
+            src="/images/test2.png"
+            alt=""
+            className="lg:w-[700px] w-11/12 lg:hidden block bottom-0 right-0 h-auto absolute "
+          /> 
         </div>
       </div>
-
-    
        <div className="flex flex-col antialiased  bg-gradient-to-r from-[#f6ba13] to-orange-400 items-center justify-between relative overflow-hidden">
       <h1></h1>
       {/* Scrolling container<InfiniteMovingCards

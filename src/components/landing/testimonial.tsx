@@ -36,9 +36,9 @@ export function AnimatedTestimonialsDemo() {
         className="text-center lg:mt-16 mt-8"
       >
         <h2 className="text-4xl md:text-6xl font-bold dark:text-white mb-6 text-black">
-          Ils nous font confiance au{" "}
+          Ils nous font  {" "}
           <span className="bg-gradient-to-r pl-2 from-orange-400 to-orange-600 bg-clip-text text-transparent">
-             Maroc
+             Confiance
           </span>{" "}
           
         </h2>
