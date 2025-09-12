@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 "use client";
 import { ArrowRight, Play } from "lucide-react";
 import React from "react";
@@ -15,7 +15,7 @@ const HeroSection = () => {
     "/images/logov1.png",
     "/images/logov1.png",
   ];
-   const words = [
+  const words = [
     {
       text: "Une",
     },
@@ -24,127 +24,105 @@ const HeroSection = () => {
     },
     {
       text: "unique",
-      className: "text-orange-500 dark:text-blue-500",
+      className: "text-orange-400 dark:text-blue-500",
     },
-    
   ];
-  const testimonials = [
-  {
-    quote:
-      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
-  },
-  {
-    quote:
-      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem is but a dream within a dream.",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  {
-    quote:
-      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-    name: "Jane Austen",
-    title: "Pride and Prejudice",
-  },
-  {
-    quote:
-      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-    name: "Herman Melville",
-    title: "Moby-Dick",
-  },
-];
+
   return (
-    <div className="relative min-h-screen bg-white overflow-hidden">
+  <div className="relative min-h-screen bg-white overflow-hidden">
       <div
-        className="grid grid-cols-1 md:grid-cols-3 relative h-screen w-full text-black"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 relative h-screen w-full text-black"
         style={{
           backgroundImage: "url(/images/Vector1.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div
-          className="col-span-2 flex flex-col justify-center  max-w-3xl lg:pl-16 p-2 mt-6 gap-4"
-          
-        >
-          <div className="lg:text-left text-center ">
-          <div className="flex justify-center lg:justify-start">
-                        <TypewriterEffectSmooth words={words}  className="lg:text-5xl  text-2xl font-bold  font-adlamn italic  uppercase"/>
-</div>           
+        <div className="col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-2 flex flex-col justify-center max-w-none sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl lg:pl-16 md:pl-8 sm:pl-4 p-2 mt-6 gap-2 sm:gap-3 md:gap-4 lg:gap-4">
+          <div className="text-center sm:text-center md:text-left lg:text-left">
+            <div className="flex justify-center sm:justify-center md:justify-start lg:justify-start">
+              <TypewriterEffectSmooth
+                words={words}
+                className="text-2xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl font-bold font-poppins uppercase"
+              />
+            </div>
 
-            <h1 className="lg:text-5xl text-3xl  font-adlamn italic lg:leading-16">
+            <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-poppins leading-tight sm:leading-tight md:leading-normal lg:leading-16">
               Vos Espaces en
-              <span className="bg-gradient-to-r px-2 from-[#f6ba13] to-orange-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r px-1 sm:px-2 from-[#f6ba13] to-orange-400 bg-clip-text text-transparent">
                 3D
               </span>{" "}
-              , Vivants et Immersifs
+              , Vivants et Immersifs
             </h1>
           </div>
-          <h1 className="text-xl font-light lg:text-left text-center">
-            Redéfinissez la façon dont vos clients découvrent vos biens, hôtels
-            et projets au MONDE ENTIER
+
+          <h1 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-xl text-slate-500 text-center sm:text-center md:text-left lg:text-left font-poppins px-2 sm:px-0">
+            Redéfinissez la façon dont vos clients découvrent vos biens, hôtels et projets au MONDE ENTIER
           </h1>
-          <div className="flex lg:flex-row flex-col lg:justify-start items-center justify-center lg:gap-4">
-            <Link href={"#contact"}  className=" flex justify-between itcems-center  w-fit max-w-md mt-4 bg-[#FCA311] rounded-full text-center pl-6 pr-2 py-2 gap-8">
-              <div className="text-xl text-white font-adlamn">
+
+          <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-center sm:justify-center md:justify-start lg:justify-start items-center gap-2 sm:gap-3 md:gap-4 lg:gap-4">
+            <Link
+              href={"#contact"}
+              className="flex justify-between items-center w-fit sm:w-fit max-w-xs sm:max-w-sm md:max-w-md mt-2 sm:mt-3 md:mt-4 bg-[#FCA311] rounded-full text-center pl-4 sm:pl-5 md:pl-6 pr-1 sm:pr-2 py-2 gap-4 sm:gap-6 md:gap-8"
+            >
+              <div className="text-sm sm:text-base md:text-lg lg:text-xl text-white font-adlamn">
                 Remplissez le formulaire
               </div>
-              <div className="h-8 w-8 rounded-full bg-orange-300 text-white text-center flex items-center justify-center">
-                <ArrowRight />
+              <div className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 rounded-full bg-orange-300 text-white text-center flex items-center justify-center">
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
               </div>
             </Link>
-            <Link href={"#demo"}  className=" flex justify-between itcems-center w-fit max-w-md mt-4 border border-[#FCA311]/50 rounded-full text-center pl-2 pr-6 py-2 gap-4">
-              <div className="h-8 w-8 rounded-full bg-[#FCA311] text-white text-center flex items-center justify-center">
-                <Play />
+            <Link
+              href={"#demo"}
+              className="flex justify-between items-center w-fit sm:w-fit max-w-xs sm:max-w-sm md:max-w-md mt-2 sm:mt-3 md:mt-4 border border-[#FCA311]/50 rounded-full text-center pl-1 sm:pl-2 pr-4 sm:pr-5 md:pr-6 py-2 gap-2 sm:gap-3 md:gap-4"
+            >
+              <div className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 rounded-full bg-[#FCA311] text-white text-center flex items-center justify-center">
+                <Play className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
               </div>
-              <div className="text-xl  font-adlamn">Demo</div>
+              <div className="text-sm sm:text-base md:text-lg lg:text-xl font-adlamn">Demo</div>
             </Link>
           </div>
         </div>
-        <div className="  bg-gradient-to-r  from-[#f6ba13] to-orange-400  p-8 shadow-lg flex flex-col justify-center h-full">
+
+        <div className="col-span-1 md:col-span-1 lg:col-span-1 xl:col-span-1 bg-gradient-to-r from-[#f6ba13] to-orange-400 p-4 sm:p-6 md:p-8 shadow-lg flex flex-col justify-center h-full relative">
+          {/* Desktop and large tablet image */}
           <motion.img
             animate={{ y: [0, 10, 0] }}
             transition={{
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               duration: 4,
               ease: "easeInOut",
             }}
             src="/images/test3.png"
             alt=""
-            className="lg:w-[470px] z-50 w-11/12 lg:block hidden bottom-0 right-1/6 h-auto absolute "
+            className="hidden md:block w-full max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[470px] z-50 h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
-           <motion.img
+
+          {/* Mobile and small tablet image */}
+          <motion.img
             animate={{ y: [0, 10, 0] }}
             transition={{
-              repeat: Infinity,
+              repeat: Number.POSITIVE_INFINITY,
               duration: 4,
               ease: "easeInOut",
             }}
             src="/images/test2.png"
             alt=""
-            className="lg:w-[700px] w-11/12 lg:hidden block bottom-0 right-0 h-auto absolute "
-          /> 
+            className="block md:hidden w-11/12  sm:max-w-[320px] h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
+          />
         </div>
       </div>
-       <div className="flex flex-col antialiased  bg-gradient-to-r from-[#f6ba13] to-orange-400 items-center justify-between relative overflow-hidden">
-      <h1></h1>
-      {/* Scrolling container<InfiniteMovingCards
+
+      <div className="flex flex-col antialiased bg-gradient-to-r from-[#f6ba13] to-orange-400 items-center justify-between relative overflow-hidden py-4 sm:py-6 md:py-8">
+        <h1></h1>
+        {/* Scrolling container<InfiniteMovingCards
         items={logos}
         direction="right"
         speed="fast"
       /> */}
-    </div>
+      </div>
     </div>
   );
 };
 
 export default HeroSection;
-
-
-

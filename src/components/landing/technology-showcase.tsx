@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Tabs } from "@/components/ui/tabs";
+import { Tabs } from "@/components/tabs";
 import { Badge } from "@/components/ui/badge";
 import { 
   Play, 

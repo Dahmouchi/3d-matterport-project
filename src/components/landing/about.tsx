@@ -42,7 +42,7 @@ export default function AboutUsSteps() {
         data-aos="fade-up"
         data-aos-delay="200"
       />
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-12 items-start">
         {/* Left: Title & intro */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -92,7 +92,7 @@ export default function AboutUsSteps() {
           {/* vertical line */}
           <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-white/10 via-white/15 to-white/5" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4"  data-aos="fade-up"
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4"  data-aos="fade-up"
         data-aos-delay="100">
             {steps.map((step, i) => (
               <li
