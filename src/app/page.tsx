@@ -15,6 +15,8 @@ import Demo from "@/components/landing/Demo";
 import AboutUsSteps from "@/components/landing/about";
 import { AnimatedTestimonialsDemo } from "@/components/landing/testimonial";
 import ProcessSteps from "@/components/landing/steps";
+import ComingSoonSection from "@/components/landing/Comming-soon";
+import { Vortex } from "@/components/ui/vortex";
 
 const LandingPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -32,27 +34,29 @@ const LandingPage = () => {
     rawY.set(e.clientY - rect.top);
   };
   return (
-    <div className="min-h-screen dark:bg-slate-950 text-white overflow-x-hidden">
-      {/* Navigation */}
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+     
+        <ComingSoonSection />
+
+      {/* Navigation 
       <div className="flex justify-center w-full relative">
         <Navbar />
-      </div>
-
-      {/* Main Content */}
+      </div>*/}
+      {/* Main Content
       <main>
         <section
           ref={containerRef}
           onMouseMove={handleMouseMove}
           className="relative isolate overflow-hidden dark:bg-slate-950 bg-white text-white"
-        >
-          {/* Background gradients */}
-         
-          {/* Animated Spotlight */}
+        > */}
+
+      {/* Background gradients */}
+
+      {/* Animated Spotlight
           <motion.div
             style={{ x, y, translateX: "-50%", translateY: "-50%" }}
             className="pointer-events-none absolute -z-0 h-[44rem] w-[44rem] rounded-full opacity-60"
           >
-            {/* Dark mode spotlight */}
             <div
               className="hidden dark:block h-full w-full rounded-full blur-3xl"
               style={{
@@ -62,7 +66,6 @@ const LandingPage = () => {
               }}
             />
 
-            {/* Light mode spotlight */}
             <div
               className="block dark:hidden h-full w-full rounded-full blur-3xl"
               style={{
@@ -71,45 +74,45 @@ const LandingPage = () => {
                 mixBlendMode: "screen",
               }}
             />
-          </motion.div>
+          </motion.div> */}
 
-          {/* Hero Section */}
+      {/* Hero Section 
           <section id="home">
             <HeroSection />
-          </section>
+          </section>*/}
 
-          {/* Process Section */}
+      {/* Process Section 
           <section id="demo"> <Demo /></section>
          
           <section id="about">
             <AboutUsSteps />
-          </section>
-          {/* Features Section 
+          </section>*/}
+      {/* Features Section 
           <section id="services">
             <FeaturesSection />
-          </section>*/}
+          </section>
           <section id="how-it-works">
             <ProcessSteps />
-          </section>*
-          {/* Portfolio Section */}
+          </section>**/}
+      {/* Portfolio Section 
           <section id="portfolio">
             <PortfolioSection />
           </section>
           <section>
             <AnimatedTestimonialsDemo />
           </section>
-          {/* CTA Section */}
-        </section>
-        <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
+         
+        </section>*/}
+      {/* CTA Section   <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
           <Boxes />
           <section id="contact">
             <CTASection />
           </section>
         </div>
-      </main>
+      </main>*/}
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer
+      <Footer /> */}
     </div>
   );
 };
