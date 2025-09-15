@@ -78,7 +78,7 @@ export default function MinimalistComingSoon() {
 
       <div className="flex-1 flex flex-col lg:flex-row  ">
         {/* Left side - Email form */}
-         <div className="lg:w-1/2 flex flex-col max-w-3xl px-10  gap-8 lg:items-start mt-12 lg:mt-0 lg:text-left items-center lg:justify-center justify-between text-center">
+         <div className="lg:w-1/2 flex flex-col max-w-3xl px-10  gap-8 lg:items-start mt-12 lg:mt-0 lg:text-left items-center lg:justify-start lg:pt-40 justify-between text-center">
          
             <div className="lg:border-l-4 border-amber-400 lg:pl-4 text-white space-y-3">
               <h1 className="lg:text-7xl text-3xl font-bold uppercase">Coming soon</h1>
