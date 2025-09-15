@@ -2,10 +2,10 @@
   "name": "3d-matterport-project",
   "version": "0.1.0",
   "private": true,
- "scripts": {
+  "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "build": "set NODE_ENV=production && prisma generate && next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
