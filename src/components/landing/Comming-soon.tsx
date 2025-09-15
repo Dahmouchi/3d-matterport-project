@@ -92,7 +92,7 @@ export default function MinimalistComingSoon() {
 
           
 
-          Left Side - Content */} <form onSubmit={handleSubmit} className="flex w-2/3">
+          Left Side - Content */} <form onSubmit={handleSubmit} className="flex lg:w-2/3 w-full">
             <input
               type="email"
               value={email}
