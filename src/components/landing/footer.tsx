@@ -3,10 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { 
-  Rotate3d, 
   Mail, 
   Phone, 
-  MapPin,
   Facebook,
   Twitter,
   Instagram,

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, ADLaM_Display } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/next-themes";
 import { AOSInit } from "@/components/aos";
 
 const geistSans = Geist({
@@ -42,6 +41,7 @@ export default function RootLayout({
           >
            
           </ThemeProvider>*/}
+         
            <AOSInit />
       </body>
     </html>
