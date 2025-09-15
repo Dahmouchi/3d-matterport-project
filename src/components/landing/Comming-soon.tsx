@@ -76,9 +76,9 @@ export default function MinimalistComingSoon() {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col lg:flex-row  ">
+      <div className="flex flex-col lg:flex-row w-full ">
         {/* Left side - Email form */}
-         <div className="lg:w-1/2 flex flex-col max-w-3xl px-10  gap-8 lg:items-start mt-12 lg:mt-0 lg:text-left items-center lg:justify-start lg:pt-40 justify-between text-center">
+         <div className="w-full  flex flex-col lg:max-w-3xl px-10  gap-8 lg:items-start mt-12 lg:mt-0 lg:text-left items-center lg:justify-start lg:pt-40 justify-between text-center">
          
             <div className="lg:border-l-4 border-amber-400 lg:pl-4 text-white space-y-3">
               <h1 className="lg:text-7xl text-3xl font-bold uppercase">Coming soon</h1>
@@ -88,11 +88,9 @@ export default function MinimalistComingSoon() {
             SOMETHING EXCITING 
             <br />
             IS COMING
-          </h1>
-
-          
-
-          Left Side - Content */} <form onSubmit={handleSubmit} className="flex lg:w-2/3 w-full">
+          </h1
+          Left Side - Content */} 
+          <form onSubmit={handleSubmit} className="flex lg:w-2/3 w-full  items-center justify-center ">
             <input
               type="email"
               value={email}
