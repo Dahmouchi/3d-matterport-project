@@ -143,7 +143,7 @@ export default function Navbar1() {
           <div className="md:hidden flex items-center gap-4 z-50">
             {" "}
             <button
-              className="text-black z-50"
+              className="text-white z-50"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
