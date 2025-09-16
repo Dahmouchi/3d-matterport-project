@@ -4,13 +4,8 @@ import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import {
-  Phone,
-  Mail,
-
-  CheckCircle,
-  Sparkles,
-} from "lucide-react";
+import { Phone, Mail, CheckCircle, Sparkles } from "lucide-react";
+import sendEmail from "@/lib/sendemail";
 
 const CTASection = () => {
   const [formData, setFormData] = useState({
@@ -19,10 +14,10 @@ const CTASection = () => {
     phone: "",
     projectType: "",
     message: "",
-    city:"",
-    objectives:"",
-    surface:"",
-    link:"",
+    city: "",
+    objectives: "",
+    surface: "",
+    link: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -37,13 +32,25 @@ const CTASection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-  };
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
+  try {
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      alert("✅ Email sent successfully");
+    } else {
+      console.error("❌ Failed to send email");
+    }
+  } catch (err) {
+    console.error("Error:", err);
+  }
+};
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
@@ -126,7 +133,7 @@ const CTASection = () => {
                         required
                       />
                     </div>
-                     <div>
+                    <div>
                       <label className="block text-gray-300 text-sm font-medium mb-2">
                         Téléphone / WhatsApp *
                       </label>
@@ -143,7 +150,6 @@ const CTASection = () => {
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                   
                     <div>
                       <label className="block text-gray-300 text-sm font-medium mb-2">
                         Ville *
@@ -159,50 +165,51 @@ const CTASection = () => {
                       />
                     </div>
                     <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Type de projet *
-                    </label>
-                    <select
-                      name="projectType"
-                      value={formData.projectType}
-                      onChange={handleInputChange}
-                      className="w-full bg-gray-700/50 border border-gray-600 text-white rounded-md px-3 py-2 focus:border-[#f6ba13] focus:outline-none"
-                      required
-                    >
-                      <option value="">Sélectionnez...</option>
-                      <option value="immobilier">
-                        Immobilier (vente / location)
-                      </option>
-                      <option value="hotel">Hôtel / Riad</option>
-                      <option value="commerce">Commerce / showroom</option>
-                      <option value="architecture">Architecture / BTP</option>
-                      <option value="autre">Autre (précisez ci-dessous)</option>
-                    </select>
-                  </div>
+                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                        Type de projet *
+                      </label>
+                      <select
+                        name="projectType"
+                        value={formData.projectType}
+                        onChange={handleInputChange}
+                        className="w-full bg-gray-700/50 border border-gray-600 text-white rounded-md px-3 py-2 focus:border-[#f6ba13] focus:outline-none"
+                        required
+                      >
+                        <option value="">Sélectionnez...</option>
+                        <option value="immobilier">
+                          Immobilier (vente / location)
+                        </option>
+                        <option value="hotel">Hôtel / Riad</option>
+                        <option value="commerce">Commerce / showroom</option>
+                        <option value="architecture">Architecture / BTP</option>
+                        <option value="autre">
+                          Autre (précisez ci-dessous)
+                        </option>
+                      </select>
+                    </div>
 
-                  {/* Surface */}
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Surface approximative à scanner *
-                    </label>
-                    <select
-                      name="surface"
-                      value={formData.surface}
-                      onChange={handleInputChange}
-                      className="w-full bg-gray-700/50 border border-gray-600 text-white rounded-md px-3 py-2 focus:border-[#f6ba13] focus:outline-none"
-                      required
-                    >
-                      <option value="">Sélectionnez...</option>
-                      <option value="<100">{"< 100 m²"}</option>
-                      <option value="100-300">100 – 300 m²</option>
-                      <option value="300-600">300 – 600 m²</option>
-                      <option value="600+">+600 m²</option>
-                    </select>
-                  </div>
+                    {/* Surface */}
+                    <div>
+                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                        Surface approximative à scanner *
+                      </label>
+                      <select
+                        name="surface"
+                        value={formData.surface}
+                        onChange={handleInputChange}
+                        className="w-full bg-gray-700/50 border border-gray-600 text-white rounded-md px-3 py-2 focus:border-[#f6ba13] focus:outline-none"
+                        required
+                      >
+                        <option value="">Sélectionnez...</option>
+                        <option value="<100">{"< 100 m²"}</option>
+                        <option value="100-300">100 – 300 m²</option>
+                        <option value="300-600">300 – 600 m²</option>
+                        <option value="600+">+600 m²</option>
+                      </select>
+                    </div>
                   </div>
 
                   {/* Type de projet */}
-                  
 
                   {/* Objectif principal */}
                   <div>
@@ -252,7 +259,7 @@ const CTASection = () => {
 
                   <div>
                     <label className="block text-gray-300 text-sm font-medium mb-2">
-                      Message 
+                      Message
                     </label>
                     <Textarea
                       name="message"
@@ -266,7 +273,7 @@ const CTASection = () => {
                   {/* CTA */}
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-[#f6ba13] to-orange-400 hover:from-orange-600 hover:to-orange-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                    className="w-full bg-gradient-to-r cursor-pointer from-[#f6ba13] to-orange-400 hover:from-orange-500 hover:to-orange-700 text-white py-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-102"
                   >
                     Demander mon devis gratuit
                   </Button>
@@ -312,7 +319,7 @@ const CTASection = () => {
               ))}
             </div>
 
-            {/* Quick Action Buttons */}
+            {/* Quick Action Buttons 
             <div className="space-y-4">
               <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3">
                 <Phone className="w-5 h-5" />
@@ -323,7 +330,7 @@ const CTASection = () => {
                 <Mail className="w-5 h-5" />
                 <span>Envoyer un email</span>
               </button>
-            </div>
+            </div>*/}
           </div>
         </div>
 

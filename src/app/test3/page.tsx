@@ -75,6 +75,8 @@ const LandingPage = () => {
           </motion.div> 
 
       {/* Hero Section */}
+       <ComingSoonSection />
+      
           <section id="home">
             <HeroSection />
           </section>

@@ -40,7 +40,12 @@ export default function MinimalistComingSoon() {
     { icon: <Linkedin className="w-5 h-5" />, href: "http://linkedin.com/company/build360-ma", name: "LinkedIn" },
   ];
   return (
-    <div className="h-screen overflow-y-hidden bg-gray-900">
+    <div className="h-screen overflow-y-hidden bg-gray-900"
+     style={{
+          backgroundImage: "url(/images/Vector.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}>
  
       <div className="flex justify-between lg:flex-row flex-col lg:items-start items-center px-12 py-4">
         <div>
@@ -57,7 +62,7 @@ export default function MinimalistComingSoon() {
         </h1>
       </div>
 
-      <div className="relative overflow-hidden py-4 border-t border-b border-gray-800 bg-gradient-to-br  from-amber-400 to-orange-500 flex justify-center w-full">
+      <div className="relative overflow-hidden py-4 border-t border-b border-gray-800 bg-[#f6ba13] flex justify-center w-full">
         <div className="flex justify-between items-center w-xl lg:px-0 px-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
@@ -68,7 +73,7 @@ export default function MinimalistComingSoon() {
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ scale: 1.1 }}
-                      className="w-10 h-10 bg-white border-2 border-gray-500 hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 rounded-full flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300"
+                      className="w-10 h-10 hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 rounded-full flex items-center justify-center text-gray-700 hover:text-white transition-all duration-300"
                     >
                       {social.icon}
                     </motion.a>
@@ -96,12 +101,12 @@ export default function MinimalistComingSoon() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 lg:w-2/3 w-full px-4 py-4 border border-gray-300 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#f6ba13] transition-colors"
+              className="flex-1 lg:w-2/3 w-full px-4 py-4 border border-gray-300 text-[#f6ba13] placeholder-gray-400 focus:outline-none focus:border-[#f6ba13] transition-colors"
               required
             />
             <button
               type="submit"
-              className="px-6 py-4 bg-white border border-gray-300 text-black hover:bg-black hover:text-white transition-colors flex items-center justify-center"
+              className="px-6 py-4 bg-white border-[#f6ba13] border-2 text-black hover:bg-black hover:text-white transition-colors flex items-center justify-center"
               disabled={isSubmitted}
             >
               {isSubmitted ? <span className="text-sm">✓</span> : <ArrowRight className="w-5 h-5" />}
@@ -117,7 +122,13 @@ export default function MinimalistComingSoon() {
 
         {/* Right side - Image */}
         <div className=" relative flex items-center justify-center  lg:w-1/2 mt-10 lg:mt-0">
-          <img
+           <motion.img
+                      animate={{ y: [0, 10, 0] }}
+                      transition={{
+                        repeat: Number.POSITIVE_INFINITY,
+                        duration: 4,
+                        ease: "easeInOut",
+                      }}
             src="/images/steps/test1.png"
             alt="Modern workspace showcasing Build360"
             className="w-2/3 h-auto"
