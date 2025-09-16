@@ -34,11 +34,29 @@ export default function MinimalistComingSoon() {
     }
   }
   
-  const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: "https://web.facebook.com/profile.php?id=61580337640595", name: "Facebook" },
-    { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/build360.ma/", name: "Instagram" },
-    { icon: <Linkedin className="w-5 h-5" />, href: "http://linkedin.com/company/build360-ma", name: "LinkedIn" },
-  ];
+   const socialLinks = [
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      href: "https://web.facebook.com/profile.php?id=61580337640595",
+      name: "Facebook",
+      color: "hover:bg-blue-600",
+      bgColor: "bg-blue-500",
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      href: "https://www.instagram.com/build360.ma/",
+      name: "Instagram",
+      color: "hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500",
+      bgColor: "bg-gradient-to-r from-purple-500 to-pink-500",
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "http://linkedin.com/company/build360-ma",
+      name: "LinkedIn",
+      color: "hover:bg-blue-700",
+      bgColor: "bg-blue-600",
+    },
+  ]
   return (
     <div className="h-screen overflow-y-hidden bg-gray-900"
      style={{
@@ -62,24 +80,47 @@ export default function MinimalistComingSoon() {
         </h1>
       </div>
 
-      <div className="relative overflow-hidden py-4 border-t border-b border-gray-800 bg-[#f6ba13] flex justify-center w-full">
-        <div className="flex justify-between items-center w-xl lg:px-0 px-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.href}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.1 }}
-                      className="w-10 h-10 hover:bg-gradient-to-r hover:from-amber-400 hover:to-amber-500 rounded-full flex items-center justify-center text-gray-700 hover:text-white transition-all duration-300"
-                    >
-                      {social.icon}
-                    </motion.a>
-                  ))}
-        </div>
-      </div>
+      <div className="flex justify-center items-center mb-8 w-full bg-[#f6ba13]">
+            <div className="flex w-full justify-between max-w-3xl items-center gap-4 p-2  ">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    scale: 1.15,
+                    y: -2,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative w-12 h-12 rounded-xl bg-gray-100 hover:bg-white flex items-center justify-center text-gray-600 transition-all duration-300 shadow-sm hover:shadow-md"
+                  aria-label={`Suivez-nous sur ${social.name}`}
+                >
+                  {/* Background gradient on hover */}
+                  <div
+                    className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${social.bgColor}`}
+                  ></div>
+
+                  {/* Icon */}
+                  <div className="relative z-10 group-hover:text-white transition-colors duration-300">
+                    {social.icon}
+                  </div>
+
+                  {/* Tooltip */}
+                  <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+                    {social.name}
+                  </div>
+
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#f6ba13] to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
 
       <div className="flex flex-col lg:flex-row w-full ">
         {/* Left side - Email form */}
@@ -122,13 +163,8 @@ export default function MinimalistComingSoon() {
 
         {/* Right side - Image */}
         <div className=" relative flex items-center justify-center  lg:w-1/2 mt-10 lg:mt-0">
-           <motion.img
-                      animate={{ y: [0, 10, 0] }}
-                      transition={{
-                        repeat: Number.POSITIVE_INFINITY,
-                        duration: 4,
-                        ease: "easeInOut",
-                      }}
+           <img
+                  
             src="/images/steps/test1.png"
             alt="Modern workspace showcasing Build360"
             className="w-2/3 h-auto"
