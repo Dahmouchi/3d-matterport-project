@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, ADLaM_Display } from "next/font/google";
+import { Geist, Geist_Mono, ADLaM_Display,Montserrat } from "next/font/google";
 import "./globals.css";
 import { AOSInit } from "@/components/aos";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +12,11 @@ const adlamn = ADLaM_Display({
   variable: "--font-adlamn",
   subsets: ["latin"],
   weight: "400",
+});
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: "500",
 });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -31,9 +37,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  ${adlamn.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}  ${adlamn.variable} ${montserrat.variable} antialiased`}
       >
         {children}
+        <Toaster 
+        position="top-center"
+        />
         {/*<ThemeProvider
             attribute="class"
             defaultTheme="light"

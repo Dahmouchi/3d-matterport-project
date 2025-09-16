@@ -1,154 +1,327 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { 
-  Menu, 
-  X, 
-  Phone,
-  ArrowRight,
-  Rotate3d
-} from "lucide-react";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence, Variants } from "framer-motion";
+import Link from "next/link";
+import { Phone } from "lucide-react";
+
+export default function Navbar1() {
+  const [open, setOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setOpen(false);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  // scroll detection
+  useEffect(() => {
+    const onScroll = () => {
+      setCollapsed(window.scrollY > 120);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const navItems = [
-    { name: "Accueil", href: "#home" },
-    { name: "Services", href: "#services" },
-    { name: "Technologie", href: "#technology" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact", href: "#contact" }
+  const navLinks = [
+    { title: "Accueil", href: "#home" },
+    { title: "À propos", href: "#about" },
+    { title: "Comment ça marche", href: "#how-it-works" },
   ];
+  const navLinks1 = [
+    { title: "Accueil", href: "#home" },
+    { title: "À propos", href: "#about" },
+    { title: "Comment ça marche", href: "#how-it-works" },
+    { title: "Contact", href: "#contact" },
+  ];
+  const headerVariants: Variants = {
+    expanded: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 260, damping: 26 },
+    },
+    collapsed: {
+      x: 320,
+      opacity: 0,
+      transition: { duration: 0.25, ease: "easeOut" },
+    },
+  };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? "bg-black/80 backdrop-blur-md border-b border-gray-800" 
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3 cursor-pointer"
+    <>
+      {/* Floating round menu button */}
+      <motion.button
+        aria-label="Toggle menu"
+        onClick={() => setOpen((v) => !v)}
+        className="fixed right-4 font-montserrat top-4 z-[60] rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white shadow-xl p-3"
+        initial={{ opacity: 0, scale: 0.8, x: 60 }}
+        animate={
+          collapsed
+            ? { opacity: 1, scale: 1, x: 0 }
+            : { opacity: 0, scale: 0.8, x: 60 }
+        }
+        transition={{ type: "spring", stiffness: 300, damping: 22 }}
+      >
+        {open ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <div className="relative">
-              <Rotate3d className="w-8 h-8 text-blue-400" />
-              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-lg"></div>
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              Matterport3D
-            </span>
-          </motion.div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        )}
+      </motion.button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
+      {/* Main header */}
+      <motion.nav
+        variants={headerVariants}
+        animate={collapsed ? "collapsed" : "expanded"}
+        className="fixed top-3 font-montserrat left-1/2 -translate-x-1/2 rounded-full lg:px-4 px-2 z-40 border-b-2 border-t-gray-200 border-t border-[#f6ba13] bg-white/10 backdrop-blur-lg shadow w-11/12"
+      >
+        <div className="mx-auto flex w-full items-center justify-between px-6 py-4 gap-12">
+          {/* Logo */}
+          <Link href="/" className="text-xl font-bold">
+            <img
+              src="/images/logov1white.png"
+              alt="logo"
+              className="lg:h-14 h-8 w-auto"
+            />
+          </Link>
+
+          {/* Desktop nav (only visible when not collapsed) */}
+          <div
+            className={`hidden md:flex items-center gap-8 font-semibold ${
+              collapsed ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          >
+            {navLinks.map((item) => (
+              <Link
+                key={item.href}
                 href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-gray-300 hover:text-white transition-colors duration-200 relative group"
+                className="text-gray-100 hover:text-white transition-colors relative group"
               >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
-              </motion.a>
+                {item.title}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
+              </Link>
             ))}
           </div>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-gray-600 text-gray-300 hover:bg-white hover:text-black transition-all duration-300"
+          {/* CTA */}
+          <Link href="#contact" className="hidden md:flex items-center gap-2">
+            <div className="text-white border-2 border-e-white font-semibold rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 px-4 py-2">
+              Prendre RDV
+            </div>
+            <div className="rounded-full border-2 border-e-white bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white p-2">
+              <Phone />
+            </div>
+          </Link>
+          <div className="md:hidden flex items-center gap-4 z-50">
+            {" "}
+            <button
+              className="text-black z-50"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
             >
-              <Phone className="w-4 h-4 mr-2" />
-              Appeler
-            </Button>
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white transition-all duration-300"
-            >
-              Devis Gratuit
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+              {" "}
+              {open ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {" "}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />{" "}
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="#fff"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {" "}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />{" "}
+                </svg>
+              )}{" "}
+            </button>{" "}
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-white hover:bg-gray-800 rounded-lg transition-colors"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
+      </motion.nav>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800"
+      {/* Mobile fullscreen menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-gradient-to-b from-[#f6ba13] to-orange-400 text-white space-y-8 md:hidden"
+          >
+            <button
+              className="text-black z-50 absolute top-8 right-8"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
             >
-              <div className="py-4 space-y-4">
-                {navItems.map((item, index) => (
-                  <motion.a
-                    key={item.name}
-                    href={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
-                  >
-                    {item.name}
-                  </motion.a>
-                ))}
-                
-                <div className="px-4 pt-4 space-y-3 border-t border-gray-800">
-                  <Button
-                    variant="outline"
-                    className="w-full border-gray-600 text-gray-300 hover:bg-white hover:text-black"
-                  >
-                    <Phone className="w-4 h-4 mr-2" />
-                    Appeler
-                  </Button>
-                  <Button
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white"
-                  >
-                    Devis Gratuit
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </motion.nav>
-  );
-};
+              {" "}
+              {open ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {" "}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />{" "}
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="#fff"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  {" "}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />{" "}
+                </svg>
+              )}{" "}
+            </button>{" "}
+            <div
+              className="absolute w-full h-full top-0 bg-center z-40"
+              style={{ backgroundImage: 'url("/images/Vector1.png")' }}
+            />
+            <div className="bg-white py-4 px-8 rounded-full z-50">
+              <Link
+                href="/"
+                className="text-xl font-bold tracking-tight text-white"
+              >
+                <img
+                  src="/images/logov1.png"
+                  alt=""
+                  className="lg:h-20 h-8 w-auto"
+                />
+              </Link>
+            </div>
+            {navLinks1.map((item, i) => (
+              <motion.div
+                key={item.href}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="z-50 relative"
+              >
+                <Link
+                  href={`${item.href}`}
+                  onClick={() => setOpen(false)}
+                  className="text-2xl font-semibold hover:text-orange-500 transition-colors"
+                >
+                  {item.title}
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-export default Navbar;
+      <AnimatePresence>
+        {open && collapsed && (
+          <motion.div
+            key="desktop-dropdown"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="hidden md:flex flex-col fixed top-20 right-4 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-6 w-72"
+          >
+            {/* Logo */}
+            <div className="flex justify-center mb-4">
+              <Link href="/" onClick={() => setOpen(false)}>
+                <img
+                  src="/images/logov1.png"
+                  alt="logo"
+                  className="h-12 w-auto"
+                />
+              </Link>
+            </div>
+
+            {/* Nav links */}
+            <div className="flex flex-col space-y-3">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 font-medium"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="mt-6">
+              <Link
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white font-semibold py-2 px-4"
+              >
+                Prendre RDV <Phone className="w-4 h-4" />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

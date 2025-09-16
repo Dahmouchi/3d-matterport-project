@@ -97,7 +97,7 @@ export default function MinimalistComingSoon() {
                     y: -2,
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative w-12 h-12 rounded-xl bg-gray-100 hover:bg-white flex items-center justify-center text-gray-600 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="group relative w-12 h-12 rounded-xl lg:bg-gray-100 hover:bg-white flex items-center justify-center text-gray-600 transition-all duration-300 shadow-sm hover:shadow-md"
                   aria-label={`Suivez-nous sur ${social.name}`}
                 >
                   {/* Background gradient on hover */}

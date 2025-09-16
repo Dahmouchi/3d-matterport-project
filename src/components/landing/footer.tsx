@@ -1,20 +1,31 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  Mail, 
-  Phone, 
+import {
+  Mail,
+  Phone,
   Facebook,
   Twitter,
   Instagram,
   Linkedin,
   Youtube,
-  ArrowUp
+  ArrowUp,
 } from "lucide-react";
 import Link from "next/link";
+import axios from "axios";
+import { toast } from "sonner";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    toast.success("Event has been created", {
+      description: "Sunday, December 03, 2023 at 9:00 AM",
+      className: "bg-green-400",
+      descriptionClassName: "text-[#fff]",
+    });
+  };
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -27,8 +38,8 @@ const Footer = () => {
         "Visite Virtuelle",
         "Scan Commercial",
         "Patrimoine Historique",
-        "Formation Matterport"
-      ]
+        "Formation Matterport",
+      ],
     },
     {
       title: "Solutions",
@@ -37,8 +48,8 @@ const Footer = () => {
         "Architecture",
         "Construction",
         "Hôtellerie",
-        "Retail & Showroom"
-      ]
+        "Retail & Showroom",
+      ],
     },
     {
       title: "Ressources",
@@ -47,19 +58,13 @@ const Footer = () => {
         "Tutoriels",
         "Blog",
         "Cas d'usage",
-        "Support Technique"
-      ]
+        "Support Technique",
+      ],
     },
     {
       title: "Entreprise",
-      links: [
-        "À propos",
-        "Notre équipe",
-        "Carrières",
-        "Partenaires",
-        "Presse"
-      ]
-    }
+      links: ["À propos", "Notre équipe", "Carrières", "Partenaires", "Presse"],
+    },
   ];
 
   const socialLinks = [
@@ -67,7 +72,7 @@ const Footer = () => {
     { icon: <Twitter className="w-5 h-5" />, href: "#", name: "Twitter" },
     { icon: <Instagram className="w-5 h-5" />, href: "#", name: "Instagram" },
     { icon: <Linkedin className="w-5 h-5" />, href: "#", name: "LinkedIn" },
-    { icon: <Youtube className="w-5 h-5" />, href: "#", name: "YouTube" }
+    { icon: <Youtube className="w-5 h-5" />, href: "#", name: "YouTube" },
   ];
 
   return (
@@ -80,7 +85,19 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
-        <div className="py-16">
+        <div className="pb-16 pt-8">
+          <div className="flex items-center space-x-3 mb-6">
+            <Link
+              href="/"
+              className="text-xl font-bold tracking-tight text-white"
+            >
+              <img
+                src="/images/logov1white.png"
+                alt=""
+                className="h-14 w-auto"
+              />
+            </Link>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-2">
@@ -91,16 +108,11 @@ const Footer = () => {
                 viewport={{ once: true }}
               >
                 {/* Logo */}
-                <div className="flex items-center space-x-3 mb-6">
-                 <Link href="/" className="text-xl font-bold tracking-tight text-white">
-          <img src="/images/logov1white.png" alt="" className="h-14 w-auto" />
-        </Link>
-                </div>
 
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Spécialiste de la numérisation 3D et des visites virtuelles. 
-                  Nous transformons vos espaces en expériences immersives 
-                  avec la technologie Matterport de pointe.
+                <p className="text-gray-300 mb-6 max-w-xs leading-relaxed">
+                  Spécialiste de la numérisation 3D et des visites virtuelles.
+                  Nous transformons vos espaces en expériences immersives avec
+                  la technologie Matterport de pointe.
                 </p>
 
                 {/* Contact Info */}
@@ -113,7 +125,6 @@ const Footer = () => {
                     <Mail className="w-5 h-5 text-orange-400" />
                     <span> Contact@build360.ma </span>
                   </div>
-                 
                 </div>
 
                 {/* Social Links */}
@@ -159,7 +170,7 @@ const Footer = () => {
                       >
                         <a
                           href="#"
-                          className="text-gray-400 hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
+                          className="text-white hover:text-white transition-colors duration-200 hover:translate-x-1 inline-block"
                         >
                           {link}
                         </a>
@@ -189,16 +200,18 @@ const Footer = () => {
                 Recevez nos actualités, conseils et offres exclusives
               </p>
             </div>
-            <div className="flex space-x-3">
+            <form onSubmit={handleSubmit} className="w-full flex space-x-3">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Votre adresse email"
                 className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
               />
               <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 S&apos;abonner
               </button>
-            </div>
+            </form>
           </div>
         </motion.div>
 
@@ -235,4 +248,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

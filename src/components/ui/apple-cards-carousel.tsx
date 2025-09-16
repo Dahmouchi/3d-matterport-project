@@ -278,6 +278,7 @@ export const BlurImage = ({
   width,
   src,
   className,
+  fill,
   alt,
   ...rest
 }: ImageProps) => {

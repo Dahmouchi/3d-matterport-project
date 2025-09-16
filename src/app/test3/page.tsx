@@ -6,7 +6,6 @@ import FeaturesSection from "@/components/landing/features-section";
 import Footer from "@/components/landing/footer";
 import PortfolioSection from "@/components/landing/portfolio-section";
 import ProcessSection from "@/components/landing/process-section";
-import Navbar from "@/components/Nav";
 import React, { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Boxes } from "@/components/ui/background-boxes";
@@ -17,6 +16,8 @@ import { AnimatedTestimonialsDemo } from "@/components/landing/testimonial";
 import ProcessSteps from "@/components/landing/steps";
 import ComingSoonSection from "@/components/landing/Comming-soon";
 import { Vortex } from "@/components/ui/vortex";
+import HeroSection1 from "@/components/Hero";
+import Navbar1 from "@/components/landing/NavBar";
 
 const LandingPage = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -34,11 +35,11 @@ const LandingPage = () => {
     rawY.set(e.clientY - rect.top);
   };
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden font-montserrat">
      
       {/* Navigation */}
       <div className="flex justify-center w-full relative">
-        <Navbar />
+        <Navbar1 />
       </div>
       {/* Main Content*/}
       <main>
@@ -74,11 +75,10 @@ const LandingPage = () => {
             />
           </motion.div> 
 
-      {/* Hero Section */}
-       <ComingSoonSection />
+      {/* Hero Section */}     
       
           <section id="home">
-            <HeroSection />
+            <HeroSection1 /> 
           </section>
 
       {/* Process Section */}

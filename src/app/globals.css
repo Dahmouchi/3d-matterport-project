@@ -126,6 +126,9 @@ html {
   .font-adlamn {
     font-family: var(--font-adlamn), sans-serif;
   }
+  .font-montserrat{
+    font-family: var(--font-montserrat),sans-serif;
+  }
 }
 
 @theme inline {

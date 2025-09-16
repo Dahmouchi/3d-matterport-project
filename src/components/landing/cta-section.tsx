@@ -96,9 +96,9 @@ const CTASection = () => {
         <div className="grid grid-cols-1  gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-2xl">
-              <h3 className="text-2xl font-bold dark:text-white mb-6">
-                Demandez votre devis gratuit
+            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl lg:p-8 p-4 border border-gray-700 shadow-2xl">
+              <h3 className="lg:text-2xl text-xl font-bold dark:text-white mb-6">
+                Demandez votre devis <span className="text-amber-400 font-bold">Gratuit*</span>
               </h3>
 
               {!isSubmitted ? (
@@ -106,7 +106,7 @@ const CTASection = () => {
                   {/* Informations de base */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                      <label className="block text-gray-100 text-sm font-medium mb-2">
                         Nom & Prénom *
                       </label>
                       <Input
@@ -120,7 +120,7 @@ const CTASection = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                      <label className="block text-gray-100 text-sm font-medium mb-2">
                         Email *
                       </label>
                       <Input
@@ -134,7 +134,7 @@ const CTASection = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                      <label className="block text-gray-100 text-sm font-medium mb-2">
                         Téléphone / WhatsApp *
                       </label>
                       <Input
@@ -151,7 +151,7 @@ const CTASection = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                      <label className="block text-gray-100 text-sm font-medium mb-2">
                         Ville *
                       </label>
                       <Input
@@ -165,7 +165,7 @@ const CTASection = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                      <label className="block text-gray-100 text-sm font-medium mb-2">
                         Type de projet *
                       </label>
                       <select
@@ -190,7 +190,7 @@ const CTASection = () => {
 
                     {/* Surface */}
                     <div>
-                      <label className="block text-gray-300 text-sm font-medium mb-2">
+                      <label className="block text-gray-100 text-sm font-medium mb-2">
                         Surface approximative à scanner *
                       </label>
                       <select
@@ -213,7 +213,7 @@ const CTASection = () => {
 
                   {/* Objectif principal */}
                   <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                    <label className="block text-gray-100 text-sm font-medium mb-2">
                       Objectif principal *
                     </label>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
@@ -244,7 +244,7 @@ const CTASection = () => {
 
                   {/* Détails complémentaires */}
                   <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                    <label className="block text-gray-100 text-sm font-medium mb-2">
                       Lien de site web (si existant)
                     </label>
                     <Input
@@ -258,7 +258,7 @@ const CTASection = () => {
                   </div>
 
                   <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">
+                    <label className="block text-gray-100 text-sm font-medium mb-2">
                       Message
                     </label>
                     <Textarea
