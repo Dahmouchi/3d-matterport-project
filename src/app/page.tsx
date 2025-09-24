@@ -1,14 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-import MatterportHero from "@/components/Hero";
 import CTASection from "@/components/landing/cta-section";
-import FeaturesSection from "@/components/landing/features-section";
 import Footer from "@/components/landing/footer";
-import PortfolioSection from "@/components/landing/portfolio-section";
-import ProcessSection from "@/components/landing/process-section";
-import Navbar from "@/components/Nav";
-import React, { useRef } from "react";
-import { Boxes } from "@/components/ui/background-boxes";
+import React from "react";
 import Demo from "@/components/landing/Demo";
 import AboutUsSteps from "@/components/landing/about";
 import { AnimatedTestimonialsDemo } from "@/components/landing/testimonial";
@@ -37,16 +31,13 @@ const LandingPage = () => {
              <section id="about">
                <AboutUsSteps />
              </section>
-             <section id="portfolio">
-               <PortfolioSection />
-             </section>
+            
              <section>
                <AnimatedTestimonialsDemo />
              </section>
            </section>
            {/* CTA Section */}
            <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
-             <Boxes />
              <section id="contact">
                <CTASection />
              </section>
