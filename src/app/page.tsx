@@ -37,7 +37,12 @@ const LandingPage = () => {
              </section>
            </section>
            {/* CTA Section */}
-           <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
+           <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center"
+             style={{
+          backgroundImage: "url(/images/Vector.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}>
              <section id="contact">
                <CTASection />
              </section>
