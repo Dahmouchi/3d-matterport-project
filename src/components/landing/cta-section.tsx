@@ -32,25 +32,39 @@ const CTASection = () => {
     });
   };
 
- const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-  try {
-    const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const res2 = await fetch(
+        "http://localhost:3001/fr/api/reservations",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: "John Doe",
+            email: "john@example.com",
+            phone: "+123456789",
+            projectType: "Apartment",
+            message: "Interested in consultation",
+            city: "Casablanca",
+            objectives: "Investment",
+            surface: "120m²",
+            link: "https://example.com/project",
+          }),
+        }
+      );
 
-    if (res.ok) {
-      alert("✅ Email sent successfully");
-    } else {
-      console.error("❌ Failed to send email");
+      if (res2.ok) {
+        alert("✅ Email sent successfully");
+      } else {
+        console.error("❌ Failed to send email");
+        console.log(res2);
+      }
+    } catch (err) {
+      console.error("Error:", err);
     }
-  } catch (err) {
-    console.error("Error:", err);
-  }
-};
+  };
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
@@ -98,7 +112,8 @@ const CTASection = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl lg:p-8 p-4 border border-gray-700 shadow-2xl">
               <h3 className="lg:text-2xl text-xl font-bold dark:text-white mb-6">
-                Demandez votre devis <span className="text-amber-400 font-bold">Gratuit*</span>
+                Demandez votre devis{" "}
+                <span className="text-amber-400 font-bold">Gratuit*</span>
               </h3>
 
               {!isSubmitted ? (
