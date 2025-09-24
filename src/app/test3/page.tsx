@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import CTASection from "@/components/landing/cta-section";
 import Footer from "@/components/landing/footer";

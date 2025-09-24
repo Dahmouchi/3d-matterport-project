@@ -103,7 +103,7 @@ export function CollectionStrip() {
           dragConstraints={{ left: -maxDrag, right: 0 }}
           dragElastic={0.1}
         >
-          {collections.map((collection, index) => (
+          {collections.map((collection) => (
             <motion.div
               key={collection.id}
               className="flex-shrink-0 w-80 group cursor-pointer"

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import { Search, Sparkles, Handshake, Box } from "lucide-react";

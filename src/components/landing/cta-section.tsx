@@ -1,11 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, CheckCircle, Sparkles } from "lucide-react";
-import sendEmail from "@/lib/sendemail";
+import { Phone, Mail, CheckCircle } from "lucide-react";
 
 const CTASection = () => {
   const [formData, setFormData] = useState({
