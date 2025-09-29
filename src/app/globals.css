@@ -165,3 +165,90 @@ html {
     color: #666;
     box-shadow: inset 4px 4px 12px #d89000, inset -4px -4px 12px #ffffff;
   }
+
+  @layer base {
+  * {
+    @apply border-border outline-ring/50 overscroll-none;
+  }
+  body {
+    @apply bg-muted text-foreground font-mono;
+  }
+}
+
+.recharts-cartesian-grid-vertical :first-child,
+.recharts-cartesian-grid-vertical :last-child {
+  opacity: 0;
+}
+
+@media (min-width: 1028px) {
+  .dashboard {
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 1240px) and (max-width: 1920px) {
+  .dashboard {
+    font-size: 0.75em;
+  }
+}
+
+@media (min-width: 1920px) {
+  .dashboard {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 2160px) {
+  .dashboard {
+    font-size: 1.2em;
+  }
+}
+
+/* Stat Marquee Animations */
+@keyframes marquee-up {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes marquee-down {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes marquee-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1) translateY(0);
+  }
+  25% {
+    opacity: 0.4;
+    transform: scale(1.02) translateY(-1px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05) translateY(-2px);
+  }
+  75% {
+    opacity: 0.6;
+    transform: scale(1.02) translateY(-1px);
+  }
+}
+
+/* Hover interactions */
+.group:hover .animate-marquee-pulse {
+  animation-play-state: paused;
+}
+
+.group:hover .animate-marquee-up,
+.group:hover .animate-marquee-down {
+  animation-play-state: paused;
+}

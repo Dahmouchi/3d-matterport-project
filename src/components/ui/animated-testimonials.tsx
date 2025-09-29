@@ -5,7 +5,7 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Testimonial = {
   quote: string;
@@ -44,70 +44,81 @@ export const AnimatedTestimonials = ({
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
   };
+  const rotations = React.useMemo(
+    () => testimonials.map(() => randomRotateY()),
+    [testimonials]
+  );
+  // deterministic rotation based on index
+  function getBackCardStyle(index: number, activeIndex: number) {
+    const offset = index - activeIndex; // distance from active card
+    if (offset === 0) return { rotate: 0, scale: 1, z: 0 }; // front card
+
+    // back cards
+    return {
+      rotate: offset * 3, // each step adds ~3° rotation
+      scale: 1 - Math.abs(offset) * 0.05, // slightly smaller
+      z: -100 - Math.abs(offset) * 50, // push farther back
+    };
+  }
+
   return (
     <div className="mx-auto max-w-sm px-4 py-20 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
       <div className="relative grid grid-cols-1 lg:gap-20 gap-10 md:grid-cols-2">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
-              {testimonials.map((testimonial, index) => (
-                <motion.div
-                  key={testimonial.src}
-                  initial={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: -100,
-                    rotate: randomRotateY(),
-                  }}
-                  animate={{
-                    opacity: isActive(index) ? 1 : 0.7,
-                    scale: isActive(index) ? 1 : 0.95,
-                    z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
-                    zIndex: isActive(index)
-                      ? 40
-                      : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
-                  }}
-                  exit={{
-                    opacity: 0,
-                    scale: 0.9,
-                    z: 100,
-                    rotate: randomRotateY(),
-                  }}
-                  transition={{
-                    duration: 0.4,
-                    ease: "easeInOut",
-                  }}
-                  className="absolute inset-0 origin-bottom"
-                >
-                  <img
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
-                  />
-                </motion.div>
-              ))}
+              {testimonials.map((testimonial, index) => {
+                const { rotate, scale, z } = getBackCardStyle(
+                  index,
+                  active
+                );
+
+                return (
+                  <motion.div
+                    key={testimonial.src}
+                    initial={{ opacity: 0, scale: 0.9, z: -100, rotate }}
+                    animate={{
+                      opacity: isActive(index) ? 1 : 0.7,
+                      scale,
+                      z,
+                      rotate,
+                      zIndex: isActive(index)
+                        ? 40
+                        : testimonials.length + 2 - index,
+                      y: isActive(index) ? [0, -80, 0] : 0,
+                    }}
+                    exit={{ opacity: 0, scale: 0.9, z: 100, rotate }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute inset-0 origin-bottom"
+                  >
+                    <img
+                      src={testimonial.src}
+                      alt={testimonial.name}
+                      width={500}
+                      height={500}
+                      draggable={false}
+                      className="h-full w-full rounded-3xl object-cover object-center"
+                    />
+                  </motion.div>
+                );
+              })}
             </AnimatePresence>
           </div>
         </div>
-         <div className=" flex lg:hidden gap-4 justify-end ">
-            <button
-              onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
-            >
-              <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
-            >
-              <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
-            </button>
-          </div>
+        <div className=" flex lg:hidden gap-4 justify-end ">
+          <button
+            onClick={handlePrev}
+            className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+          >
+            <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+          >
+            <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+          </button>
+        </div>
         <div className="flex flex-col justify-between lg:py-4">
           <motion.div
             key={active}

@@ -43,20 +43,20 @@ const CTASection = () => {
       body: JSON.stringify(formData),
     });*/}
       const res2 = await fetch(
-        "http://localhost:3001/fr/api/reservations",
+        "http://localhost:3001/api/reservations",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            name: "John Doe",
-            email: "john@example.com",
-            phone: "+123456789",
-            projectType: "Apartment",
-            message: "Interested in consultation",
-            city: "Casablanca",
-            objectives: "Investment",
-            surface: "120m²",
-            link: "https://example.com/project",
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            projectType: formData.projectType,
+            message: formData.message,
+            city: formData.city,
+            objectives: formData.objectives,
+            surface: formData.surface,
+            link:formData.link,
           }),
         }
       );
