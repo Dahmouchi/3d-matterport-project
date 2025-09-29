@@ -93,7 +93,7 @@ const ADMIN_PASS  = process.env.NEXT_PUBLIC_ADMIN_PASS ;
         <CardHeader className="text-center space-y-2">
             <Link href="/" className="text-xl font-bold w-full flex items-center justify-center">
             <img
-              src="/images/logov1White.png"
+              src="/images/logov1white.png"
               alt="logo"
               className="lg:h-14 h-8 w-auto"
             />
