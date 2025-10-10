@@ -294,7 +294,7 @@ const CTASection = () => {
                   {/* CTA */}
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r cursor-pointer from-[#f6ba13] to-orange-400 hover:from-orange-500 hover:to-orange-700 text-white py-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-102"
+                    className="w-full bg-gradient-to-r cursor-pointer from-[#f6ba13] to-orange-400 hover:from-orange-500 hover:to-orange-700 text-white py-6 rounded-lg font-semibold"
                   >
                     Demander mon devis gratuit
                   </Button>

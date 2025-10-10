@@ -1,15 +1,28 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Users, PiggyBank, BarChart3, PlayCircle } from "lucide-react";
+import {
+  MapPin,
+  Users,
+  PiggyBank,
+  BarChart3,
+  PlayCircle,
+  X,
+} from "lucide-react";
 import { CometCard } from "../ui/comet-card";
 import { div } from "motion/react-client";
 import { Play } from "next/font/google";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
-
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogTrigger,
+} from "../ui/dialog";
+import { Button } from "../ui/button";
 const Demo = () => {
-  const modelId = "UoqjwziqrZs"; // Replace with your actual Matterport model ID
+  const modelId = "cb3PdBNtPt9"; // Replace with your actual Matterport model ID
   const mpUrl = useMemo(() => {
     const base = "https://my.matterport.com/show/";
     const params = new URLSearchParams({
@@ -122,7 +135,7 @@ const Demo = () => {
             viewport={{ once: true }}
             className="relative rounded-2xl lg:block hidden overflow-hidden shadow-2xl ring-1 ring-white/10"
           >
-            <div className="aspect-[16/9]">
+            <div className="aspect-[16/9] relative">
               <iframe
                 src={mpUrl}
                 className="absolute inset-0 w-full h-full"
@@ -130,6 +143,14 @@ const Demo = () => {
                 allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen; autoplay"
                 allowFullScreen
               />
+              <div className="absolute bottom-2 px-4 w-full">
+<div
+                  className="flex w-full   px-8  justify-center items-center  mt-2 sm:mt-3 md:mt-4 bg-[#fff] rounded-full text-center pl-4 sm:pl-5 md:pl-6 pr-1 sm:pr-2 py-2 gap-4 sm:gap-6 md:gap-8"
+                >
+                  <img src="/images/logov1.png"  alt="logo"
+              className="h-8 w-auto"/>
+                </div>
+              </div>
             </div>
           </motion.div>
 
@@ -171,7 +192,15 @@ const Demo = () => {
                   allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen; autoplay"
                   allowFullScreen
                 />
+                <div
+                  onClick={() => setOpen(false)}
+                  className="flex bottom-2 z-50 right-4 px-5 absolute justify-center items-center w-1/2 sm:w-fit max-w-xl sm:max-w-sm md:max-w-md mt-2 sm:mt-3 md:mt-4 bg-[#fff] rounded-full text-center pl-4 sm:pl-5 md:pl-6 pr-1 sm:pr-2 py-2 gap-4 sm:gap-6 md:gap-8"
+                >
+                  <img src="/images/logov1.png"  alt="logo"
+              className="lg:h-14 h-8 w-auto"/>
+                </div>
               </DialogContent>
+              <DialogClose></DialogClose>
             </Dialog>
           </div>
         </div>
