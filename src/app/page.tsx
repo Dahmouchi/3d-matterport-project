@@ -7,50 +7,55 @@ import AboutUsSteps from "@/components/landing/about";
 import { AnimatedTestimonialsDemo } from "@/components/landing/testimonial";
 import HeroSection1 from "@/components/Hero";
 import Navbar1 from "@/components/landing/NavBar";
-
+import SplashCursor from "@/components/SplashCursor";
+import Projects from "@/components/landing/Projects";
 const LandingPage = () => {
- 
   return (
-   <div className="min-h-screen bg-black text-white overflow-x-hidden font-montserrat">
-         {/* Navigation */}
-         <div className="flex justify-center w-full relative">
-           <Navbar1 />
-         </div>
-         {/* Main Content*/}
-         <main>
-           <section className="relative isolate overflow-hidden dark:bg-slate-950 bg-white text-white">
-             <section id="home">
-               <HeroSection1 />
-             </section>
-             {/* Process Section */}
-             <section id="demo">
-               {" "}
-               <Demo />
-             </section>
-             <section id="about">
-               <AboutUsSteps />
-             </section>
-            
-             <section>
-               <AnimatedTestimonialsDemo />
-             </section>
-           </section>
-           {/* CTA Section */}
-           <div className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center"
-             style={{
-          backgroundImage: "url(/images/Vector.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}>
-             <section id="contact">
-               <CTASection />
-             </section>
-           </div>
-         </main>
-   
-         {/* Footer*/}
-         <Footer />
-       </div>
+    <div className="min-h-screen bg-black text-white overflow-x-hidden font-montserrat">
+      {/* Navigation */}
+      <SplashCursor />
+      <div className="flex justify-center w-full relative">
+        <Navbar1 />
+      </div>
+      {/* Main Content*/}
+      <main>
+        <section className="relative isolate overflow-hidden dark:bg-slate-950 bg-white text-white">
+          <section id="home">
+            <HeroSection1 />
+          </section>
+          {/* Process Section */}
+          <section id="demo">
+            {" "}
+            <Demo />
+          </section>
+          <section id="about">
+            <AboutUsSteps />
+          </section>
+
+          <section>
+            <AnimatedTestimonialsDemo />
+          </section>
+         
+        </section>
+
+        {/* CTA Section */}
+        <div
+          className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center"
+          style={{
+            backgroundImage: "url(/images/Vector.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <section id="contact">
+            <CTASection />
+          </section>
+        </div>
+      </main>
+
+      {/* Footer*/}
+      <Footer />
+    </div>
   );
 };
 
