@@ -57,10 +57,10 @@ const HeroSection1 = () => {
             </h1>
           </div>
 
-          <h1 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-xl text-slate-50 text-center sm:text-center md:text-left lg:text-left font-poppins px-2 sm:px-0">
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-xl text-slate-50 text-center sm:text-center md:text-left lg:text-left font-poppins px-2 sm:px-0">
             Redéfinissez la façon dont vos clients découvrent vos biens, hôtels
             et projets au MONDE ENTIER
-          </h1>
+          </h2>
 
           <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-center sm:justify-center md:justify-start lg:justify-start items-center gap-2 sm:gap-3 md:gap-4 lg:gap-4">
             <Link
@@ -118,7 +118,7 @@ const HeroSection1 = () => {
       </div>
       {/* Scrolling container
       <div className="flex flex-col antialiased bg-gradient-to-r from-[#f6ba13] to-orange-400 items-center justify-between relative overflow-hidden py-4 sm:py-6 md:py-8">
-        <h1></h1>
+       
       <InfiniteMovingCards
         items={logos}
         direction="right"

@@ -117,7 +117,6 @@ const HeroSection = () => {
       </div>
 
       <div className="flex flex-col antialiased bg-gradient-to-r from-[#f6ba13] to-orange-400 items-center justify-between relative overflow-hidden py-4 sm:py-6 md:py-8">
-        <h1></h1>
         {/* Scrolling container<InfiniteMovingCards
         items={logos}
         direction="right"
