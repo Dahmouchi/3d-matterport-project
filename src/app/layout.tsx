@@ -31,26 +31,20 @@ export const metadata: Metadata = {
 
   // 2. Title optimized for French
   title: {
-    // Optimisé : < 580 pixels
-    default: "Build360 : Expériences 3D Immersives Maroc",
-    // Pour les autres pages (ex: "Contact | Build360")
-    template: "%s | Build360",
+    default: "Build360 : Création Visite Virtuelle Maroc & 3D Immersive",
+    template: "%s | Build360 Maroc",
   },
-
-  // Description optimisée (< 160 caractères)
   description:
-    "Build360 crée des expériences 3D immersives et visites virtuelles au Maroc. Sublimez vos projets immobiliers et numériques grâce au design interactif.",
-  // 4. Keywords focused on Morocco/French market
+    "Expert en création de visite virtuelle au Maroc (Casablanca, Rabat, Marrakech). Solutions 3D immersives pour l'immobilier, l'hôtellerie et l'industrie. Demandez votre devis gratuit.",
   keywords: [
-    "Expériences 3D",
     "Visite virtuelle Maroc",
-    "Design immersif",
-    "Immobilier 3D",
-    "Espaces numériques",
-    "Architecture interactive",
+    "Visite 360 degré",
+    "Réalité virtuelle Immobilier",
+    "Visite virtuelle Riad Hôtel",
+    "Agence 3D Casablanca",
+    "Scan 3D Maroc",
     "Build360",
-    "Maroc",
-    "Visualisation 3D",
+    "Prix visite virtuelle Maroc",
   ],
 
   authors: [{ name: "Build360 Team" }],

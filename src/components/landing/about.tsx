@@ -1,143 +1,124 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
-import { Search, Sparkles, Handshake, Box } from "lucide-react";
+import { Search, Sparkles, ScanEye, TrendingUp } from "lucide-react"; // Changed icons for better context
 
 export default function AboutUsSteps() {
   const steps = [
     {
-      number: "1",
-      title: "Découverte",
-      text: "Nous analysons vos besoins, votre audience et vos objectifs pour cadrer une vision claire et mesurable.",
+      title: "1. Audit & Stratégie",
+      text: "Nous étudions votre espace et vos objectifs commerciaux pour définir le type de visite virtuelle le plus rentable pour vous.",
       icon: Search,
     },
     {
-      number: "2",
-      title: "Conception",
-      text: "Design de l'expérience, scénarisation et prototypage. Nous choisissons les meilleurs outils et parcours.",
+      title: "2. Scénarisation UX",
+      text: "Nous concevons un parcours utilisateur fluide. Choix des points de vue stratégiques et design de l'interface interactive.",
       icon: Sparkles,
     },
     {
-      number: "3",
-      title: "Production",
-      text: "Captation 3D, intégrations (Matterport/BIM), contenus interactifs et automatisations prêtes à scaler.",
-      icon: Box,
+      title: "3. Captation & Tech",
+      text: "Numérisation 4K avec technologie Matterport ou Laser. Création du jumeau numérique et intégration de vos médias (tags, vidéos).",
+      icon: ScanEye, // Changed to ScanEye (more relevant for 3D)
     },
     {
-      number: "4",
-      title: "Accompagnement",
-      text: "Formation, analytics et itérations continues pour des résultats durables et un ROI tangible.",
-      icon: Handshake,
+      title: "4. Déploiement & Suivi",
+      text: "Intégration sur votre site, Google Maps et réseaux sociaux. Formation de vos équipes et suivi des statistiques de visites.",
+      icon: TrendingUp, // Changed to TrendingUp (implies ROI/Growth)
     },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#f6ba13] via-orange-400 to-orange-600 lg:py-20 lg:pt pt-10">
-      {/* background accents */}
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#f6ba13] via-orange-400 to-orange-600 lg:py-20 py-10">
+      {/* Background accents */}
       <div className="pointer-events-none absolute -top-32 -right-32 h-80 w-80 rounded-full bg-indigo-600/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-fuchsia-600/10 blur-3xl" />
+
+      {/* Decorative Image (Desktop) */}
       <img
         src="/images/pro22.png"
-        className="absolute bottom-0 right-2/3 lg:block hidden w-1/5"
-        alt="ssssss"
-        title="ssssss"
+        className="absolute bottom-0 right-2/3 lg:block hidden w-1/5 object-contain z-10"
+        alt="Technicien Build360 réalisant un scan 3D au Maroc"
+        title="Expertise 3D Build360"
         data-aos="fade-up"
         data-aos-delay="200"
       />
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-12 items-start">
-        {/* Left: Title & intro */}
+
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Left: Title & Intro */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative "
+          className="relative z-20"
         >
           <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-            Notre approche,{" "}
-            <span className="bg-gradient-to-r from-slate-700 via-slate-600 to-slate-700 bg-clip-text text-transparent">
-              étape par étape
+            De la vision à la{" "}
+            <span className="bg-white/90 bg-clip-text text-transparent drop-shadow-sm">
+              réalité virtuelle
             </span>
           </h2>
-          <p className="mt-4 text-slate-50 leading-relaxed">
-            Nous combinons design, 3D et technologie pour créer des expériences
-            immersives à fort impact. Voici comment nous travaillons pour
-            transformer vos idées en résultats concrets.
+          <p className="mt-4 text-orange-50 text-lg leading-relaxed">
+            Chez Build360, nous ne faisons pas que prendre des photos. Nous
+            bâtissons une <strong>stratégie digitale immersive</strong>. Voici
+            notre processus pour transformer vos espaces en outils de vente
+            performants au Maroc.
           </p>
 
-          {/* value chips */}
-
-          {/* CTA */}
-          <div className="mt-8 flex items-center gap-3">
+          {/* CTA Buttons */}
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white text-slate-900 px-4 py-2.5 font-medium shadow-sm hover:shadow-md transition"
+              className="inline-flex items-center justify-center rounded-xl bg-white text-orange-600 px-6 py-3 font-bold shadow-lg hover:shadow-xl hover:bg-slate-50 transition transform hover:-translate-y-1"
             >
-              Parlons de votre projet
+              Lancer mon projet
             </a>
             <a
               href="#portfolio"
-              className="inline-flex items-center justify-center rounded-xl border border-white/50 px-4 py-2.5 text-white hover:bg-white/5 transition"
+              className="inline-flex items-center justify-center rounded-xl border-2 border-white/30 px-6 py-3 text-white font-medium hover:bg-white/10 transition"
             >
-              Voir nos réalisations
+              Voir des exemples
             </a>
           </div>
         </motion.div>
 
-        {/* Right: Step-by-step timeline */}
+        {/* Right: Step-by-step Grid */}
         <motion.ul
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="relative"
+          className="relative grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
-          {/* vertical line */}
-          <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-white/10 via-white/15 to-white/5" />
-
-          <div
-            className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            {steps.map((step, i) => (
-              <li key={step.title} className="relative last:pb-0 h-full w-full">
-                {/* number badge 
-              <div className="absolute left-0 top-0">
-                <div className="grid place-items-center h-12 w-12 rounded-full bg-white text-orange-700 font-semibold shadow ring-4 ring-white/10">
-                  {step.number}
-                </div>
-              </div>*/}
-
-                {/* card */}
-                <div className="group h-full rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 transition hover:-translate-y-0.5 hover:bg-white/[0.07] hover:shadow-lg hover:shadow-indigo-950/20">
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-xl text-orange-500 bg-white p-2 shadow-md">
-                      <step.icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-semibold text-lg">
-                        {step.title}
-                      </h3>
-                      <p className="mt-1 text-white leading-relaxed">
-                        {step.text}
-                      </p>
-                    </div>
+          {steps.map((step, i) => (
+            <li key={step.title} className="h-full w-full">
+              <div className="group h-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-xl hover:shadow-orange-900/10">
+                <div className="flex flex-col gap-4">
+                  <div className="self-start rounded-xl text-orange-600 bg-white p-3 shadow-lg group-hover:scale-110 transition-transform">
+                    <step.icon className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-xl">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-orange-50 text-sm leading-relaxed">
+                      {step.text}
+                    </p>
                   </div>
                 </div>
-              </li>
-            ))}
-          </div>
+              </div>
+            </li>
+          ))}
         </motion.ul>
       </div>
+
+      {/* Mobile Image */}
       <div
-        className="flex justify-center"
+        className="flex justify-center relative z-10"
         data-aos="fade-up"
         data-aos-delay="200"
       >
         <img
           src="/images/pro22.png"
-          className=" block lg:hidden w-2/3 mt-4"
-          alt="fffffffffff"
+          className="block lg:hidden w-3/4 mt-8 drop-shadow-2xl"
+          alt="Scan 3D Matterport Maroc"
         />
       </div>
     </section>

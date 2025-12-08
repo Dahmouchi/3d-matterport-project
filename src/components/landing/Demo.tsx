@@ -80,13 +80,13 @@ const Demo = () => {
         viewport={{ once: true }}
         className="text-center lg:mt-16 mt-8"
       >
-        <h1 className="text-4xl md:text-6xl font-bold dark:text-white mb-6 text-black">
+        <h2 className="text-4xl md:text-6xl font-bold dark:text-white mb-6 text-black">
           Pourquoi
           <span className="bg-gradient-to-r pl-2 from-orange-400 to-orange-600 bg-clip-text text-transparent">
             la visite virtuelle 3D
           </span>{" "}
           change tout ?
-        </h1>
+        </h2>
         <p className="lg:text-xl text-md dark:text-gray-300 text-gray-500 max-w-3xl mx-auto">
           De la capture à la diffusion, découvrez comment nous transformons vos
           espaces en expériences 3D immersives en quelques étapes simples
