@@ -31,14 +31,15 @@ export const metadata: Metadata = {
 
   // 2. Title optimized for French
   title: {
-    default: "Build360 - Donnez VIE à vos espaces | Expériences 3D Immersives",
-    template: "%s | Build360 Maroc",
+    // Optimisé : < 580 pixels
+    default: "Build360 : Expériences 3D Immersives Maroc",
+    // Pour les autres pages (ex: "Contact | Build360")
+    template: "%s | Build360",
   },
 
-  // 3. Description in French
+  // Description optimisée (< 160 caractères)
   description:
-    "Build360 transforme les espaces réels et numériques en expériences 3D immersives au Maroc. Que ce soit pour l'immobilier ou les projets créatifs, nous donnons vie aux environnements grâce au design interactif.",
-
+    "Build360 crée des expériences 3D immersives et visites virtuelles au Maroc. Sublimez vos projets immobiliers et numériques grâce au design interactif.",
   // 4. Keywords focused on Morocco/French market
   keywords: [
     "Expériences 3D",
