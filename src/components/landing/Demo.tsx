@@ -144,11 +144,13 @@ const Demo = () => {
                 allowFullScreen
               />
               <div className="absolute bottom-2 px-4 w-full">
-<div
-                  className="flex w-full   px-8  justify-center items-center  mt-2 sm:mt-3 md:mt-4 bg-[#fff] rounded-full text-center pl-4 sm:pl-5 md:pl-6 pr-1 sm:pr-2 py-2 gap-4 sm:gap-6 md:gap-8"
-                >
-                  <img src="/images/logov1.png" title="logo"  alt="logo"
-              className="h-8 w-auto"/>
+                <div className="flex w-full   px-8  justify-center items-center  mt-2 sm:mt-3 md:mt-4 bg-[#fff] rounded-full text-center pl-4 sm:pl-5 md:pl-6 pr-1 sm:pr-2 py-2 gap-4 sm:gap-6 md:gap-8">
+                  <img
+                    src="/images/logov1.png"
+                    title="logo"
+                    alt="logo"
+                    className="h-8 w-auto"
+                  />
                 </div>
               </div>
             </div>
@@ -196,8 +198,12 @@ const Demo = () => {
                   onClick={() => setOpen(false)}
                   className="flex bottom-2 z-50 right-4 px-5 absolute justify-center items-center w-1/2 sm:w-fit max-w-xl sm:max-w-sm md:max-w-md mt-2 sm:mt-3 md:mt-4 bg-[#fff] rounded-full text-center pl-4 sm:pl-5 md:pl-6 pr-1 sm:pr-2 py-2 gap-4 sm:gap-6 md:gap-8"
                 >
-                  <img src="/images/logov1.png" title="logo"  alt="logo"
-              className="lg:h-14 h-8 w-auto"/>
+                  <img
+                    src="/images/logov1.png"
+                    title="logo"
+                    alt="logo"
+                    className="lg:h-14 h-8 w-auto"
+                  />
                 </div>
               </DialogContent>
               <DialogClose></DialogClose>

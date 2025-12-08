@@ -48,13 +48,13 @@ const HeroSection1 = () => {
               />
             </div>
 
-            <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-montserrat leading-tight sm:leading-tight md:leading-normal lg:leading-16">
+            <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-montserrat leading-tight sm:leading-tight md:leading-normal lg:leading-16">
               Vos Espaces en
               <span className="bg-gradient-to-r px-1 sm:px-2 from-[#f6ba13] to-orange-400 bg-clip-text text-transparent">
                 3D
               </span>{" "}
               , Vivants et Immersifs
-            </h1>
+            </h2>
           </div>
 
           <h2 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-xl text-slate-50 text-center sm:text-center md:text-left lg:text-left font-poppins px-2 sm:px-0">
