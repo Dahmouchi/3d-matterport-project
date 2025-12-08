@@ -98,7 +98,7 @@ const HeroSection1 = () => {
               ease: "easeInOut",
             }}
             src="/images/steps/test2.png"
-            alt=""
+            alt="logo"
             className="hidden md:block w-full max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[470px] z-50 h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
 
@@ -111,7 +111,7 @@ const HeroSection1 = () => {
               ease: "easeInOut",
             }}
             src="/images/steps/test2.png"
-            alt=""
+            alt="logo"
             className="block md:hidden w-8/12  sm:max-w-[320px] h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
         </div>

@@ -29,7 +29,7 @@ const HeroSection = () => {
   ];
 
   return (
-  <div className="relative min-h-screen bg-white overflow-hidden">
+    <div className="relative min-h-screen bg-white overflow-hidden">
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 relative h-screen w-full text-black"
         style={{
@@ -57,7 +57,8 @@ const HeroSection = () => {
           </div>
 
           <h1 className="text-base sm:text-lg md:text-xl lg:text-xl xl:text-xl text-slate-500 text-center sm:text-center md:text-left lg:text-left font-poppins px-2 sm:px-0">
-            Redéfinissez la façon dont vos clients découvrent vos biens, hôtels et projets au MONDE ENTIER
+            Redéfinissez la façon dont vos clients découvrent vos biens, hôtels
+            et projets au MONDE ENTIER
           </h1>
 
           <div className="flex flex-col sm:flex-col md:flex-row lg:flex-row xl:flex-row justify-center sm:justify-center md:justify-start lg:justify-start items-center gap-2 sm:gap-3 md:gap-4 lg:gap-4">
@@ -79,7 +80,9 @@ const HeroSection = () => {
               <div className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 rounded-full bg-[#FCA311] text-white text-center flex items-center justify-center">
                 <Play className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
               </div>
-              <div className="text-sm sm:text-base md:text-lg lg:text-xl font-adlamn">Demo</div>
+              <div className="text-sm sm:text-base md:text-lg lg:text-xl font-adlamn">
+                Demo
+              </div>
             </Link>
           </div>
         </div>
@@ -94,7 +97,7 @@ const HeroSection = () => {
               ease: "easeInOut",
             }}
             src="/images/steps/test1.png"
-            alt=""
+            alt="logo"
             className="hidden md:block w-full max-w-[300px] md:max-w-[350px] lg:max-w-[400px] xl:max-w-[470px] z-50 h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
 
@@ -107,7 +110,7 @@ const HeroSection = () => {
               ease: "easeInOut",
             }}
             src="/images/test2.png"
-            alt=""
+            alt="logo"
             className="block md:hidden w-11/12  sm:max-w-[320px] h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
         </div>

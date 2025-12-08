@@ -155,7 +155,7 @@ export const ChromaGrid = ({
           }}
         >
           <div className="chroma-img-wrapper">
-            <img src={c.image} alt={c.title} loading="lazy" />
+            <img src={c.image} alt={c.title || "t3"} loading="lazy" />
           </div>
           <footer className="chroma-info">
             <h3 className="name">{c.title}</h3>

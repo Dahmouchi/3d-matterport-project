@@ -248,7 +248,7 @@ export default function Navbar1() {
               >
                 <img
                   src="/images/logov1.png"
-                  alt=""
+                  alt="logo"
                   className="lg:h-20 h-8 w-auto"
                 />
               </Link>

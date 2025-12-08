@@ -39,7 +39,7 @@ export default function AboutUsSteps() {
       <img
         src="/images/pro22.png"
         className="absolute bottom-0 right-2/3 lg:block hidden w-1/5"
-        alt=""
+        alt="ssssss"
         data-aos="fade-up"
         data-aos-delay="200"
       />
@@ -93,14 +93,13 @@ export default function AboutUsSteps() {
           {/* vertical line */}
           <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-white/10 via-white/15 to-white/5" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4"  data-aos="fade-up"
-        data-aos-delay="100">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             {steps.map((step, i) => (
-              <li
-                key={step.title}
-                
-                className="relative last:pb-0 h-full w-full"
-              >
+              <li key={step.title} className="relative last:pb-0 h-full w-full">
                 {/* number badge 
               <div className="absolute left-0 top-0">
                 <div className="grid place-items-center h-12 w-12 rounded-full bg-white text-orange-700 font-semibold shadow ring-4 ring-white/10">
@@ -137,7 +136,7 @@ export default function AboutUsSteps() {
         <img
           src="/images/pro22.png"
           className=" block lg:hidden w-2/3 mt-4"
-          alt=""
+          alt="fffffffffff"
         />
       </div>
     </section>

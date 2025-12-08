@@ -93,7 +93,7 @@ const Footer = () => {
             >
               <img
                 src="/images/logov1white.png"
-                alt=""
+                alt="logo"
                 className="h-14 w-auto"
               />
             </Link>

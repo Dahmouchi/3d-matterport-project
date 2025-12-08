@@ -11,10 +11,10 @@ export default function Navbar() {
   const [collapsed, setCollapsed] = useState(false);
 
   useEffect(() => {
-  const handleScroll = () => setOpen(false);
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    const handleScroll = () => setOpen(false);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   // scroll detection
   useEffect(() => {
     const onScroll = () => {
@@ -36,18 +36,18 @@ export default function Navbar() {
     { title: "Comment ça marche", href: "#how-it-works" },
     { title: "Contact", href: "#contact" },
   ];
-const headerVariants: Variants = {
-  expanded: {
-    x: 0,
-    opacity: 1,
-    transition: { type: "spring", stiffness: 260, damping: 26 },
-  },
-  collapsed: {
-    x: 320,
-    opacity: 0,
-    transition: { duration: 0.25, ease: "easeOut" },
-  },
-};
+  const headerVariants: Variants = {
+    expanded: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 260, damping: 26 },
+    },
+    collapsed: {
+      x: 320,
+      opacity: 0,
+      transition: { duration: 0.25, ease: "easeOut" },
+    },
+  };
 
   return (
     <>
@@ -248,7 +248,7 @@ const headerVariants: Variants = {
               >
                 <img
                   src="/images/logov1.png"
-                  alt=""
+                  alt="testtt"
                   className="lg:h-20 h-8 w-auto"
                 />
               </Link>
@@ -274,54 +274,54 @@ const headerVariants: Variants = {
         )}
       </AnimatePresence>
 
-
-<AnimatePresence>
-  {open && collapsed && (
-    <motion.div
-      key="desktop-dropdown"
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.25 }}
-      className="hidden md:flex flex-col fixed top-20 right-4 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-6 w-72"
-    >
-     
-
-      {/* Logo */}
-      <div className="flex justify-center mb-4">
-        <Link href="/" onClick={() => setOpen(false)}>
-          <img src="/images/logov1.png" alt="logo" className="h-12 w-auto" />
-        </Link>
-      </div>
-
-      {/* Nav links */}
-      <div className="flex flex-col space-y-3">
-        {navLinks.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={() => setOpen(false)}
-            className="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 font-medium"
+      <AnimatePresence>
+        {open && collapsed && (
+          <motion.div
+            key="desktop-dropdown"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="hidden md:flex flex-col fixed top-20 right-4 z-50 bg-white rounded-2xl shadow-xl border border-gray-200 p-6 w-72"
           >
-            {item.title}
-          </Link>
-        ))}
-      </div>
+            {/* Logo */}
+            <div className="flex justify-center mb-4">
+              <Link href="/" onClick={() => setOpen(false)}>
+                <img
+                  src="/images/logov1.png"
+                  alt="logo"
+                  className="h-12 w-auto"
+                />
+              </Link>
+            </div>
 
-      {/* CTA */}
-      <div className="mt-6">
-        <Link
-          href="#contact"
-          onClick={() => setOpen(false)}
-          className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white font-semibold py-2 px-4"
-        >
-          Prendre RDV <Phone className="w-4 h-4" />
-        </Link>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
+            {/* Nav links */}
+            <div className="flex flex-col space-y-3">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="px-4 py-2 rounded-lg hover:bg-gray-100 text-gray-700 font-medium"
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
 
+            {/* CTA */}
+            <div className="mt-6">
+              <Link
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white font-semibold py-2 px-4"
+              >
+                Prendre RDV <Phone className="w-4 h-4" />
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
