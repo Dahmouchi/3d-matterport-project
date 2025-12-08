@@ -40,6 +40,7 @@ export default function AboutUsSteps() {
         src="/images/pro22.png"
         className="absolute bottom-0 right-2/3 lg:block hidden w-1/5"
         alt="ssssss"
+        title="ssssss"
         data-aos="fade-up"
         data-aos-delay="200"
       />

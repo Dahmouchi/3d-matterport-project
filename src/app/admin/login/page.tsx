@@ -95,6 +95,7 @@ const ADMIN_PASS  = process.env.NEXT_PUBLIC_ADMIN_PASS ;
             <img
               src="/images/logov1white.png"
               alt="logo"
+              title="logo"
               className="lg:h-14 h-8 w-auto"
             />
           </Link>

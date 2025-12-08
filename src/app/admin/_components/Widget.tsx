@@ -69,6 +69,7 @@ export default function Widget({ widgetData }: WidgetProps) {
           <Image
             src="/assets/pc_blueprint.gif"
             alt="logo"
+            title="logo"
             width={250}
             height={250}
             className="size-full object-contain"

@@ -68,10 +68,7 @@ export const AnimatedTestimonials = ({
           <div className="relative h-80 w-full">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => {
-                const { rotate, scale, z } = getBackCardStyle(
-                  index,
-                  active
-                );
+                const { rotate, scale, z } = getBackCardStyle(index, active);
 
                 return (
                   <motion.div
@@ -94,6 +91,7 @@ export const AnimatedTestimonials = ({
                     <img
                       src={testimonial.src}
                       alt={testimonial.name}
+                      title={testimonial.name}
                       width={500}
                       height={500}
                       draggable={false}

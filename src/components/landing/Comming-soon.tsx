@@ -68,7 +68,7 @@ export default function MinimalistComingSoon() {
       <div className="flex justify-between lg:flex-row flex-col lg:items-start items-center px-12 py-4">
         <div>
           <div className="flex items-center gap-4">
-            <img src="/images/logov1white.png" alt="Build360 Logo" width={60} height={60} className="rounded-lg h-16 w-auto" />
+            <img src="/images/logov1white.png" alt="Build360 Logo" title="Build360 Logo" width={60} height={60} className="rounded-lg h-16 w-auto" />
           </div>
         </div>
 

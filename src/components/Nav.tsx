@@ -109,6 +109,7 @@ export default function Navbar() {
             <img
               src="/images/logov1.png"
               alt="logo"
+              title="logo"
               className="lg:h-14 h-8 w-auto"
             />
           </Link>
@@ -290,6 +291,7 @@ export default function Navbar() {
                 <img
                   src="/images/logov1.png"
                   alt="logo"
+                  title="logo"
                   className="h-12 w-auto"
                 />
               </Link>

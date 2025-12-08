@@ -110,7 +110,8 @@ const HeroSection = () => {
               ease: "easeInOut",
             }}
             src="/images/visite_virtuelle_maroc.png"
-            alt="logo"
+            alt="visite virtuelle maroc"
+            title="visite virtuelle maroc"
             className="block md:hidden w-11/12  sm:max-w-[320px] h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
         </div>
