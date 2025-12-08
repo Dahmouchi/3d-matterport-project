@@ -109,7 +109,7 @@ const HeroSection = () => {
               duration: 4,
               ease: "easeInOut",
             }}
-            src="/images/test2.png"
+            src="/images/visite_virtuelle_maroc.png"
             alt="logo"
             className="block md:hidden w-11/12  sm:max-w-[320px] h-auto absolute bottom-0 left-1/2 transform -translate-x-1/2"
           />
