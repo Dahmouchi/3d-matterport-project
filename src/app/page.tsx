@@ -18,7 +18,7 @@ const LandingPage = () => {
       </div>
       {/* Main Content*/}
       <main>
-        <section className="relative isolate overflow-hidden dark:bg-slate-950 bg-white text-white">
+        <section className="relative isolate dark:bg-slate-950 bg-white text-white">
           <section id="home">
             <HeroSection1 />
           </section>
@@ -39,7 +39,7 @@ const LandingPage = () => {
         </section>
         {/* CTA Section */}
         <div
-          className="h-fit relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center"
+          className="h-fit relative w-full bg-slate-900 flex flex-col items-center justify-center"
           style={{
             backgroundImage: "url(/images/Vector.png)",
             backgroundSize: "cover",

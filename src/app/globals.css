@@ -126,14 +126,15 @@ html {
   .font-adlamn {
     font-family: var(--font-adlamn), sans-serif;
   }
-  .font-montserrat{
-    font-family: var(--font-montserrat),sans-serif;
+  .font-montserrat {
+    font-family: var(--font-montserrat), sans-serif;
   }
 }
 
 @theme inline {
-  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
@@ -141,38 +142,34 @@ html {
   }
 }
 .button13 {
-    padding: 0.5em 0.5em;
+  padding: 0.5em 0.5em;
 
-    font-size: 18px;
-   
-    cursor: pointer;
-    border: 1px solid #e8e8e8;
-    transition: all 0.3s;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-  }
+  font-size: 18px;
+
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow:
+    6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+}
 .button12 {
-   
-    padding: 0.5em 1.7em;
-    font-size: 18px;
-   
-    cursor: pointer;
-    border: 1px solid #e8e8e8;
-    transition: all 0.3s;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-  }
+  padding: 0.5em 1.7em;
+  font-size: 18px;
 
-  .button12:active {
-    color: #666;
-    box-shadow: inset 4px 4px 12px #d89000, inset -4px -4px 12px #ffffff;
-  }
+  cursor: pointer;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s;
+  box-shadow:
+    6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+}
 
-  @layer base {
-  * {
-    @apply border-border outline-ring/50 overscroll-none;
-  }
-  body {
-    @apply bg-muted text-foreground font-mono;
-  }
+.button12:active {
+  color: #666;
+  box-shadow:
+    inset 4px 4px 12px #d89000,
+    inset -4px -4px 12px #ffffff;
 }
 
 .recharts-cartesian-grid-vertical :first-child,
