@@ -2,11 +2,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "motion/react";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Phone, Globe, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export default function Navbar1() {
+type NavDict = {
+  home: string;
+  about: string;
+  howItWorks: string;
+  contact: string;
+  cta: string;
+};
+
+export default function Navbar1({
+  dict,
+  lang,
+}: {
+  dict: NavDict;
+  lang: string;
+}) {
   const [open, setOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
 
@@ -26,16 +47,70 @@ export default function Navbar1() {
   }, []);
 
   const navLinks = [
-    { title: "Accueil", href: "#home" },
-    { title: "À propos", href: "#about" },
-    { title: "Comment ça marche", href: "#how-it-works" },
+    { title: dict.home, href: "#home" },
+    { title: dict.about, href: "#about" },
+    { title: dict.howItWorks, href: "#how-it-works" },
   ];
   const navLinks1 = [
-    { title: "Accueil", href: "#home" },
-    { title: "À propos", href: "#about" },
-    { title: "Comment ça marche", href: "#how-it-works" },
-    { title: "Contact", href: "#contact" },
+    { title: dict.home, href: "#home" },
+    { title: dict.about, href: "#about" },
+    { title: dict.howItWorks, href: "#how-it-works" },
+    { title: dict.contact, href: "#contact" },
   ];
+  const pathname = usePathname();
+
+  const getPathname = (locale: string) => {
+    if (!pathname) return `/${locale}`;
+    const segments = pathname.split("/");
+    segments[1] = locale;
+    return segments.join("/");
+  };
+
+  const languages = [
+    { code: "fr", label: "Français" },
+    { code: "en", label: "English" },
+    { code: "ar", label: "العربية" },
+  ];
+
+  const LanguageSwitcher = () => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button className="flex items-center gap-2 text-white hover:text-[#f6ba13] transition-colors font-semibold outline-none group cursor-pointer">
+          <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
+          <span className="uppercase">{lang}</span>
+          <ChevronDown className="w-4 h-4 opacity-70" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="bg-white/95 backdrop-blur-md border border-gray-100 min-w-[140px] z-[100] p-1 rounded-xl shadow-2xl">
+        {languages.map((l) => (
+          <DropdownMenuItem key={l.code} asChild>
+            <Link
+              href={getPathname(l.code)}
+              className={`w-full cursor-pointer flex items-center justify-between px-3 py-2.5 text-sm font-semibold transition-all rounded-lg ${
+                lang === l.code
+                  ? "text-orange-600 bg-orange-50 shadow-sm"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-orange-500"
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <span className="uppercase text-[10px] bg-gray-100 px-1.5 py-0.5 rounded text-gray-500 font-bold">
+                  {l.code}
+                </span>
+                {l.label}
+              </div>
+              {lang === l.code && (
+                <motion.div
+                  layoutId="activeLocale"
+                  className="w-1.5 h-1.5 rounded-full bg-orange-500"
+                />
+              )}
+            </Link>
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+
   const headerVariants: Variants = {
     expanded: {
       x: 0,
@@ -105,7 +180,7 @@ export default function Navbar1() {
       >
         <div className="mx-auto flex w-full items-center justify-between px-6 py-4 gap-12">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold">
+          <Link href={`/${lang}`} className="text-xl font-bold">
             <img
               src="/images/logov1white.png"
               alt="logo"
@@ -133,14 +208,18 @@ export default function Navbar1() {
           </div>
 
           {/* CTA */}
-          <Link href="#contact" className="hidden md:flex items-center gap-2">
-            <div className="text-white border-2 border-e-white font-semibold rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 px-4 py-2">
-              Prendre RDV
-            </div>
-            <div className="rounded-full border-2 border-e-white bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white p-2">
-              <Phone />
-            </div>
-          </Link>
+          {/* CTA & Language */}
+          <div className="hidden md:flex items-center gap-6">
+            <LanguageSwitcher />
+            <Link href="#contact" className="flex items-center gap-2 group">
+              <div className="text-white border-2 border-white/20 group-hover:border-white/50 font-semibold rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 px-5 py-2.5 transition-all shadow-lg hover:shadow-orange-500/20">
+                {dict.cta}
+              </div>
+              <div className="rounded-full border-2 border-white/20 group-hover:border-white/50 bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white p-2.5 transition-all shadow-lg hover:shadow-orange-500/20 hover:scale-110">
+                <Phone className="w-5 h-5" />
+              </div>
+            </Link>
+          </div>
           <div className="md:hidden flex items-center gap-4 z-50">
             {" "}
             <button
@@ -244,7 +323,7 @@ export default function Navbar1() {
             />
             <div className="bg-white py-4 px-8 rounded-full z-50">
               <Link
-                href="/"
+                href={`/${lang}`}
                 className="text-xl font-bold tracking-tight text-white"
               >
                 <img
@@ -271,6 +350,27 @@ export default function Navbar1() {
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navLinks1.length * 0.1 }}
+              className="z-50 flex gap-4 pt-12"
+            >
+              {languages.map((l) => (
+                <Link
+                  key={l.code}
+                  href={getPathname(l.code)}
+                  onClick={() => setOpen(false)}
+                  className={`px-5 py-2.5 rounded-2xl text-lg font-bold uppercase transition-all ${
+                    lang === l.code
+                      ? "bg-white text-orange-600 shadow-xl scale-110 rotate-3"
+                      : "bg-white/10 text-white hover:bg-white/30 backdrop-blur-sm -rotate-3"
+                  }`}
+                >
+                  {l.code}
+                </Link>
+              ))}
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -287,7 +387,7 @@ export default function Navbar1() {
           >
             {/* Logo */}
             <div className="flex justify-center mb-4">
-              <Link href="/" onClick={() => setOpen(false)}>
+              <Link href={`/${lang}`} onClick={() => setOpen(false)}>
                 <img
                   src="/images/logov1.png"
                   alt="logo"
@@ -312,14 +412,31 @@ export default function Navbar1() {
             </div>
 
             {/* CTA */}
-            <div className="mt-6">
+            <div className="mt-6 space-y-5">
               <Link
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white font-semibold py-2 px-4"
+                className="flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white font-bold py-3 px-6 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all hover:scale-[1.02]"
               >
-                Prendre RDV <Phone className="w-4 h-4" />
+                {dict.cta} <Phone className="w-5 h-5" />
               </Link>
+
+              <div className="flex items-center justify-between bg-gray-50 p-2 rounded-2xl border border-gray-100">
+                {languages.map((l) => (
+                  <Link
+                    key={l.code}
+                    href={getPathname(l.code)}
+                    onClick={() => setOpen(false)}
+                    className={`flex-1 text-center py-2 rounded-xl text-sm font-bold uppercase transition-all ${
+                      lang === l.code
+                        ? "bg-white text-orange-600 shadow-md ring-1 ring-black/5"
+                        : "text-gray-400 hover:text-gray-600"
+                    }`}
+                  >
+                    {l.code}
+                  </Link>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}

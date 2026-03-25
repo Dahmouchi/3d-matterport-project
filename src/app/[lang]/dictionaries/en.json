@@ -1,0 +1,245 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "howItWorks": "How It Works",
+    "contact": "Contact",
+    "cta": "Book a Meeting"
+  },
+  "hero": {
+    "typewriter": ["A", "unique", "experience"],
+    "title": "Your Spaces in 3D, Alive and Immersive",
+    "subtitle": "Redefine the way your clients discover your properties, hotels and projects across THE ENTIRE WORLD",
+    "ctaForm": "Fill in the form",
+    "ctaDemo": "Demo"
+  },
+  "demo": {
+    "heading": "Why does 3D virtual tour change everything?",
+    "subheading": "From capture to delivery, discover how we transform your spaces into immersive 3D experiences in a few simple steps",
+    "stats": [
+      {
+        "title": "-50% fewer site visits",
+        "text": "Thanks to interactive virtual tours."
+      },
+      {
+        "title": "+80% client engagement",
+        "text": "Spaces that captivate and hold attention."
+      },
+      {
+        "title": "+70% cost savings",
+        "text": "On on-site survey costs and BIM file creation."
+      }
+    ]
+  },
+  "about": {
+    "heading": "From vision to virtual reality",
+    "subheading": "At Build360, we do more than take photos. We build an immersive digital strategy. Here is our process to transform your spaces into high-performing sales tools in Morocco.",
+    "ctaStart": "Start my project",
+    "ctaExamples": "See examples",
+    "steps": [
+      {
+        "title": "1. Audit & Strategy",
+        "text": "We study your space and your business objectives to define the most profitable type of virtual tour for you."
+      },
+      {
+        "title": "2. UX Storyboarding",
+        "text": "We design a smooth user journey. Selection of strategic viewpoints and interactive interface design."
+      },
+      {
+        "title": "3. Capture & Tech",
+        "text": "4K digitisation with Matterport or Laser technology. Digital twin creation and integration of your media (tags, videos)."
+      },
+      {
+        "title": "4. Deployment & Monitoring",
+        "text": "Integration on your website, Google Maps and social networks. Team training and visit statistics tracking."
+      }
+    ]
+  },
+  "aboutSection": {
+    "heading1": "Agency specialising in ",
+    "heading2": "Virtual Tours",
+    "heading3": " and ",
+    "heading4": "3D",
+    "heading5": " solutions in Morocco",
+    "subheading": "Stand out from the competition with immersive technology. Build360 transforms your spaces (real estate, showrooms, hotels) into interactive experiences accessible anywhere in the world.",
+    "ctaQuote": "Request a free quote",
+    "ctaRealisations": "See our projects",
+    "readyText": "Ready to transform your spaces into immersive experiences?",
+    "services": [
+      {
+        "title": "Virtual Tour for Real Estate",
+        "description": "Accelerate your property sales. Allow your clients to visit apartments, villas and offices without travelling. Our HD virtual tours offer total transparency, filter casual visitors and trigger remote love-at-first-sight moments.",
+        "features": [
+          "Apartments & Villas",
+          "Commercial Offices",
+          "HD 360° Tours"
+        ]
+      },
+      {
+        "title": "Valorisation of Riads and Hotels",
+        "description": "Reassure future clients before booking. Offer total immersion in your hotel or Riad. A 360° tour increases reservation rates and improves your visibility on Google Maps and Booking.",
+        "features": [
+          "Traditional Riads",
+          "Hotels & Resorts",
+          "Google Maps Integrated"
+        ]
+      },
+      {
+        "title": "Virtual Showrooms & Industry",
+        "description": "Digitalise your point of sale. Whether you are a factory, school or shop, extend the customer experience beyond opening hours with an interactive digital twin.",
+        "features": [
+          "Shops & Showrooms",
+          "Factories & Industries",
+          "Schools & Institutions"
+        ]
+      }
+    ]
+  },
+  "carousel": {
+    "badge": "Our Matterport Projects",
+    "heading": "Explore our 3D tours",
+    "subheading": "Immerse yourself in our real projects — click on a card to launch the virtual tour directly.",
+    "ctaText": "Would you like a similar project for your space?",
+    "ctaButton": "Get my virtual tour",
+    "categories": {
+      "Tous": "All",
+      "Immobilier": "Real Estate",
+      "Hôtellerie": "Hospitality",
+      "Ecoles": "Schools",
+      "Showroom": "Showroom",
+      "Offices": "Offices"
+    },
+    "projects": {
+      "1": {
+        "title": "Scandinavian Villa",
+        "subtitle": "Luxury Residence",
+        "description": "Full 3D digitisation of a 500 m² luxury villa with pool, gardens and panoramic terrace.",
+        "location": "Temara, Morocco"
+      },
+      "3": {
+        "title": "SUPMTI",
+        "subtitle": "School",
+        "description": "Interactive virtual tour of a high-end showroom — accessible 24/7 for your clients.",
+        "location": "Rabat, Morocco"
+      },
+      "4": {
+        "title": "Office SUMPTI",
+        "subtitle": "Office",
+        "description": "Modern apartment with panoramic view of the strait — presented in high-definition 360° tour.",
+        "location": "Tangier, Morocco"
+      }
+    }
+  },
+  "cta": {
+    "heading": "Let's Turn Your Vision into 3D Reality",
+    "subheading": "Ready to revolutionise the way you present your spaces? Contact us today for a personalised and free quote.",
+    "formTitle": "Request your",
+    "formTitleHighlight": "Free* Quote",
+    "labelName": "First & Last Name *",
+    "placeholderName": "Your full name",
+    "labelEmail": "Email *",
+    "placeholderEmail": "your@email.com",
+    "labelPhone": "Phone / WhatsApp *",
+    "placeholderPhone": "+212 6 12 34 56 78",
+    "labelCity": "City *",
+    "placeholderCity": "e.g. Casablanca, Marrakech…",
+    "labelProjectType": "Project type *",
+    "selectDefault": "Select…",
+    "projectTypes": {
+      "immobilier": "Real Estate (sale / rental)",
+      "hotel": "Hotel / Riad",
+      "commerce": "Shop / Showroom",
+      "architecture": "Architecture / Construction",
+      "autre": "Other (specify below)"
+    },
+    "labelSurface": "Approximate area to scan *",
+    "surfaces": {
+      "lt100": "< 100 m²",
+      "100-300": "100 – 300 m²",
+      "300-600": "300 – 600 m²",
+      "600+": "+600 m²"
+    },
+    "labelObjective": "Main objective *",
+    "objectives": [
+      "3D Virtual Tour",
+      "HDR Photos",
+      "2D / 3D Floor Plan",
+      "BIM Export",
+      "Promotional Video"
+    ],
+    "labelLink": "Website link (if existing)",
+    "placeholderLink": "your website",
+    "labelMessage": "Message",
+    "placeholderMessage": "Additional information ...",
+    "submitButton": "Request my free quote",
+    "successTitle": "Thank you for your request!",
+    "successText": "We will contact you as soon as possible.",
+    "contactPhone": "Phone",
+    "contactPhoneDesc": "Mon-Fri 9am-6pm",
+    "contactEmail": "Email",
+    "contactEmailDesc": "Response within 2h"
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "subheading": "Find answers to the most common questions about our virtual tour services in Morocco.",
+    "items": [
+      {
+        "question": "What is the price of a virtual tour in Morocco?",
+        "answer": "The price depends on the area (m²) and the features requested. At Build360, we offer solutions adapted to studios and large factories alike. Contact us for a custom quote within 24h."
+      },
+      {
+        "question": "Which cities do you operate in?",
+        "answer": "Our team travels throughout Morocco for the digitalisation of your spaces, including Casablanca, Rabat, Marrakech, Tangier, Agadir and Fez."
+      },
+      {
+        "question": "Are the tours compatible on mobile?",
+        "answer": "Yes, all our Build360 experiences are 100% responsive and work on smartphones, tablets, computers and virtual reality headsets (VR)."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Specialist in 3D digitalisation and virtual tours. We transform your spaces into immersive experiences with cutting-edge Matterport technology.",
+    "newsletterHeading": "Stay up to date with the latest 3D innovations",
+    "newsletterSubheading": "Receive our news, tips and exclusive offers",
+    "newsletterPlaceholder": "Your email address",
+    "subscribeButton": "Subscribe",
+    "copyright": "© 2026 Build360. All rights reserved.",
+    "legalLinks": ["Legal Notice", "Privacy Policy", "Terms & Conditions"],
+    "sections": [
+      {
+        "title": "Services",
+        "links": [
+          "3D Residential Scan",
+          "Virtual Tour",
+          "Commercial Scan",
+          "Historical Heritage",
+          "Matterport Training"
+        ]
+      },
+      {
+        "title": "Solutions",
+        "links": [
+          "Real Estate",
+          "Architecture",
+          "Construction",
+          "Hospitality",
+          "Retail & Showroom"
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          "Documentation",
+          "Tutorials",
+          "Blog",
+          "Use Cases",
+          "Technical Support"
+        ]
+      },
+      {
+        "title": "Company",
+        "links": ["About Us", "Our Team", "Careers", "Partners", "Press"]
+      }
+    ]
+  }
+}

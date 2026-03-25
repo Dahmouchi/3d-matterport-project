@@ -5,25 +5,18 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
-  {
-    question: "Quel est le prix d'une visite virtuelle au Maroc ?",
-    answer:
-      "Le tarif dépend de la superficie (m²) et des fonctionnalités demandées. Chez Build360, nous proposons des solutions adaptées aux studios comme aux grandes usines. Contactez-nous pour un devis sur mesure sous 24h.",
-  },
-  {
-    question: "Dans quelles villes intervenez-vous ?",
-    answer:
-      "Notre équipe se déplace partout au Maroc pour la numérisation de vos espaces, notamment à Casablanca, Rabat, Marrakech, Tanger, Agadir et Fès.",
-  },
-  {
-    question: "Les visites sont-elles compatibles sur mobile ?",
-    answer:
-      "Oui, toutes nos expériences Build360 sont 100% responsives et fonctionnent sur smartphone, tablette, ordinateur et casques de réalité virtuelle (VR).",
-  },
-];
+type FaqItem = {
+  question: string;
+  answer: string;
+};
 
-const FAQSection = () => {
+type FaqDict = {
+  heading: string;
+  subheading: string;
+  items: FaqItem[];
+};
+
+const FAQSection = ({ dict }: { dict: FaqDict }) => {
   return (
     <section id="faq" className="relative">
       {/* Background decoration */}
@@ -36,21 +29,31 @@ const FAQSection = () => {
         {/* Header */}
         <header className=" mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Questions{" "}
-            <span className="bg-gradient-to-r from-[#f6ba13] via-orange-400 to-orange-600 bg-clip-text text-transparent">
-              Fréquentes
-            </span>
+            {dict.heading.split("Fréquentes").map((part, i, arr) =>
+              i < arr.length - 1 ? (
+                <span key={i}>
+                  {part}
+                  <span className="bg-gradient-to-r from-[#f6ba13] via-orange-400 to-orange-600 bg-clip-text text-transparent">
+                    Fréquentes
+                  </span>
+                </span>
+              ) : (
+                <span key={i}>{part}</span>
+              )
+            )}
+            {!dict.heading.includes("Fréquentes") && (
+              <span className="bg-gradient-to-r from-[#f6ba13] via-orange-400 to-orange-600 bg-clip-text text-transparent">
+                {dict.heading}
+              </span>
+            )}
           </h2>
-          <p className="text-lg text-gray-400">
-            Retrouvez les réponses aux questions les plus posées sur nos
-            services de visites virtuelles au Maroc.
-          </p>
+          <p className="text-lg text-gray-400">{dict.subheading}</p>
         </header>
 
         {/* FAQ Accordion */}
         <div className="max-w-3xl mx-auto pb-4">
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+            {dict.items.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
@@ -66,8 +69,6 @@ const FAQSection = () => {
             ))}
           </Accordion>
         </div>
-
-        {/* CTA */}
       </div>
 
       {/* Structured Data for SEO */}
@@ -77,7 +78,7 @@ const FAQSection = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: faqs.map((faq) => ({
+            mainEntity: dict.items.map((faq) => ({
               "@type": "Question",
               name: faq.question,
               acceptedAnswer: {

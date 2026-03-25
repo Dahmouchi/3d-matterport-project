@@ -2,27 +2,35 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useMemo, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   MapPin,
   Users,
   PiggyBank,
-  BarChart3,
   PlayCircle,
-  X,
 } from "lucide-react";
-import { CometCard } from "../ui/comet-card";
-import { div } from "motion/react-client";
-import { Play } from "next/font/google";
 import {
   Dialog,
   DialogClose,
   DialogContent,
   DialogTrigger,
 } from "../ui/dialog";
-import { Button } from "../ui/button";
-const Demo = () => {
-  const modelId = "cb3PdBNtPt9"; // Replace with your actual Matterport model ID
+
+type DemoStat = {
+  title: string;
+  text: string;
+};
+
+type DemoDict = {
+  heading: string;
+  subheading: string;
+  stats: DemoStat[];
+};
+
+const ICONS = [MapPin, Users, PiggyBank];
+
+const Demo = ({ dict }: { dict: DemoDict }) => {
+  const modelId = "cb3PdBNtPt9";
   const mpUrl = useMemo(() => {
     const base = "https://my.matterport.com/show/";
     const params = new URLSearchParams({
@@ -49,26 +57,12 @@ const Demo = () => {
   }, [modelId]);
   const [open, setOpen] = useState(false);
 
-  const stats = [
-    {
-      number: "1",
-      title: "-50 % de déplacements",
-      text: "Grâce aux visites virtuelles interactives.",
-      icon: MapPin,
-    },
-    {
-      number: "2",
-      title: "+80 % d’engagement client",
-      text: "Des espaces qui captivent et retiennent l’attention.",
-      icon: Users,
-    },
-    {
-      number: "3",
-      title: "+70 % d’économies",
-      text: "Sur les frais de relevés terrain et la création de fichiers BIM.",
-      icon: PiggyBank,
-    },
-  ];
+  const stats = dict.stats.map((s, i) => ({
+    number: String(i + 1),
+    title: s.title,
+    text: s.text,
+    icon: ICONS[i],
+  }));
 
   return (
     <section className=" relative overflow-hidden bg-white  py-6 px-4">
@@ -81,15 +75,21 @@ const Demo = () => {
         className="text-center lg:mt-16 mt-8"
       >
         <h2 className="text-4xl md:text-6xl font-bold dark:text-white mb-6 text-black">
-          Pourquoi
-          <span className="bg-gradient-to-r pl-2 from-orange-400 to-orange-600 bg-clip-text text-transparent">
-            la visite virtuelle 3D
-          </span>{" "}
-          change tout ?
+          {dict.heading.split("3D").map((part, i, arr) =>
+            i < arr.length - 1 ? (
+              <React.Fragment key={i}>
+                {part}
+                <span className="bg-gradient-to-r pl-2 from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                  3D
+                </span>
+              </React.Fragment>
+            ) : (
+              part
+            )
+          )}
         </h2>
         <p className="lg:text-xl text-md dark:text-gray-300 text-gray-500 max-w-3xl mx-auto">
-          De la capture à la diffusion, découvrez comment nous transformons vos
-          espaces en expériences 3D immersives en quelques étapes simples
+          {dict.subheading}
         </p>
       </motion.div>
 

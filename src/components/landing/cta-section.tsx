@@ -1,13 +1,46 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, CheckCircle } from "lucide-react";
 
-const CTASection = () => {
+type CtaDict = {
+  heading: string;
+  subheading: string;
+  formTitle: string;
+  formTitleHighlight: string;
+  labelName: string;
+  placeholderName: string;
+  labelEmail: string;
+  placeholderEmail: string;
+  labelPhone: string;
+  placeholderPhone: string;
+  labelCity: string;
+  placeholderCity: string;
+  labelProjectType: string;
+  selectDefault: string;
+  projectTypes: Record<string, string>;
+  labelSurface: string;
+  surfaces: Record<string, string>;
+  labelObjective: string;
+  objectives: string[];
+  labelLink: string;
+  placeholderLink: string;
+  labelMessage: string;
+  placeholderMessage: string;
+  submitButton: string;
+  successTitle: string;
+  successText: string;
+  contactPhone: string;
+  contactPhoneDesc: string;
+  contactEmail: string;
+  contactEmailDesc: string;
+};
+
+const CTASection = ({ dict }: { dict: CtaDict }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,12 +69,6 @@ const CTASection = () => {
     e.preventDefault();
 
     try {
-      {/* 
-       const res = await fetch("/api/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });*/}
       const res2 = await fetch(
         "http://localhost:3001/api/reservations",
         {
@@ -56,7 +83,7 @@ const CTASection = () => {
             city: formData.city,
             objectives: formData.objectives,
             surface: formData.surface,
-            link:formData.link,
+            link: formData.link,
           }),
         }
       );
@@ -71,25 +98,24 @@ const CTASection = () => {
       console.error("Error:", err);
     }
   };
+
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
-      title: "Téléphone",
-      value: "06 64 09 10 68",
-      description: "Lun-Ven 9h-18h",
+      title: dict.contactPhone,
+      value: "06 64 09 10 68",
+      description: dict.contactPhoneDesc,
     },
     {
       icon: <Mail className="w-6 h-6" />,
-      title: "Email",
+      title: dict.contactEmail,
       value: "Contact@build360.ma ",
-      description: "Réponse sous 2h",
+      description: dict.contactEmailDesc,
     },
   ];
 
   return (
     <section className="py-20 relative overflow-hidden">
-      {/* Floating Elements */}
-
       <div className="container mx-auto px-4 relative z-10">
         {/* Main CTA Header */}
         <motion.div
@@ -100,16 +126,10 @@ const CTASection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white  mb-6">
-            Transformons Votre{" "}
-            <span className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
-              Vision
-            </span>{" "}
-            en Réalité 3D
+            {dict.heading}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Prêt à révolutionner votre façon de présenter vos espaces ?
-            Contactez-nous dès aujourd&apos;hui pour un devis personnalisé et
-            gratuit.
+            {dict.subheading}
           </p>
         </motion.div>
 
@@ -118,17 +138,19 @@ const CTASection = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl lg:p-8 p-4 border border-gray-700 shadow-2xl">
               <h3 className="lg:text-2xl text-xl font-bold dark:text-white mb-6">
-                Demandez votre devis{" "}
-                <span className="text-amber-400 font-bold">Gratuit*</span>
+                {dict.formTitle}{" "}
+                <span className="text-amber-400 font-bold">
+                  {dict.formTitleHighlight}
+                </span>
               </h3>
 
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Informations de base */}
+                  {/* Basic info */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <label className="block text-gray-100 text-sm font-medium mb-2">
-                        Nom & Prénom *
+                        {dict.labelName}
                       </label>
                       <Input
                         type="text"
@@ -136,13 +158,13 @@ const CTASection = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13]"
-                        placeholder="Votre nom complet"
+                        placeholder={dict.placeholderName}
                         required
                       />
                     </div>
                     <div>
                       <label className="block text-gray-100 text-sm font-medium mb-2">
-                        Email *
+                        {dict.labelEmail}
                       </label>
                       <Input
                         type="email"
@@ -150,13 +172,13 @@ const CTASection = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13]"
-                        placeholder="votre@email.com"
+                        placeholder={dict.placeholderEmail}
                         required
                       />
                     </div>
                     <div>
                       <label className="block text-gray-100 text-sm font-medium mb-2">
-                        Téléphone / WhatsApp *
+                        {dict.labelPhone}
                       </label>
                       <Input
                         type="tel"
@@ -164,7 +186,7 @@ const CTASection = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                         className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13]"
-                        placeholder="+212 6 12 34 56 78"
+                        placeholder={dict.placeholderPhone}
                         required
                       />
                     </div>
@@ -173,7 +195,7 @@ const CTASection = () => {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <label className="block text-gray-100 text-sm font-medium mb-2">
-                        Ville *
+                        {dict.labelCity}
                       </label>
                       <Input
                         type="text"
@@ -181,13 +203,13 @@ const CTASection = () => {
                         value={formData.city}
                         onChange={handleInputChange}
                         className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13]"
-                        placeholder="Ex: Casablanca, Marrakech..."
+                        placeholder={dict.placeholderCity}
                         required
                       />
                     </div>
                     <div>
                       <label className="block text-gray-100 text-sm font-medium mb-2">
-                        Type de projet *
+                        {dict.labelProjectType}
                       </label>
                       <select
                         name="projectType"
@@ -196,23 +218,25 @@ const CTASection = () => {
                         className="w-full bg-gray-700/50 border border-gray-600 text-white rounded-md px-3 py-2 focus:border-[#f6ba13] focus:outline-none"
                         required
                       >
-                        <option value="">Sélectionnez...</option>
+                        <option value="">{dict.selectDefault}</option>
                         <option value="immobilier">
-                          Immobilier (vente / location)
+                          {dict.projectTypes.immobilier}
                         </option>
-                        <option value="hotel">Hôtel / Riad</option>
-                        <option value="commerce">Commerce / showroom</option>
-                        <option value="architecture">Architecture / BTP</option>
-                        <option value="autre">
-                          Autre (précisez ci-dessous)
+                        <option value="hotel">{dict.projectTypes.hotel}</option>
+                        <option value="commerce">
+                          {dict.projectTypes.commerce}
                         </option>
+                        <option value="architecture">
+                          {dict.projectTypes.architecture}
+                        </option>
+                        <option value="autre">{dict.projectTypes.autre}</option>
                       </select>
                     </div>
 
                     {/* Surface */}
                     <div>
                       <label className="block text-gray-100 text-sm font-medium mb-2">
-                        Surface approximative à scanner *
+                        {dict.labelSurface}
                       </label>
                       <select
                         name="surface"
@@ -221,30 +245,26 @@ const CTASection = () => {
                         className="w-full bg-gray-700/50 border border-gray-600 text-white rounded-md px-3 py-2 focus:border-[#f6ba13] focus:outline-none"
                         required
                       >
-                        <option value="">Sélectionnez...</option>
-                        <option value="<100">{"< 100 m²"}</option>
-                        <option value="100-300">100 – 300 m²</option>
-                        <option value="300-600">300 – 600 m²</option>
-                        <option value="600+">+600 m²</option>
+                        <option value="">{dict.selectDefault}</option>
+                        <option value="<100">{dict.surfaces["lt100"]}</option>
+                        <option value="100-300">
+                          {dict.surfaces["100-300"]}
+                        </option>
+                        <option value="300-600">
+                          {dict.surfaces["300-600"]}
+                        </option>
+                        <option value="600+">{dict.surfaces["600+"]}</option>
                       </select>
                     </div>
                   </div>
 
-                  {/* Type de projet */}
-
-                  {/* Objectif principal */}
+                  {/* Objective */}
                   <div>
                     <label className="block text-gray-100 text-sm font-medium mb-2">
-                      Objectif principal *
+                      {dict.labelObjective}
                     </label>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-                      {[
-                        "Visite virtuelle 3D",
-                        "Photos HDR",
-                        "Plan 2D / 3D",
-                        "Export BIM",
-                        "Vidéo promotionnelle",
-                      ].map((obj) => (
+                      {dict.objectives.map((obj) => (
                         <label
                           key={obj}
                           className="flex items-center space-x-2 text-gray-200"
@@ -263,10 +283,10 @@ const CTASection = () => {
                     </div>
                   </div>
 
-                  {/* Détails complémentaires */}
+                  {/* Website link */}
                   <div>
                     <label className="block text-gray-100 text-sm font-medium mb-2">
-                      Lien de site web (si existant)
+                      {dict.labelLink}
                     </label>
                     <Input
                       type="url"
@@ -274,20 +294,20 @@ const CTASection = () => {
                       value={formData.link}
                       onChange={handleInputChange}
                       className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13]"
-                      placeholder="votre site web"
+                      placeholder={dict.placeholderLink}
                     />
                   </div>
 
                   <div>
                     <label className="block text-gray-100 text-sm font-medium mb-2">
-                      Message
+                      {dict.labelMessage}
                     </label>
                     <Textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-[#f6ba13] min-h-[120px]"
-                      placeholder="informations supplémentaires ..."
+                      placeholder={dict.placeholderMessage}
                     />
                   </div>
 
@@ -296,26 +316,23 @@ const CTASection = () => {
                     type="submit"
                     className="w-full bg-gradient-to-r cursor-pointer from-[#f6ba13] to-orange-400 hover:from-orange-500 hover:to-orange-700 text-white py-6 rounded-lg font-semibold"
                   >
-                    Demander mon devis gratuit
+                    {dict.submitButton}
                   </Button>
                 </form>
               ) : (
                 <div className="text-center py-8">
                   <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
                   <h4 className="text-2xl font-bold text-white mb-2">
-                    Merci pour votre demande !
+                    {dict.successTitle}
                   </h4>
-                  <p className="text-gray-300">
-                    Nous vous contacterons dans les plus brefs délais.
-                  </p>
+                  <p className="text-gray-300">{dict.successText}</p>
                 </div>
               )}
             </div>
           </div>
 
-          {/* Contact Info & Quick Actions */}
+          {/* Contact Info */}
           <div className="space-y-8">
-            {/* Contact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {contactInfo.map((info, index) => (
                 <div
@@ -339,53 +356,8 @@ const CTASection = () => {
                 </div>
               ))}
             </div>
-
-            {/* Quick Action Buttons 
-            <div className="space-y-4">
-              <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-purple-600 hover:to-blue-700 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3">
-                <Phone className="w-5 h-5" />
-                <span>Appeler maintenant</span>
-              </button>
-
-              <button className="w-full bg-gradient-to-r from-[#f6ba13] to-red-600 hover:from-orange-600 hover:to-red-700 text-white py-4 px-6 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center space-x-3">
-                <Mail className="w-5 h-5" />
-                <span>Envoyer un email</span>
-              </button>
-            </div>*/}
           </div>
         </div>
-
-        {/* Bottom Stats 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
-            {[
-              { number: "500+", label: "Projets réalisés" },
-              { number: "99%", label: "Clients satisfaits" },
-              { number: "24h", label: "Délai de réponse" },
-              { number: "5★", label: "Note moyenne" },
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-400 bg-clip-text text-transparent mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>*/}
       </div>
     </section>
   );

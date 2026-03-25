@@ -33,7 +33,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import type { MockData } from "@/app/types/dashboard";
+import type { MockData } from "@/app/[lang]/types/dashboard";
 import mockDataJson from "@/lib/mock.json";
 
 import { LogFeed } from "../_components/log-feed";
@@ -56,8 +56,6 @@ interface Reservation {
   updatedAt: string;
 }
 
-
-
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const mockData = mockDataJson as MockData;
@@ -68,14 +66,14 @@ export default function AdminPage() {
   const [statusFilter, setStatusFilter] = useState("all");
   const [selectedTab, setSelectedTab] = useState("all");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-const API_BASE = process.env.NEXT_PUBLIC_API_KEY;
+  const API_BASE = process.env.NEXT_PUBLIC_API_KEY;
 
   const {
     data: reservations,
     error,
     isLoading,
     mutate,
-} = useSWR<Reservation[]>(`${API_BASE}/api/reservations`, fetcher, {
+  } = useSWR<Reservation[]>(`${API_BASE}/api/reservations`, fetcher, {
     refreshInterval: 30000,
     revalidateOnFocus: true,
   });
@@ -182,7 +180,6 @@ const API_BASE = process.env.NEXT_PUBLIC_API_KEY;
       return matchesSearch && matchesStatus && matchesTab;
     }) || [];
 
-
   if (!isAuthenticated) return null;
 
   return (
@@ -190,8 +187,8 @@ const API_BASE = process.env.NEXT_PUBLIC_API_KEY;
       <main className="p-4 md:p-6 lg:p-8">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-6">
           {/* Stat Cards */}
-         
-           <StatCard
+
+          <StatCard
             title="Total Reservations"
             value={(reservations?.length || 0).toString()}
             delta="+12.5%"
@@ -219,7 +216,7 @@ const API_BASE = process.env.NEXT_PUBLIC_API_KEY;
             deltaType="positive"
             icon={<CheckCircle className="h-6 w-6 text-blue-500" />}
           />
-            <Widget widgetData={mockData.widgetData} />
+          <Widget widgetData={mockData.widgetData} />
           {/* Main Content Area */}
           <div className="col-span-1 md:col-span-2 lg:col-span-4">
             <ChartCard
@@ -229,46 +226,52 @@ const API_BASE = process.env.NEXT_PUBLIC_API_KEY;
           </div>
 
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
-           <Card className="rounded-none border-2 border-zinc-800 bg-zinc-900/50 h-full">
-            <CardHeader>
-              <CardTitle className="text-slate-300">Status Summary</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-amber-500" />
-                    <span className="text-slate-300 text-sm">Pending</span>
+            <Card className="rounded-none border-2 border-zinc-800 bg-zinc-900/50 h-full">
+              <CardHeader>
+                <CardTitle className="text-slate-300">Status Summary</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-amber-500" />
+                      <span className="text-slate-300 text-sm">Pending</span>
+                    </div>
+                    <span className="text-slate-400 text-sm font-medium">
+                      {statusCounts.PENDING}
+                    </span>
                   </div>
-                  <span className="text-slate-400 text-sm font-medium">{statusCounts.PENDING}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                    <span className="text-slate-300 text-sm">Confirmed</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                      <span className="text-slate-300 text-sm">Confirmed</span>
+                    </div>
+                    <span className="text-slate-400 text-sm font-medium">
+                      {statusCounts.CONFIRMED}
+                    </span>
                   </div>
-                  <span className="text-slate-400 text-sm font-medium">{statusCounts.CONFIRMED}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-red-500" />
-                    <span className="text-slate-300 text-sm">Rejected</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-red-500" />
+                      <span className="text-slate-300 text-sm">Rejected</span>
+                    </div>
+                    <span className="text-slate-400 text-sm font-medium">
+                      {statusCounts.REJECTED}
+                    </span>
                   </div>
-                  <span className="text-slate-400 text-sm font-medium">{statusCounts.REJECTED}</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 rounded-full bg-blue-500" />
-                    <span className="text-slate-300 text-sm">Completed</span>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <div className="w-3 h-3 rounded-full bg-blue-500" />
+                      <span className="text-slate-300 text-sm">Completed</span>
+                    </div>
+                    <span className="text-slate-400 text-sm font-medium">
+                      {statusCounts.COMPLETED}
+                    </span>
                   </div>
-                  <span className="text-slate-400 text-sm font-medium">{statusCounts.COMPLETED}</span>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
           </div>
-
-       
         </div>
       </main>
     </div>

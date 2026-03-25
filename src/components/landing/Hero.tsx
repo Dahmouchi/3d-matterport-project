@@ -3,7 +3,7 @@
 "use client";
 import { ArrowRight, Play } from "lucide-react";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
 import Link from "next/link";

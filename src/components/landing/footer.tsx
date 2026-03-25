@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import {
   Mail,
   Phone,
@@ -16,12 +16,29 @@ import {
 import Link from "next/link";
 import { toast } from "sonner";
 
-const Footer = () => {
+type FooterSection = {
+  title: string;
+  links: string[];
+};
+
+type FooterDict = {
+  description: string;
+  newsletterHeading: string;
+  newsletterSubheading: string;
+  newsletterPlaceholder: string;
+  subscribeButton: string;
+  copyright: string;
+  legalLinks: string[];
+  sections: FooterSection[];
+};
+
+const Footer = ({ dict, lang }: { dict: FooterDict; lang: string }) => {
   const [email, setEmail] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
-    toast.success("Event has been created", {
-      description: "Sunday, December 03, 2023 at 9:00 AM",
+    e.preventDefault();
+    toast.success("Subscribed!", {
+      description: "You've been added to our newsletter.",
       className: "bg-green-400",
       descriptionClassName: "text-[#fff]",
     });
@@ -29,43 +46,6 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  const footerSections = [
-    {
-      title: "Services",
-      links: [
-        "Scan 3D Résidentiel",
-        "Visite Virtuelle",
-        "Scan Commercial",
-        "Patrimoine Historique",
-        "Formation Matterport",
-      ],
-    },
-    {
-      title: "Solutions",
-      links: [
-        "Immobilier",
-        "Architecture",
-        "Construction",
-        "Hôtellerie",
-        "Retail & Showroom",
-      ],
-    },
-    {
-      title: "Ressources",
-      links: [
-        "Documentation",
-        "Tutoriels",
-        "Blog",
-        "Cas d'usage",
-        "Support Technique",
-      ],
-    },
-    {
-      title: "Entreprise",
-      links: ["À propos", "Notre équipe", "Carrières", "Partenaires", "Presse"],
-    },
-  ];
 
   const socialLinks = [
     { icon: <Facebook className="w-5 h-5" />, href: "#", name: "Facebook" },
@@ -88,7 +68,7 @@ const Footer = () => {
         <div className="pb-16 pt-8">
           <div className="flex items-center space-x-3 mb-6">
             <Link
-              href="/"
+              href={`/${lang}`}
               className="text-xl font-bold tracking-tight text-white"
             >
               <img
@@ -108,12 +88,8 @@ const Footer = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                {/* Logo */}
-
                 <p className="text-gray-300 mb-6 max-w-xs leading-relaxed">
-                  Spécialiste de la numérisation 3D et des visites virtuelles.
-                  Nous transformons vos espaces en expériences immersives avec
-                  la technologie Matterport de pointe.
+                  {dict.description}
                 </p>
 
                 {/* Contact Info */}
@@ -149,7 +125,7 @@ const Footer = () => {
             </div>
 
             {/* Footer Links */}
-            {footerSections.map((section, sectionIndex) => (
+            {dict.sections.map((section, sectionIndex) => (
               <div key={section.title} className="lg:col-span-1">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -195,10 +171,10 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-white mb-2">
-                Restez informé des dernières innovations 3D
+                {dict.newsletterHeading}
               </h3>
               <p className="text-gray-400">
-                Recevez nos actualités, conseils et offres exclusives
+                {dict.newsletterSubheading}
               </p>
             </div>
             <form onSubmit={handleSubmit} className="w-full flex space-x-3">
@@ -206,11 +182,11 @@ const Footer = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Votre adresse email"
+                placeholder={dict.newsletterPlaceholder}
                 className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
               />
-              <button className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                S&apos;abonner
+              <button type="submit" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                {dict.subscribeButton}
               </button>
             </form>
           </div>
@@ -220,16 +196,12 @@ const Footer = () => {
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex flex-wrap items-center space-x-6 text-gray-400 text-sm">
-              <span>© 2024 Matterport3D. Tous droits réservés.</span>
-              <a href="#" className="hover:text-white transition-colors">
-                Mentions légales
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Politique de confidentialité
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                CGV
-              </a>
+              <span>{dict.copyright}</span>
+              {dict.legalLinks.map((link, idx) => (
+                <a key={idx} href="#" className="hover:text-white transition-colors">
+                  {link}
+                </a>
+              ))}
             </div>
 
             {/* Back to Top Button */}

@@ -1,0 +1,209 @@
+{
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "howItWorks": "Comment ça marche",
+    "contact": "Contact",
+    "cta": "Prendre RDV"
+  },
+  "hero": {
+    "typewriter": ["Une", "expérience", "unique"],
+    "title": "Vos Espaces en 3D , Vivants et Immersifs",
+    "subtitle": "Redéfinissez la façon dont vos clients découvrent vos biens, hôtels et projets au MONDE ENTIER",
+    "ctaForm": "Remplissez le formulaire",
+    "ctaDemo": "Demo"
+  },
+  "demo": {
+    "heading": "Pourquoi la visite virtuelle 3D change tout ?",
+    "subheading": "De la capture à la diffusion, découvrez comment nous transformons vos espaces en expériences 3D immersives en quelques étapes simples",
+    "stats": [
+      {
+        "title": "-50 % de déplacements",
+        "text": "Grâce aux visites virtuelles interactives."
+      },
+      {
+        "title": "+80 % d'engagement client",
+        "text": "Des espaces qui captivent et retiennent l'attention."
+      },
+      {
+        "title": "+70 % d'économies",
+        "text": "Sur les frais de relevés terrain et la création de fichiers BIM."
+      }
+    ]
+  },
+  "about": {
+    "heading": "De la vision à la réalité virtuelle",
+    "subheading": "Chez Build360, nous ne faisons pas que prendre des photos. Nous bâtissons une stratégie digitale immersive. Voici notre processus pour transformer vos espaces en outils de vente performants au Maroc.",
+    "ctaStart": "Lancer mon projet",
+    "ctaExamples": "Voir des exemples",
+    "steps": [
+      {
+        "title": "1. Audit & Stratégie",
+        "text": "Nous étudions votre espace et vos objectifs commerciaux pour définir le type de visite virtuelle le plus rentable pour vous."
+      },
+      {
+        "title": "2. Scénarisation UX",
+        "text": "Nous concevons un parcours utilisateur fluide. Choix des points de vue stratégiques et design de l'interface interactive."
+      },
+      {
+        "title": "3. Captation & Tech",
+        "text": "Numérisation 4K avec technologie Matterport ou Laser. Création du jumeau numérique et intégration de vos médias (tags, vidéos)."
+      },
+      {
+        "title": "4. Déploiement & Suivi",
+        "text": "Intégration sur votre site, Google Maps et réseaux sociaux. Formation de vos équipes et suivi des statistiques de visites."
+      }
+    ]
+  },
+  "aboutSection": {
+    "heading1": "Agence de création de ",
+    "heading2": "Visites Virtuelles",
+    "heading3": " et solutions ",
+    "heading4": "3D",
+    "heading5": " au Maroc",
+    "subheading": "Démarquez-vous de la concurrence grâce à la technologie immersive. Build360 transforme vos espaces (biens immobiliers, showrooms, hôtels) en expériences interactives accessibles partout dans le monde.",
+    "ctaQuote": "Demander un devis gratuit",
+    "ctaRealisations": "Voir nos réalisations",
+    "readyText": "Prêt à transformer vos espaces en expériences immersives ?",
+    "services": [
+      {
+        "title": "Visite Virtuelle pour l'Immobilier",
+        "description": "Accélérez vos ventes immobilières. Permettez à vos clients de visiter appartements, villas et bureaux sans se déplacer. Nos visites virtuelles haute définition offrent une transparence totale, filtrent les visiteurs curieux et déclenchent le coup de cœur à distance.",
+        "features": ["Appartements & Villas", "Bureaux commerciaux", "Visites HD 360°"]
+      },
+      {
+        "title": "Valorisation de Riads et Hôtels",
+        "description": "Rassurez vos futurs clients avant la réservation. Offrez une immersion totale dans votre établissement hôtelier ou Riad. Une visite 360° augmente le taux de réservation et améliore votre visibilité sur Google Maps et Booking.",
+        "features": ["Riads traditionnels", "Hôtels & Resorts", "Google Maps intégré"]
+      },
+      {
+        "title": "Showrooms Virtuels & Industrie",
+        "description": "Digitalisez votre point de vente. Que vous soyez une usine, une école ou un commerce, prolongez l'expérience client au-delà des horaires d'ouverture grâce à un jumeau numérique interactif.",
+        "features": ["Commerces & Showrooms", "Usines & Industries", "Écoles & Institutions"]
+      }
+    ]
+  },
+  "carousel": {
+    "badge": "Nos Réalisations Matterport",
+    "heading": "Explorez nos visites 3D",
+    "subheading": "Immergez-vous dans nos projets réels — cliquez sur une carte pour lancer la visite virtuelle directement.",
+    "ctaText": "Vous souhaitez un projet similaire pour votre espace ?",
+    "ctaButton": "Obtenir ma visite virtuelle",
+    "categories": {
+      "Tous": "Tous",
+      "Immobilier": "Immobilier",
+      "Hôtellerie": "Hôtellerie",
+      "Ecoles": "Écoles",
+      "Showroom": "Showroom",
+      "Offices": "Bureaux"
+    },
+    "projects": {
+      "1": {
+        "title": "Villa Scandinavienne",
+        "subtitle": "Résidence de luxe",
+        "description": "Numérisation 3D complète d'une villa de luxe 500 m² avec piscine, jardins et terrasse panoramique.",
+        "location": "Témara, Maroc"
+      },
+      "3": {
+        "title": "SUPMTI",
+        "subtitle": "Ecole",
+        "description": "Visite virtuelle interactive d'un showroom haut de gamme — accessible 24h/24 pour vos clients.",
+        "location": "Rabat, Maroc"
+      },
+      "4": {
+        "title": "Office SUMPTI",
+        "subtitle": "Bureau",
+        "description": "Appartement moderne avec vue panoramique sur le détroit — présenté en visite 360° haute définition.",
+        "location": "Tanger, Maroc"
+      }
+    }
+  },
+  "cta": {
+    "heading": "Transformons Votre Vision en Réalité 3D",
+    "subheading": "Prêt à révolutionner votre façon de présenter vos espaces ? Contactez-nous dès aujourd'hui pour un devis personnalisé et gratuit.",
+    "formTitle": "Demandez votre devis",
+    "formTitleHighlight": "Gratuit*",
+    "labelName": "Nom & Prénom *",
+    "placeholderName": "Votre nom complet",
+    "labelEmail": "Email *",
+    "placeholderEmail": "votre@email.com",
+    "labelPhone": "Téléphone / WhatsApp *",
+    "placeholderPhone": "+212 6 12 34 56 78",
+    "labelCity": "Ville *",
+    "placeholderCity": "Ex: Casablanca, Marrakech...",
+    "labelProjectType": "Type de projet *",
+    "selectDefault": "Sélectionnez...",
+    "projectTypes": {
+      "immobilier": "Immobilier (vente / location)",
+      "hotel": "Hôtel / Riad",
+      "commerce": "Commerce / showroom",
+      "architecture": "Architecture / BTP",
+      "autre": "Autre (précisez ci-dessous)"
+    },
+    "labelSurface": "Surface approximative à scanner *",
+    "surfaces": {
+      "lt100": "< 100 m²",
+      "100-300": "100 – 300 m²",
+      "300-600": "300 – 600 m²",
+      "600+": "+600 m²"
+    },
+    "labelObjective": "Objectif principal *",
+    "objectives": ["Visite virtuelle 3D", "Photos HDR", "Plan 2D / 3D", "Export BIM", "Vidéo promotionnelle"],
+    "labelLink": "Lien de site web (si existant)",
+    "placeholderLink": "votre site web",
+    "labelMessage": "Message",
+    "placeholderMessage": "informations supplémentaires ...",
+    "submitButton": "Demander mon devis gratuit",
+    "successTitle": "Merci pour votre demande !",
+    "successText": "Nous vous contacterons dans les plus brefs délais.",
+    "contactPhone": "Téléphone",
+    "contactPhoneDesc": "Lun-Ven 9h-18h",
+    "contactEmail": "Email",
+    "contactEmailDesc": "Réponse sous 2h"
+  },
+  "faq": {
+    "heading": "Questions Fréquentes",
+    "subheading": "Retrouvez les réponses aux questions les plus posées sur nos services de visites virtuelles au Maroc.",
+    "items": [
+      {
+        "question": "Quel est le prix d'une visite virtuelle au Maroc ?",
+        "answer": "Le tarif dépend de la superficie (m²) et des fonctionnalités demandées. Chez Build360, nous proposons des solutions adaptées aux studios comme aux grandes usines. Contactez-nous pour un devis sur mesure sous 24h."
+      },
+      {
+        "question": "Dans quelles villes intervenez-vous ?",
+        "answer": "Notre équipe se déplace partout au Maroc pour la numérisation de vos espaces, notamment à Casablanca, Rabat, Marrakech, Tanger, Agadir et Fès."
+      },
+      {
+        "question": "Les visites sont-elles compatibles sur mobile ?",
+        "answer": "Oui, toutes nos expériences Build360 sont 100% responsives et fonctionnent sur smartphone, tablette, ordinateur et casques de réalité virtuelle (VR)."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Spécialiste de la numérisation 3D et des visites virtuelles. Nous transformons vos espaces en expériences immersives avec la technologie Matterport de pointe.",
+    "newsletterHeading": "Restez informé des dernières innovations 3D",
+    "newsletterSubheading": "Recevez nos actualités, conseils et offres exclusives",
+    "newsletterPlaceholder": "Votre adresse email",
+    "subscribeButton": "S'abonner",
+    "copyright": "© 2026 Build360. Tous droits réservés.",
+    "legalLinks": ["Mentions légales", "Politique de confidentialité", "CGV"],
+    "sections": [
+      {
+        "title": "Services",
+        "links": ["Scan 3D Résidentiel", "Visite Virtuelle", "Scan Commercial", "Patrimoine Historique", "Formation Matterport"]
+      },
+      {
+        "title": "Solutions",
+        "links": ["Immobilier", "Architecture", "Construction", "Hôtellerie", "Retail & Showroom"]
+      },
+      {
+        "title": "Ressources",
+        "links": ["Documentation", "Tutoriels", "Blog", "Cas d'usage", "Support Technique"]
+      },
+      {
+        "title": "Entreprise",
+        "links": ["À propos", "Notre équipe", "Carrières", "Partenaires", "Presse"]
+      }
+    ]
+  }
+}

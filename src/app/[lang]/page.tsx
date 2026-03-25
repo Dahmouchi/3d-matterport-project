@@ -1,41 +1,57 @@
-"use client";
 import CTASection from "@/components/landing/cta-section";
 import Footer from "@/components/landing/footer";
 import React from "react";
 import Demo from "@/components/landing/Demo";
 import AboutUsSteps from "@/components/landing/about";
-import { AnimatedTestimonialsDemo } from "@/components/landing/testimonial";
 import HeroSection1 from "@/components/Hero";
 import Navbar1 from "@/components/landing/NavBar";
 import AboutSection from "@/components/landing/AboutSection";
 import FAQSection from "@/components/landing/FAQSection";
-const LandingPage = () => {
+//import MatterportCarousel from "@/components/landing/MatterportCarousel";
+import { getDictionary } from "./dictionaries";
+
+type Props = {
+  params: Promise<{ lang: "en" | "fr" | "ar" }>;
+};
+
+const LandingPage = async ({ params }: Props) => {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const isRtl = lang === "ar";
+
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden font-montserrat">
+    <div
+      className="min-h-screen bg-black text-white overflow-x-hidden font-montserrat"
+      dir={isRtl ? "rtl" : "ltr"}
+    >
       {/* Navigation */}
       <div className="flex justify-center w-full relative">
-        <Navbar1 />
+        <Navbar1 dict={dict.navbar} lang={lang} />
       </div>
       {/* Main Content*/}
       <main>
         <section className="relative isolate dark:bg-slate-950 bg-white text-white">
           <section id="home">
-            <HeroSection1 />
+            <HeroSection1 dict={dict.hero} rtl={isRtl} />
           </section>
           {/* Process Section */}
           <section id="demo">
             {" "}
-            <Demo />
+            <Demo dict={dict.demo} />
+          </section>
+
+          <section id="how-it-works">
+            <AboutUsSteps dict={dict.about} rtl={isRtl} />
           </section>
 
           <section id="about">
-            <AboutUsSteps />
+            <AboutSection dict={dict.aboutSection} />
           </section>
 
-          <section>
-            <AboutSection />
-            {/** <AnimatedTestimonialsDemo />*/}
-          </section>
+          {/* Matterport Projects Carousel 
+          <section id="projects">
+            <MatterportCarousel dict={dict.carousel} />
+          </section>*/}
         </section>
         {/* CTA Section */}
         <div
@@ -47,14 +63,14 @@ const LandingPage = () => {
           }}
         >
           <section id="contact">
-            <CTASection />
-            <FAQSection />
+            <CTASection dict={dict.cta} />
+            <FAQSection dict={dict.faq} />
           </section>
         </div>
       </main>
 
       {/* Footer*/}
-      <Footer />
+      <Footer dict={dict.footer} lang={lang} />
     </div>
   );
 };

@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, ADLaM_Display, Montserrat } from "next/font/google";
-import "./globals.css";
+import {
+  Geist,
+  Geist_Mono,
+  ADLaM_Display,
+  Montserrat,
+  Cairo,
+} from "next/font/google";
+import "../globals.css";
 import { AOSInit } from "@/components/aos";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -21,6 +27,11 @@ const montserrat = Montserrat({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+// 2. Configure the Arabic Font
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["arabic"],
 });
 
 // 1. Changez ceci par votre vrai domaine (ex: https://build360.ma)
@@ -98,17 +109,32 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
 };
-
-export default function RootLayout({
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "fr" }, { lang: "ar" }];
+}
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ lang: string }>;
 }>) {
+  const { lang } = await params;
+  const mainFontClass = lang === "ar" ? cairo.className : geistSans.className;
+
   return (
     // Correct: lang is set to French
-    <html lang="fr" suppressHydrationWarning>
+    <html
+      lang={lang}
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      suppressHydrationWarning
+    >
       <body
-        className={`${geistSans.variable} ${geistMono.variable}  ${adlamn.variable} ${montserrat.variable} antialiased`}
+        className={`
+          ${mainFontClass} 
+          ${geistMono.variable} 
+          antialiased
+        `}
       >
         {children}
         <Toaster position="top-center" />

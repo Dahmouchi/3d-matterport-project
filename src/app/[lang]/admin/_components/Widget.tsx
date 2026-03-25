@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import TVNoise from "@/components/ui/tv-noise";
 import Image from "next/image";
-import { WidgetData } from "@/app/types/dashboard";
+import { WidgetData } from "@/app/[lang]/types/dashboard";
 
 interface WidgetProps {
   widgetData: WidgetData;
@@ -61,8 +61,6 @@ export default function Widget({ widgetData }: WidgetProps) {
         <div className="flex justify-between items-center">
           <span className="opacity-50">{widgetData.temperature}</span>
           <span>{widgetData.location}</span>
-
-         
         </div>
 
         <div className="absolute inset-0 -z-[1]">
