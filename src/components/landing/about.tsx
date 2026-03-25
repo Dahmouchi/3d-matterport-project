@@ -30,7 +30,7 @@ export default function AboutUsSteps({
   }));
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#f6ba13] via-orange-400 to-orange-600 lg:py-20 py-10">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#f6ba13] via-orange-400 to-orange-600 lg:py-20 py-0 lg:pb-10 pb-0">
       {/* Background accents */}
       <div className="pointer-events-none absolute -top-32 -right-32 h-80 w-80 rounded-full bg-indigo-600/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-fuchsia-600/10 blur-3xl" />
@@ -122,7 +122,7 @@ export default function AboutUsSteps({
 
       {/* Mobile Image */}
       <div
-        className={`"flex justify-center relative z-10`}
+        className={"flex justify-center relative z-10 w-full"}
         data-aos="fade-up"
         data-aos-delay="200"
       >
