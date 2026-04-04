@@ -118,6 +118,88 @@
       }
     }
   },
+  "projectsListing": {
+    "badge": "معرض مشاريعنا",
+    "heading": "استكشف مشاريعنا",
+    "subheading": "اكتشف أحدث إنجازاتنا في الجولات الافتراضية ثلاثية الأبعاد في جميع أنحاء المغرب.",
+    "columns": {
+      "title": "المشروع",
+      "city": "المدينة",
+      "area": "المساحة",
+      "action": "عرض الجولة",
+      "showMore": "عرض المزيد",
+      "showLess": "عرض أقل"
+    },
+    "projects": [
+      {
+        "id": "1",
+        "title": "فيلا إسكندنافية",
+        "description": "رقمنة ثلاثية الأبعاد كاملة لفيلا فاخرة بمساحة 500 متر مربع مع مسبح وحدائق وتراس بانورامي.",
+        "link": "https://my.matterport.com/show/?m=cb3PdBNtPt9",
+        "matterportId": "cb3PdBNtPt9",
+        "area": "150 م³",
+        "city": "تمارة"
+      },
+      {
+        "id": "2",
+        "title": "صالة عرض SUPMTI",
+        "description": "جولة افتراضية تفاعلية لصالة عرض راقية — متاحة لعملائك على مدار الساعة طوال أيام الأسبوع.",
+        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
+        "matterportId": "NamRELgC9Hy",
+        "area": "1400 م³",
+        "city": "الرباط"
+      },
+      {
+        "id": "4",
+        "title": "قاعة الولود",
+        "description": "قاعة الولود بتصميم داخلي حديث وإطلالة بانورامية على المحيط.",
+        "link": "https://my.matterport.com/show/?m=XtAViUe8UAj",
+        "matterportId": "XtAViUe8UAj",
+        "area": "850 م³",
+        "city": "سلا"
+      },
+      {
+        "id": "3",
+        "title": "مكتب SUMPTI",
+        "description": "شقة حديثة بإطلالة بانورامية على المضيق — يتم تقديمها في جولة 360 درجة عالية الدقة.",
+        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
+        "matterportId": "PgAV361iABv",
+        "area": "280 م³",
+        "city": "الرباط"
+      },
+
+      {
+        "id": "5",
+        "title": "صالة عرض حديثة",
+        "description": "مساحة تفاعلية لعرض المنتجات الراقية مع تقنية ثلاثية الأبعاد غامرة.",
+        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
+        "matterportId": "NamRELgC9Hy",
+        "area": "400 م³",
+        "city": "مراكش"
+      },
+      {
+        "id": "6",
+        "title": "المقر الرئيسي للشركة",
+        "description": "رقمنة كاملة لطابق المكاتب للتصميم الداخلي وتخطيط إدارة المساحات.",
+        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
+        "matterportId": "PgAV361iABv",
+        "area": "1200 م³",
+        "city": "الرباط"
+      },
+      {
+        "id": "7",
+        "title": "فيلا شاطئية",
+        "description": "فيلا شاطئية جميلة مع جولة 360 درجة لجميع المناطق الداخلية والخارجية.",
+        "link": "https://my.matterport.com/show/?m=cb3PdBNtPt9",
+        "matterportId": "cb3PdBNtPt9",
+        "area": "350 م³",
+        "city": "أكادير"
+      }
+    ]
+  },
+  "partners": {
+    "heading": "شركاؤنا في النجاح"
+  },
   "cta": {
     "heading": "لنحوّل رؤيتك إلى واقع ثلاثي الأبعاد",
     "subheading": "هل أنت مستعد لإحداث ثورة في طريقة تقديم فضاءاتك؟ تواصل معنا اليوم للحصول على عرض أسعار مجاني ومخصص.",

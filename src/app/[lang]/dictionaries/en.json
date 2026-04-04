@@ -130,6 +130,88 @@
       }
     }
   },
+  "projectsListing": {
+    "badge": "Our Portfolio",
+    "heading": "Explore Our Projects",
+    "subheading": "Discover our latest 3D virtual tour achievements across Morocco.",
+    "columns": {
+      "title": "Project",
+      "city": "City",
+      "area": "Area",
+      "action": "View Tour",
+      "showMore": "Show More",
+      "showLess": "Show Less"
+    },
+    "projects": [
+      {
+        "id": "1",
+        "title": "Scandinavian Villa",
+        "description": "Full 3D digitisation of a 500 m² luxury villa with pool, gardens and panoramic terrace.",
+        "link": "https://my.matterport.com/show/?m=cb3PdBNtPt9",
+        "matterportId": "cb3PdBNtPt9",
+        "area": "150 m³",
+        "city": "Temara"
+      },
+      {
+        "id": "2",
+        "title": "SUPMTI Showroom",
+        "description": "Interactive virtual tour of a high-end showroom — accessible 24/7 for your clients.",
+        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
+        "matterportId": "NamRELgC9Hy",
+        "area": "1400 m³",
+        "city": "Rabat"
+      },
+      {
+        "id": "4",
+        "title": "Al Woud Hall",
+        "description": "Stunning hall with modern interior design and panoramic ocean view.",
+        "link": "https://my.matterport.com/show/?m=XtAViUe8UAj",
+        "matterportId": "XtAViUe8UAj",
+        "area": "850 m³",
+        "city": "Salé"
+      },
+      {
+        "id": "3",
+        "title": "Office SUMPTI",
+        "description": "Modern apartment with panoramic view of the strait — presented in high-definition 360° tour.",
+        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
+        "matterportId": "PgAV361iABv",
+        "area": "280 m³",
+        "city": "Rabat"
+      },
+
+      {
+        "id": "5",
+        "title": "Modern Showroom",
+        "description": "Interactive space for exhibiting high-end products with immersive 3D technology.",
+        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
+        "matterportId": "NamRELgC9Hy",
+        "area": "400 m³",
+        "city": "Marrakech"
+      },
+      {
+        "id": "6",
+        "title": "Corporate HQ",
+        "description": "Full office floor digitization for interior design and space management planning.",
+        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
+        "matterportId": "PgAV361iABv",
+        "area": "1200 m³",
+        "city": "Rabat"
+      },
+      {
+        "id": "7",
+        "title": "Beach Villa",
+        "description": "Beautiful beachfront villa with 360° tour of all indoor and outdoor areas.",
+        "link": "https://my.matterport.com/show/?m=cb3PdBNtPt9",
+        "matterportId": "cb3PdBNtPt9",
+        "area": "350 m³",
+        "city": "Agadir"
+      }
+    ]
+  },
+  "partners": {
+    "heading": "They trust us"
+  },
   "cta": {
     "heading": "Let's Turn Your Vision into 3D Reality",
     "subheading": "Ready to revolutionise the way you present your spaces? Contact us today for a personalised and free quote.",

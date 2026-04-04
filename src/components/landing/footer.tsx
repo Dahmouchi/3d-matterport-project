@@ -48,10 +48,21 @@ const Footer = ({ dict, lang }: { dict: FooterDict; lang: string }) => {
   };
 
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: "#", name: "Facebook" },
-    { icon: <Twitter className="w-5 h-5" />, href: "#", name: "Twitter" },
-    { icon: <Instagram className="w-5 h-5" />, href: "#", name: "Instagram" },
-    { icon: <Linkedin className="w-5 h-5" />, href: "#", name: "LinkedIn" },
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      href: "https://www.facebook.com/profile.php?id=61580337640595",
+      name: "Facebook",
+    },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      href: "https://www.instagram.com/build360.ma/reels/",
+      name: "Instagram",
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://www.linkedin.com/company/build360-ma/posts/?feedView=all",
+      name: "LinkedIn",
+    },
     { icon: <Youtube className="w-5 h-5" />, href: "#", name: "YouTube" },
   ];
 
@@ -173,9 +184,7 @@ const Footer = ({ dict, lang }: { dict: FooterDict; lang: string }) => {
               <h3 className="text-2xl font-bold text-white mb-2">
                 {dict.newsletterHeading}
               </h3>
-              <p className="text-gray-400">
-                {dict.newsletterSubheading}
-              </p>
+              <p className="text-gray-400">{dict.newsletterSubheading}</p>
             </div>
             <form onSubmit={handleSubmit} className="w-full flex space-x-3">
               <input
@@ -185,7 +194,10 @@ const Footer = ({ dict, lang }: { dict: FooterDict; lang: string }) => {
                 placeholder={dict.newsletterPlaceholder}
                 className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none"
               />
-              <button type="submit" className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+              <button
+                type="submit"
+                className="bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              >
                 {dict.subscribeButton}
               </button>
             </form>
@@ -198,7 +210,11 @@ const Footer = ({ dict, lang }: { dict: FooterDict; lang: string }) => {
             <div className="flex flex-wrap items-center space-x-6 text-gray-400 text-sm">
               <span>{dict.copyright}</span>
               {dict.legalLinks.map((link, idx) => (
-                <a key={idx} href="#" className="hover:text-white transition-colors">
+                <a
+                  key={idx}
+                  href="#"
+                  className="hover:text-white transition-colors"
+                >
                   {link}
                 </a>
               ))}

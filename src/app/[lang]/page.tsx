@@ -9,6 +9,9 @@ import AboutSection from "@/components/landing/AboutSection";
 import FAQSection from "@/components/landing/FAQSection";
 //import MatterportCarousel from "@/components/landing/MatterportCarousel";
 import { getDictionary } from "./dictionaries";
+import MatterportCarousel from "@/components/landing/MatterportCarousel";
+import ProjectsListing from "@/components/landing/ProjectsListing";
+import PartnersSection from "@/components/landing/PartnersSection";
 
 type Props = {
   params: Promise<{ lang: "en" | "fr" | "ar" }>;
@@ -48,10 +51,17 @@ const LandingPage = async ({ params }: Props) => {
             <AboutSection dict={dict.aboutSection} />
           </section>
 
-          {/* Matterport Projects Carousel 
-          <section id="projects">
-            <MatterportCarousel dict={dict.carousel} />
-          </section>*/}
+           {/* Matterport Projects Listing (One per line) */}
+           <section id="portfolio">
+             <ProjectsListing dict={dict.projectsListing} rtl={isRtl} />
+           </section>
+
+           <PartnersSection dict={dict.partners} />
+
+           {/* Matterport Projects Carousel
+           <section id="projects">
+             <MatterportCarousel dict={dict.carousel} />
+           </section> */}
         </section>
         {/* CTA Section */}
         <div
