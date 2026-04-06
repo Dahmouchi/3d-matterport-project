@@ -12,9 +12,10 @@ const PartnersSection = ({ dict }: { dict: PartnersDict }) => {
   const partnerLogos = [
     "/images/logos/supmti.png",
     "/images/logos/alwoud.png",
-    "/images/logos/auto.jpg",
-    "/images/logov1.png",
+    "/images/logos/auto.png",
+    "/images/logos/complirisk.png",
     "/images/logos/sedec.webp",
+    "/images/logos/calx.jpg",
   ];
 
   return (
