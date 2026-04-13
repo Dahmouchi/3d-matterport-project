@@ -142,12 +142,12 @@
       },
       {
         "id": "2",
-        "title": "صالة عرض SUPMTI",
-        "description": "جولة افتراضية تفاعلية لصالة عرض راقية — متاحة لعملائك على مدار الساعة طوال أيام الأسبوع.",
-        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
-        "matterportId": "NamRELgC9Hy",
-        "area": "1400 م³",
-        "city": "الرباط"
+        "title": "دار أنس",
+        "description": "دار أنس هي دار ضيافة تقع في مراكش، المغرب. تتكون من غرفتين وجناحين، ومطعم وحديقة.",
+        "link": "https://my.matterport.com/show/?m=vB4ESxP4Q5T",
+        "matterportId": "vB4ESxP4Q5T",
+        "area": "150 م³",
+        "city": "مراكش"
       },
       {
         "id": "4",
@@ -157,43 +157,6 @@
         "matterportId": "XtAViUe8UAj",
         "area": "850 م³",
         "city": "سلا"
-      },
-      {
-        "id": "3",
-        "title": "مكتب SUMPTI",
-        "description": "شقة حديثة بإطلالة بانورامية على المضيق — يتم تقديمها في جولة 360 درجة عالية الدقة.",
-        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
-        "matterportId": "PgAV361iABv",
-        "area": "280 م³",
-        "city": "الرباط"
-      },
-
-      {
-        "id": "5",
-        "title": "صالة عرض حديثة",
-        "description": "مساحة تفاعلية لعرض المنتجات الراقية مع تقنية ثلاثية الأبعاد غامرة.",
-        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
-        "matterportId": "NamRELgC9Hy",
-        "area": "400 م³",
-        "city": "مراكش"
-      },
-      {
-        "id": "6",
-        "title": "المقر الرئيسي للشركة",
-        "description": "رقمنة كاملة لطابق المكاتب للتصميم الداخلي وتخطيط إدارة المساحات.",
-        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
-        "matterportId": "PgAV361iABv",
-        "area": "1200 م³",
-        "city": "الرباط"
-      },
-      {
-        "id": "7",
-        "title": "فيلا شاطئية",
-        "description": "فيلا شاطئية جميلة مع جولة 360 درجة لجميع المناطق الداخلية والخارجية.",
-        "link": "https://my.matterport.com/show/?m=cb3PdBNtPt9",
-        "matterportId": "cb3PdBNtPt9",
-        "area": "350 م³",
-        "city": "أكادير"
       }
     ]
   },

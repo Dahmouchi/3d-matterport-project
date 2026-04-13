@@ -154,12 +154,12 @@
       },
       {
         "id": "2",
-        "title": "Showroom SUPMTI",
-        "description": "Visite virtuelle interactive d'un showroom haut de gamme — accessible 24h/24 pour vos clients.",
-        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
-        "matterportId": "NamRELgC9Hy",
-        "area": "1400 m³",
-        "city": "Rabat"
+        "title": "Dar ANAS",
+        "description": "Dar Anas est une maison d'hôtes située à Marrakech, Maroc. Elle est composée de 2 chambres et suites, d'un restaurant et d'un jardin.",
+        "link": "https://my.matterport.com/show/?m=vB4ESxP4Q5T",
+        "matterportId": "vB4ESxP4Q5T",
+        "area": "150 m³",
+        "city": "Marrakech"
       },
       {
         "id": "4",
@@ -169,43 +169,6 @@
         "matterportId": "XtAViUe8UAj",
         "area": "850 m³",
         "city": "Salé"
-      },
-      {
-        "id": "3",
-        "title": "Bureau SUMPTI",
-        "description": "Appartement moderne avec vue panoramique sur le détroit — présenté en visite 360° haute définition.",
-        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
-        "matterportId": "PgAV361iABv",
-        "area": "280 m³",
-        "city": "Rabat"
-      },
-
-      {
-        "id": "5",
-        "title": "Showroom Moderne",
-        "description": "Espace interactif pour l'exposition de produits haut de gamme avec technologie 3D immersive.",
-        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
-        "matterportId": "NamRELgC9Hy",
-        "area": "400 m³",
-        "city": "Marrakech"
-      },
-      {
-        "id": "6",
-        "title": "Siège Social",
-        "description": "Numérisation complète d'un étage de bureaux pour l'aménagement et la planification de l'espace.",
-        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
-        "matterportId": "PgAV361iABv",
-        "area": "1200 m³",
-        "city": "Rabat"
-      },
-      {
-        "id": "7",
-        "title": "Villa en Bord de Mer",
-        "description": "Magnifique villa en bord de mer avec visite 360° de tous les espaces intérieurs et extérieurs.",
-        "link": "https://my.matterport.com/show/?m=cb3PdBNtPt9",
-        "matterportId": "cb3PdBNtPt9",
-        "area": "350 m³",
-        "city": "Agadir"
       }
     ]
   },

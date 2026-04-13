@@ -44,14 +44,17 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
 
-  const metadataByLang: Record<string, {
-    title: string;
-    description: string;
-    keywords: string[];
-    ogTitle: string;
-    ogDescription: string;
-    altText: string;
-  }> = {
+  const metadataByLang: Record<
+    string,
+    {
+      title: string;
+      description: string;
+      keywords: string[];
+      ogTitle: string;
+      ogDescription: string;
+      altText: string;
+    }
+  > = {
     fr: {
       title: "Build360 : Création Visite Virtuelle Maroc & 3D Immersive",
       description:
@@ -67,7 +70,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "Prix visite virtuelle Maroc",
       ],
       ogTitle: "Build360 - Donnez VIE à vos espaces",
-      ogDescription: "Transformez vos espaces en expériences 3D immersives et interactives.",
+      ogDescription:
+        "Transformez vos espaces en expériences 3D immersives et interactives.",
       altText: "Aperçu Build360 Expérience Immersive",
     },
     en: {
@@ -85,7 +89,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "Virtual tour price Morocco",
       ],
       ogTitle: "Build360 - Bring your spaces to LIFE",
-      ogDescription: "Transform your spaces into immersive and interactive 3D experiences.",
+      ogDescription:
+        "Transform your spaces into immersive and interactive 3D experiences.",
       altText: "Build360 Immersive Experience Preview",
     },
     ar: {

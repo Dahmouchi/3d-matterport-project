@@ -154,12 +154,12 @@
       },
       {
         "id": "2",
-        "title": "SUPMTI Showroom",
-        "description": "Interactive virtual tour of a high-end showroom — accessible 24/7 for your clients.",
-        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
-        "matterportId": "NamRELgC9Hy",
-        "area": "1400 m³",
-        "city": "Rabat"
+        "title": "Dar ANAS",
+        "description": "Dar Anas is a guest house located in Marrakech, Morocco. It is composed of 2 bedrooms and suites, a restaurant and a garden.",
+        "link": "https://my.matterport.com/show/?m=vB4ESxP4Q5T",
+        "matterportId": "vB4ESxP4Q5T",
+        "area": "150 m³",
+        "city": "Marrakech"
       },
       {
         "id": "4",
@@ -169,43 +169,6 @@
         "matterportId": "XtAViUe8UAj",
         "area": "850 m³",
         "city": "Salé"
-      },
-      {
-        "id": "3",
-        "title": "Office SUMPTI",
-        "description": "Modern apartment with panoramic view of the strait — presented in high-definition 360° tour.",
-        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
-        "matterportId": "PgAV361iABv",
-        "area": "280 m³",
-        "city": "Rabat"
-      },
-
-      {
-        "id": "5",
-        "title": "Modern Showroom",
-        "description": "Interactive space for exhibiting high-end products with immersive 3D technology.",
-        "link": "https://my.matterport.com/show/?m=NamRELgC9Hy",
-        "matterportId": "NamRELgC9Hy",
-        "area": "400 m³",
-        "city": "Marrakech"
-      },
-      {
-        "id": "6",
-        "title": "Corporate HQ",
-        "description": "Full office floor digitization for interior design and space management planning.",
-        "link": "https://my.matterport.com/show/?m=PgAV361iABv",
-        "matterportId": "PgAV361iABv",
-        "area": "1200 m³",
-        "city": "Rabat"
-      },
-      {
-        "id": "7",
-        "title": "Beach Villa",
-        "description": "Beautiful beachfront villa with 360° tour of all indoor and outdoor areas.",
-        "link": "https://my.matterport.com/show/?m=cb3PdBNtPt9",
-        "matterportId": "cb3PdBNtPt9",
-        "area": "350 m³",
-        "city": "Agadir"
       }
     ]
   },
