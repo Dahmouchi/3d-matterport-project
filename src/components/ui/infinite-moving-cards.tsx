@@ -92,9 +92,9 @@ export const InfiniteMovingCards = ({
               src={item}
               alt="brand logo"
               title="brand logo"
-              width={100}
-              height={100}
-              className="object-contain"
+              width={120}
+              height={120}
+              className="w-32 h-auto"
             />
           </li>
         ))}
