@@ -38,7 +38,7 @@ const AboutSection = ({ dict }: { dict: AboutSectionDict }) => {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Header Section */}
         <header className=" mx-auto text-center mb-20">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold lg:leading-20 mb-8">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold lg:leading-20 mb-8">
             <span className="text-gray-900">{dict.heading1}</span>
             <span className="bg-gradient-to-r from-[#f6ba13] via-orange-400 to-orange-600 bg-clip-text text-transparent">
               {dict.heading2}
@@ -48,7 +48,7 @@ const AboutSection = ({ dict }: { dict: AboutSectionDict }) => {
               {dict.heading4}
             </span>
             <span className="text-gray-900">{dict.heading5}</span>
-          </h1>
+          </h2>
 
           <p className="text-md sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
             {dict.subheading}

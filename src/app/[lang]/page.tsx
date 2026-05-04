@@ -12,6 +12,7 @@ import { getDictionary } from "./dictionaries";
 import MatterportCarousel from "@/components/landing/MatterportCarousel";
 import ProjectsListing from "@/components/landing/ProjectsListing";
 import PartnersSection from "@/components/landing/PartnersSection";
+import MapSection from "@/components/landing/MapSection";
 
 type Props = {
   params: Promise<{ lang: "en" | "fr" | "ar" }>;
@@ -78,6 +79,9 @@ const LandingPage = async ({ params }: Props) => {
           </section>
         </div>
       </main>
+
+      {/* Map Section */}
+      <MapSection dict={dict.map} />
 
       {/* Footer*/}
       <Footer dict={dict.footer} lang={lang} />

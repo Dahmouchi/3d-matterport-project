@@ -45,7 +45,7 @@ const HeroSection1 = ({ dict, rtl }: { dict: HeroDict; rtl: boolean }) => {
               />
             </div>
 
-            <h2
+            <h1
               className={`text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl font-montserrat leading-tight sm:leading-tight md:leading-normal lg:leading-16 ${rtl ? "md:text-right lg:text-right" : "md:text-left lg:text-left"}`}
             >
               {dict.title.split("3D").map((part, i, arr) =>
@@ -60,7 +60,7 @@ const HeroSection1 = ({ dict, rtl }: { dict: HeroDict; rtl: boolean }) => {
                   part
                 ),
               )}
-            </h2>
+            </h1>
           </div>
 
           <h2

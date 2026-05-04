@@ -286,5 +286,9 @@
         "links": ["About Us", "Our Team", "Careers", "Partners", "Press"]
       }
     ]
+  },
+  "map": {
+    "heading": "Where to find us in Morocco",
+    "subheading": "Find us in our offices or contact us to transform your spaces with alive and immersive 3D virtual tours."
   }
 }
