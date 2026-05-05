@@ -31,7 +31,7 @@ export async function POST(req: Request) {
         <!-- Header -->
         <div style="background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%); padding: 40px 30px; text-align: center; border-bottom: 5px solid #f6ba13;">
             <img src="https://build360.ma/images/logov1white.png" alt="Build360 Logo" style="height: 50px; margin-bottom: 20px;">
-            <h1 style="color: #ffffff; margin: 0; font-size: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">🚀 Nouveau Projet Potentiel</h1>
+            <h1 style="color: #ffffff; margin: 0; font-size: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Nouvelle demande de Visite virtuelle</h1>
             <p style="color: #f6ba13; margin: 10px 0 0 0; font-size: 14px; font-weight: 500;">
                 Reçu le ${new Date().toLocaleDateString("fr-FR", {
                   weekday: "long",
@@ -79,7 +79,7 @@ export async function POST(req: Request) {
             <!-- Project Details -->
             <div style="margin-bottom: 35px;">
                 <h2 style="color: #1a1a1a; font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
-                    <span style="background-color: #f6ba13; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-block; text-align: center; line-height: 30px; margin-right: 10px;">🏗️</span>
+                    <span style="background-color: #f6ba13; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-block; text-align: center; line-height: 30px; margin-right: 10px;">📝​</span>
                     Spécifications du Projet
                 </h2>
                 <div style="background-color: #f9f9f9; border-radius: 8px; padding: 25px;">
@@ -95,21 +95,27 @@ export async function POST(req: Request) {
                         <tr>
                             <td style="padding: 10px 0; color: #777; vertical-align: top;">Objectifs :</td>
                             <td style="padding: 10px 0; color: #1a1a1a; font-weight: 600;">
-                                ${Array.isArray(objectives) ? objectives.map(obj => `<span style="display: inline-block; background-color: #eee; padding: 2px 8px; margin: 2px; border-radius: 4px; font-size: 12px;">${obj}</span>`).join('') : objectives}
+                                ${Array.isArray(objectives) ? objectives.map((obj) => `<span style="display: inline-block; background-color: #eee; padding: 2px 8px; margin: 2px; border-radius: 4px; font-size: 12px;">${obj}</span>`).join("") : objectives}
                             </td>
                         </tr>
-                        ${link ? `
+                        ${
+                          link
+                            ? `
                         <tr>
                             <td style="padding: 10px 0; color: #777;">Lien projet :</td>
                             <td style="padding: 10px 0;"><a href="${link}" style="color: #f6ba13; text-decoration: none;">Voir le projet</a></td>
                         </tr>
-                        ` : ''}
+                        `
+                            : ""
+                        }
                     </table>
                 </div>
             </div>
             
             <!-- Message -->
-            ${message ? `
+            ${
+              message
+                ? `
             <div style="margin-bottom: 35px;">
                 <h2 style="color: #1a1a1a; font-size: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">
                     <span style="background-color: #f6ba13; color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-block; text-align: center; line-height: 30px; margin-right: 10px;">💬</span>
@@ -119,7 +125,9 @@ export async function POST(req: Request) {
                     "${message}"
                 </div>
             </div>
-            ` : ''}
+            `
+                : ""
+            }
             
             <!-- Actions -->
             <div style="text-align: center; margin-top: 40px;">
@@ -142,10 +150,14 @@ export async function POST(req: Request) {
     `;
 
     await sendEmail(
-      ["elhassan.dahmouchi.pro@gmail.com", "contact@build360.ma", "haoussi.anass@gmail.com"],
+      [
+        "elhassan.dahmouchi.pro@gmail.com",
+        "contact@build360.ma",
+        "haoussi.anass@gmail.com",
+      ],
       `New Project Request from ${name}`,
       adminHtml,
-      email
+      email,
     );
 
     // ============ USER CONFIRMATION EMAIL ============
@@ -222,7 +234,7 @@ export async function POST(req: Request) {
       email,
       "✅ Thank you for your request – Build360 Team",
       userHtml,
-      "no-reply@build360.com"
+      "no-reply@build360.com",
     );
 
     return NextResponse.json({ success: true });
@@ -230,7 +242,7 @@ export async function POST(req: Request) {
     console.error("Email error:", error);
     return NextResponse.json(
       { success: false, error: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
