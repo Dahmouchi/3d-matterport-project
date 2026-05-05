@@ -57,7 +57,7 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
@@ -70,7 +70,7 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
 
     try {
       const res2 = await fetch(
-        "http://localhost:3001/api/reservations",
+        `${process.env.NEXT_PUBLIC_API_KEY}/api/reservations`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -85,7 +85,7 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
             surface: formData.surface,
             link: formData.link,
           }),
-        }
+        },
       );
 
       if (res2.ok) {
@@ -289,7 +289,7 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
                       {dict.labelLink}
                     </label>
                     <Input
-                      type="url"
+                      type="text"
                       name="link"
                       value={formData.link}
                       onChange={handleInputChange}
