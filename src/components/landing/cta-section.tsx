@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, CheckCircle } from "lucide-react";
+import { toast } from "sonner";
 
 type CtaDict = {
   heading: string;
@@ -70,7 +71,7 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
 
     try {
       const res2 = await fetch(
-        `${process.env.NEXT_PUBLIC_API_KEY}/api/reservations`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/reservations`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -87,9 +88,26 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
           }),
         },
       );
+      const resEmail = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-      if (res2.ok) {
-        alert("✅ Email sent successfully");
+      if (res2.ok || resEmail.ok) {
+        toast.success(dict.successTitle);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          projectType: "",
+          message: "",
+          city: "",
+          objectives: "",
+          surface: "",
+          link: "",
+        });
+        setIsSubmitted(true);
       } else {
         console.error("❌ Failed to send email");
         console.log(res2);
