@@ -13,6 +13,7 @@ import MatterportCarousel from "@/components/landing/MatterportCarousel";
 import ProjectsListing from "@/components/landing/ProjectsListing";
 import PartnersSection from "@/components/landing/PartnersSection";
 import MapSection from "@/components/landing/MapSection";
+import BlogSection from "@/components/landing/BlogSection";
 
 type Props = {
   params: Promise<{ lang: "en" | "fr" | "ar" }>;
@@ -30,7 +31,7 @@ const LandingPage = async ({ params }: Props) => {
     >
       {/* Navigation */}
       <div className="flex justify-center w-full relative">
-        <Navbar1 dict={dict.navbar} lang={lang} />
+        <Navbar1 dict={dict.navbar} lang={lang} color="white" />
       </div>
       {/* Main Content*/}
       <main>
@@ -52,14 +53,16 @@ const LandingPage = async ({ params }: Props) => {
             <AboutSection dict={dict.aboutSection} />
           </section>
 
-           {/* Matterport Projects Listing (One per line) */}
-           <section id="portfolio">
-             <ProjectsListing dict={dict.projectsListing} rtl={isRtl} />
-           </section>
+          {/* Matterport Projects Listing (One per line) */}
+          <section id="portfolio">
+            <ProjectsListing dict={dict.projectsListing} rtl={isRtl} />
+          </section>
 
-           <PartnersSection dict={dict.partners} />
+          <PartnersSection dict={dict.partners} />
 
-           {/* Matterport Projects Carousel
+          <BlogSection dict={dict.blog} lang={lang} />
+
+          {/* Matterport Projects Carousel
            <section id="projects">
              <MatterportCarousel dict={dict.carousel} />
            </section> */}

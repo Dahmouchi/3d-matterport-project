@@ -18,15 +18,18 @@ type NavDict = {
   about: string;
   howItWorks: string;
   contact: string;
+  blog: string;
   cta: string;
 };
 
 export default function Navbar1({
   dict,
   lang,
+  color,
 }: {
   dict: NavDict;
   lang: string;
+  color: string;
 }) {
   const [open, setOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
@@ -47,15 +50,17 @@ export default function Navbar1({
   }, []);
 
   const navLinks = [
-    { title: dict.home, href: "#home" },
-    { title: dict.about, href: "#about" },
-    { title: dict.howItWorks, href: "#how-it-works" },
+    { title: dict.home, href: `/${lang}#home` },
+    { title: dict.about, href: `/${lang}#about` },
+    { title: dict.howItWorks, href: `/${lang}#how-it-works` },
+    { title: dict.blog, href: `/${lang}/blog` },
   ];
   const navLinks1 = [
-    { title: dict.home, href: "#home" },
-    { title: dict.about, href: "#about" },
-    { title: dict.howItWorks, href: "#how-it-works" },
-    { title: dict.contact, href: "#contact" },
+    { title: dict.home, href: `/${lang}#home` },
+    { title: dict.about, href: `/${lang}#about` },
+    { title: dict.howItWorks, href: `/${lang}#how-it-works` },
+    { title: dict.blog, href: `/${lang}/blog` },
+    { title: dict.contact, href: `/${lang}#contact` },
   ];
   const pathname = usePathname();
 
@@ -72,10 +77,12 @@ export default function Navbar1({
     { code: "ar", label: "العربية" },
   ];
 
-  const LanguageSwitcher = () => (
+  const LanguageSwitcher = ({ color }: { color: string }) => (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="flex items-center gap-2 text-white hover:text-[#f6ba13] transition-colors font-semibold outline-none group cursor-pointer">
+        <button
+          className={`flex items-center gap-2 ${color === "white" ? "text-white" : "text-gray-900"} hover:text-[#f6ba13] transition-colors font-semibold outline-none group cursor-pointer`}
+        >
           <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
           <span className="uppercase">{lang}</span>
           <ChevronDown className="w-4 h-4 opacity-70" />
@@ -130,7 +137,7 @@ export default function Navbar1({
       <motion.button
         aria-label="Toggle menu"
         onClick={() => setOpen((v) => !v)}
-        className="fixed right-4 font-montserrat top-4 z-[60] rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white shadow-xl p-3"
+        className={`fixed right-4 font-montserrat top-4 z-[60] rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400  shadow-xl p-3 ${color === "white" ? "text-white" : "text-black"}`}
         initial={{ opacity: 0, scale: 0.8, x: 60 }}
         animate={
           collapsed
@@ -182,7 +189,11 @@ export default function Navbar1({
           {/* Logo */}
           <Link href={`/${lang}`} className="text-xl font-bold">
             <img
-              src="/images/logov1white.png"
+              src={
+                color === "white"
+                  ? "/images/logov1white.png"
+                  : "/images/logov1.png"
+              }
               alt="logo"
               title="logo"
               className="lg:h-14 h-8 w-auto"
@@ -199,7 +210,7 @@ export default function Navbar1({
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-gray-100 hover:text-white transition-colors relative group"
+                className={`text-gray-100 hover:text-white transition-colors relative group ${color === "white" ? "text-gray-100" : "text-gray-900"}`}
               >
                 {item.title}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
@@ -210,8 +221,11 @@ export default function Navbar1({
           {/* CTA */}
           {/* CTA & Language */}
           <div className="hidden md:flex items-center gap-6">
-            <LanguageSwitcher />
-            <Link href="#contact" className="flex items-center gap-2 group">
+            <LanguageSwitcher color={color} />
+            <Link
+              href={`/${lang}#contact`}
+              className="flex items-center gap-2 group"
+            >
               <div className="text-white border-2 border-white/20 group-hover:border-white/50 font-semibold rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 px-5 py-2.5 transition-all shadow-lg hover:shadow-orange-500/20">
                 {dict.cta}
               </div>
@@ -414,7 +428,7 @@ export default function Navbar1({
             {/* CTA */}
             <div className="mt-6 space-y-5">
               <Link
-                href="#contact"
+                href={`/${lang}#contact`}
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#f6ba13] to-orange-400 text-white font-bold py-3 px-6 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 transition-all hover:scale-[1.02]"
               >

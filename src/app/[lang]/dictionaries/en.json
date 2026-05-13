@@ -4,11 +4,12 @@
     "about": "About",
     "howItWorks": "How It Works",
     "contact": "Contact",
+    "blog": "Blog",
     "cta": "Book a Meeting"
   },
   "hero": {
     "typewriter": ["A", "unique", "experience"],
-    "title": "Your Spaces in 3D, Alive and Immersive",
+    "title": "Virtual Tour 360 Rabat-Casablanca, Morocco",
     "subtitle": "Redefine the way your clients discover your properties, hotels and projects across THE ENTIRE WORLD",
     "ctaForm": "Fill in the form",
     "ctaDemo": "Demo"
@@ -290,5 +291,14 @@
   "map": {
     "heading": "Where to find us in Morocco",
     "subheading": "Find us in our offices or contact us to transform your spaces with alive and immersive 3D virtual tours."
+  },
+  "blog": {
+    "badge": "Blog",
+    "heading": "Our Latest Articles",
+    "subheading": "Discover our news, tips and guides on 3D virtual tours and immersive technologies.",
+    "readMore": "Read More",
+    "backToList": "Back to Blog",
+    "publishedOn": "Published on",
+    "author": "By"
   }
 }

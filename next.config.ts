@@ -28,13 +28,15 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "picsum.photos",
+        hostname: "**",
       },
       {
-        protocol: "https",
-        hostname: "pub-2ebf09d9626e4ce183f3f41f24e61709.r2.dev",
+        protocol: "http",
+        hostname: "**",
       },
     ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
   },
 };
 

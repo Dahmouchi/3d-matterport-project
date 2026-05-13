@@ -1,0 +1,33 @@
+# Build360 - 3D Virtual Tours & Digitalization in Morocco
+
+Build360 is a premier agency specializing in immersive 3D virtual tours and digital twins using Matterport technology. Based in Morocco, we serve clients in Casablanca, Rabat, Marrakech, Tangier, and beyond, transforming physical spaces into interactive digital experiences.
+
+## Core Services
+- **Real Estate Virtual Tours**: Accelerate sales with immersive walkthroughs for villas, apartments, and offices.
+- **Hospitality & Riads**: Increase bookings with 360° tours for hotels and guest houses, integrated with Google Maps.
+- **Commercial & Industrial Showrooms**: Digitalize showrooms, factories, and schools for 24/7 accessibility.
+- **Technical Deliverables**: HDR Photos, 2D/3D Floor Plans, BIM Exports, and Promotional Videos.
+
+## Why Choose Build360?
+- **Site Visit Reduction**: Decrease physical site visits by 50% with interactive tours.
+- **Client Engagement**: Boost engagement by up to 80% with captivating spaces.
+- **Cost Efficiency**: Save up to 70% on survey and BIM creation costs.
+- **Expertise in Morocco**: Local knowledge and nationwide operations.
+
+## Technical Details
+- **Platform**: Next.js (React)
+- **Technology**: Matterport 4K Digitization, Laser technology.
+- **Multi-language Support**: English, French, Arabic.
+- **Responsive Design**: 100% compatible with mobile, tablet, and VR headsets.
+
+## Main Sections
+- [Home](https://build360.ma/)
+- [Portfolio](https://build360.ma/portfolio)
+- [About Us](https://build360.ma/about)
+- [Blog](https://build360.ma/blog)
+- [Contact](https://build360.ma/contact)
+
+## Contact Information
+- Website: https://build360.ma
+- Operating Hours: Mon-Fri 9am-6pm
+- Location: Morocco (Casablanca, Rabat, Marrakech, Tangier, Agadir, Fez)

@@ -56,9 +56,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
   > = {
     fr: {
-      title: "Build360 : Création Visite Virtuelle Maroc & 3D Immersive",
+      title: "Build360 : Visite Virtuelle 360 Rabat-Casablanca, Maroc",
       description:
-        "Expert en création de visite virtuelle au Maroc (Casablanca, Rabat, Marrakech). Solutions 3D immersives pour l'immobilier, l'hôtellerie et l'industrie. Demandez votre devis gratuit.",
+        "Expert en création de visite virtuelle 360 Rabat-Casablanca-Marrakech et tanger, Maroc. Solutions 3D immersives pour l'immobilier, l'hôtellerie et l'industrie. Demandez votre devis gratuit.",
       keywords: [
         "Visite virtuelle Maroc",
         "Visite 360 degré",
@@ -75,9 +75,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       altText: "Aperçu Build360 Expérience Immersive",
     },
     en: {
-      title: "Build360: Virtual Tour Creation in Morocco & Immersive 3D",
+      title:
+        "Build360: Virtual Tour 360 Rabat-Casablanca-Marrakech and Tangier, Morocco",
       description:
-        "Expert in virtual tour creation in Morocco (Casablanca, Rabat, Marrakech). Immersive 3D solutions for real estate, hospitality, and industry. Request your free quote.",
+        "Expert in 360 virtual tour creation Rabat-Casablanca-Marrakech and Tangier, Morocco. Immersive 3D solutions for real estate, hospitality, and industry. Request your free quote.",
       keywords: [
         "Virtual tour Morocco",
         "360 degree tour",
@@ -94,9 +95,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       altText: "Build360 Immersive Experience Preview",
     },
     ar: {
-      title: "Build360: إنشاء جولات افتراضية في المغرب وتجربة ثلاثية الأبعاد",
+      title:
+        "Build360 : جولة افتراضية 360 الرباط-الدار البيضاء-مراكش وطنجة، المغرب",
       description:
-        "خبير في إنشاء جولات افتراضية في المغرب (الدار البيضاء، الرباط، مراكش). حلول ثلاثية الأبعاد غامرة للعقارات والفنادق والصناعة. اطلب عرض أسعار مجاني.",
+        "خبير في إنشاء جولات افتراضية 360 الرباط-الدار البيضاء-مراكش وطنجة، المغرب. حلول ثلاثية الأبعاد غامرة للعقارات والفنادق والصناعة. اطلب عرض أسعار مجاني.",
       keywords: [
         "جولة افتراضية المغرب",
         "جولة 360 درجة",

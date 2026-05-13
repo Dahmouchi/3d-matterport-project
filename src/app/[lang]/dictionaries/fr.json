@@ -4,11 +4,12 @@
     "about": "À propos",
     "howItWorks": "Comment ça marche",
     "contact": "Contact",
+    "blog": "Blog",
     "cta": "Prendre RDV"
   },
   "hero": {
     "typewriter": ["Une", "expérience", "unique"],
-    "title": "Vos Espaces en 3D , Vivants et Immersifs",
+    "title": "Visite Virtuelle 360 Rabat-Casablanca, Maroc",
     "subtitle": "Redéfinissez la façon dont vos clients découvrent vos biens, hôtels et projets au MONDE ENTIER",
     "ctaForm": "Remplissez le formulaire",
     "ctaDemo": "Demo"
@@ -296,5 +297,14 @@
   "map": {
     "heading": "Où nous trouver au Maroc",
     "subheading": "Retrouvez-vous dans nos bureaux ou contactez-nous pour transformer vos espaces avec des visites virtuelles 3D vivantes et immersives."
+  },
+  "blog": {
+    "badge": "Blog",
+    "heading": "Nos Derniers Articles",
+    "subheading": "Découvrez nos actualités, conseils et guides sur les visites virtuelles 3D et les technologies immersives.",
+    "readMore": "Lire la suite",
+    "backToList": "Retour au Blog",
+    "publishedOn": "Publié le",
+    "author": "Par"
   }
 }
