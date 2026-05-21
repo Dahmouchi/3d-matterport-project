@@ -49,8 +49,8 @@ const ProjectsListing = ({
   );
   const [showAll, setShowAll] = useState(false);
 
-  const displayedProjects = showAll ? dict.projects : dict.projects.slice(0, 6);
-  const hasMore = dict.projects.length > 6;
+  const displayedProjects = showAll ? dict.projects : dict.projects.slice(0, 3);
+  const hasMore = dict.projects.length > 3;
 
   function buildMpUrl(modelId: string) {
     const base = "https://my.matterport.com/show/";

@@ -2,27 +2,16 @@ import type { Metadata } from "next";
 import {
   Geist,
   Geist_Mono,
-  ADLaM_Display,
-  Montserrat,
   Cairo,
 } from "next/font/google";
 import "../globals.css";
 import { AOSInit } from "@/components/aos";
 import { Toaster } from "@/components/ui/sonner";
+import FloatingBee from "@/components/FloatingBee";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-});
-const adlamn = ADLaM_Display({
-  variable: "--font-adlamn",
-  subsets: ["latin"],
-  weight: "400",
-});
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: "500",
 });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -197,6 +186,7 @@ export default async function RootLayout({
         `}
       >
         {children}
+        <FloatingBee imageSrc="/Untitled-1-Recovered.png" startDelay={1000} />
         <Toaster position="top-center" />
         <AOSInit />
       </body>

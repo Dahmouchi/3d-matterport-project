@@ -155,6 +155,15 @@
       },
       {
         "id": "2",
+        "title": "Showroom Goldenhouse",
+        "description": "Modern showroom for wood products in Temara, Morocco.",
+        "link": "https://my.matterport.com/show/?m=K6xrM5M9S2w",
+        "matterportId": "K6xrM5M9S2w",
+        "area": "200 m³",
+        "city": "Temara"
+      },
+      {
+        "id": "3",
         "title": "Dar ANAS",
         "description": "Dar Anas is a guest house located in Marrakech, Morocco. It is composed of 2 bedrooms and suites, a restaurant and a garden.",
         "link": "https://my.matterport.com/show/?m=vB4ESxP4Q5T",

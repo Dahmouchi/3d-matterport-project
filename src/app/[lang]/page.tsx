@@ -9,7 +9,6 @@ import AboutSection from "@/components/landing/AboutSection";
 import FAQSection from "@/components/landing/FAQSection";
 //import MatterportCarousel from "@/components/landing/MatterportCarousel";
 import { getDictionary } from "./dictionaries";
-import MatterportCarousel from "@/components/landing/MatterportCarousel";
 import ProjectsListing from "@/components/landing/ProjectsListing";
 import PartnersSection from "@/components/landing/PartnersSection";
 import MapSection from "@/components/landing/MapSection";
@@ -39,9 +38,11 @@ const LandingPage = async ({ params }: Props) => {
           <section id="home">
             <HeroSection1 dict={dict.hero} rtl={isRtl} />
           </section>
+
           {/* Process Section */}
-          <section id="demo">
+          <section id="demo" className="relative">
             {" "}
+
             <Demo dict={dict.demo} />
           </section>
 

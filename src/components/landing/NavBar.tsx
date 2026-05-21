@@ -54,6 +54,7 @@ export default function Navbar1({
     { title: dict.about, href: `/${lang}#about` },
     { title: dict.howItWorks, href: `/${lang}#how-it-works` },
     { title: dict.blog, href: `/${lang}/blog` },
+    { title: "Realisations", href: `/${lang}/realisations` },
   ];
   const navLinks1 = [
     { title: dict.home, href: `/${lang}#home` },
@@ -61,6 +62,7 @@ export default function Navbar1({
     { title: dict.howItWorks, href: `/${lang}#how-it-works` },
     { title: dict.blog, href: `/${lang}/blog` },
     { title: dict.contact, href: `/${lang}#contact` },
+    { title: "Realisations", href: `/${lang}/realisations` },
   ];
   const pathname = usePathname();
 
