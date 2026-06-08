@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Cairo,
-} from "next/font/google";
+import { Geist, Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
 import { AOSInit } from "@/components/aos";
 import { Toaster } from "@/components/ui/sonner";
-import FloatingBee from "@/components/FloatingBee";
+//import FloatingBee from "@/components/FloatingBee";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -186,7 +182,7 @@ export default async function RootLayout({
         `}
       >
         {children}
-        <FloatingBee imageSrc="/Untitled-1-Recovered.png" startDelay={1000} />
+        {/* <FloatingBee imageSrc="/Untitled-1-Recovered.png" startDelay={1000} /> */}
         <Toaster position="top-center" />
         <AOSInit />
       </body>
