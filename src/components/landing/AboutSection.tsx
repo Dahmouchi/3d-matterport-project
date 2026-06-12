@@ -68,7 +68,17 @@ export default function StickyCardsSection({ dict }: AboutSectionProps) {
       className="relative"
     >
       {/* Sticky container */}
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden px-4 md:px-20 lg:py-6">
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-4 md:px-20 lg:py-6">
+        {/* Logo at the top */}
+        <div className="lg:hidden absolute top-18 md:top-12 z-50">
+          <img
+            src="/images/logov1.png"
+            alt="logo"
+            title="logo"
+            className="h-10 md:h-14 object-contain"
+          />
+        </div>
+
         <div
           className="relative w-full overflow-hidden rounded-[10px]"
           style={{ height: "min(600px, 80vh)" }}
