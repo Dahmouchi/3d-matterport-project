@@ -167,7 +167,7 @@ const Demo = ({ dict }: { dict: DemoDict }) => {
                     className="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent flex items-center justify-center text-white font-medium"
                     style={{
                       backgroundImage:
-                        "url('https://images.squarespace-cdn.com/content/v1/67d65f56ec463a6e9aff64be/5726358c-b613-4fd2-8c17-77f70812a357/SlavaBlazerPhotography_RealEstatePhotography103.jpg')",
+                        "url('https://www.sedec.ma/_next/static/media/scondinave.a6ae1d78.webp')",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }}
