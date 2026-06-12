@@ -154,7 +154,7 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
         <div className="grid grid-cols-1  gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl lg:p-8 p-4 border border-gray-700 shadow-2xl">
+            <div className=" backdrop-blur-sm rounded-2xl lg:p-8 p-4 border border-gray-700 shadow-2xl">
               <h3 className="lg:text-2xl text-xl font-bold dark:text-white mb-6">
                 {dict.formTitle}{" "}
                 <span className="text-amber-400 font-bold">
@@ -355,7 +355,7 @@ const CTASection = ({ dict }: { dict: CtaDict }) => {
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-[#f6ba13]/50 transition-all duration-300"
+                  className=" backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-[#f6ba13]/50 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-3 mb-3">
                     <div className="p-2 bg-gradient-to-r from-[#f6ba13] to-orange-400 rounded-lg text-white">

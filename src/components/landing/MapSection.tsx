@@ -12,7 +12,7 @@ type MapSectionProps = {
 
 const MapSection = ({ dict }: MapSectionProps) => {
   return (
-    <section className="py-10 bg-slate-900 relative overflow-hidden">
+    <section className="py-10 bg-gradient-to-b from-black to-slate-900 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/10 rounded-full blur-[120px] pointer-events-none" />
 

@@ -71,10 +71,6 @@ const ProjectsListing = ({
       className="relative py-24 bg-gray-50/50 overflow-hidden"
       dir={rtl ? "rtl" : "ltr"}
     >
-      {/* Background Ornaments */}
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-amber-400/10 to-transparent blur-3xl opacity-50" />
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-orange-500/10 to-transparent blur-3xl opacity-50" />
-
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -127,29 +123,29 @@ const ProjectsListing = ({
               </div>
 
               {/* Card Body */}
-              <div className="p-8 flex flex-col flex-1">
+              <div className="p-4 flex flex-col flex-1">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="w-8 h-[2px] bg-amber-400 rounded-full" />
-                  <span className="text-xs font-bold text-amber-500 uppercase tracking-widest">
+                  <span className="text-xs font-bold uppercase tracking-widest">
                     {project.city}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-500 transition-colors">
+                <h3 className="text-2xl font-bold text-black mb-3 group-hover:text-amber-500 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">
+                {/*<p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-2">
                   {project.description}
-                </p>
+                </p>*/}
 
                 <div className="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-gray-700 font-bold">
-                    <Maximize2 className="w-4 h-4 text-amber-500" />
+                    <Maximize2 className="w-4 h-4 " />
                     <span>{project.area}</span>
                   </div>
 
-                  <div className="flex items-center gap-2 text-amber-500 font-bold text-sm">
+                  <div className="flex items-center gap-2 text-black font-bold text-sm">
                     <span>{dict.columns.action}</span>
                     <ArrowRight
                       className={`w-4 h-4 transform group-hover:translate-x-1 ${rtl ? "rotate-180 group-hover:-translate-x-1" : ""} transition-transform`}
@@ -166,7 +162,7 @@ const ProjectsListing = ({
           <div className="mt-16 text-center">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-white border-2 border-gray-100 text-gray-900 font-bold hover:border-amber-400 hover:text-amber-500 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              className="inline-flex items-center gap-2 px-10 py-4 rounded-md bg-white border-0 text-gray-900 font-bold cursor-pointer hover:text-amber-500 transition-all duration-300"
             >
               {showAll ? (
                 <>
@@ -191,7 +187,7 @@ const ProjectsListing = ({
       >
         <DialogContent
           dir={rtl ? "rtl" : "ltr"}
-          className="lg:min-w-5xl lg:w-[95vw] h-[90vh] md:h-[95vh] p-0 bg-black border border-white/10 rounded-[1.5rem] overflow-hidden shadow-[0_0_50px_rgba(246,186,19,0.15)]"
+          className="lg:min-w-5xl lg:w-[95vw] h-[90vh] md:h-[95vh] p-0 bg-black border border-white/10 rounded-[0.5rem] overflow-hidden shadow-[0_0_50px_rgba(246,186,19,0.15)]"
         >
           {selectedProject && (
             <div className="flex flex-col h-full font-montserrat">
@@ -210,13 +206,6 @@ const ProjectsListing = ({
                     </span>
                   </div>
                 </div>
-
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="pointer-events-auto p-3 rounded-full bg-black/50 backdrop-blur-md border border-white/20 text-white hover:bg-amber-400 hover:text-black transition-all duration-300 shadow-2xl"
-                >
-                  <X className="w-5 h-5" />
-                </button>
               </div>
 
               <div className="relative flex-1">

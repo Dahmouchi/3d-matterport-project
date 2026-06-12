@@ -66,6 +66,24 @@
     "ctaQuote": "Request a free quote",
     "ctaRealisations": "See our projects",
     "readyText": "Ready to transform your spaces into immersive experiences?",
+    "sectors": [
+      {
+        "title": "Real Estate & Residential",
+        "description": "Apartments, villas, offices and show homes: your future buyers explore every room as if they were there. Fewer wasted visits, qualified prospects, and faster sales."
+      },
+      {
+        "title": "Hospitality & Tourism",
+        "description": "Riads, hotels, residences and event venues: show your clients exactly what awaits them. More direct bookings, fewer platform commissions."
+      },
+      {
+        "title": "Retail & Showrooms",
+        "description": "Showrooms, shops and fitness centres: bring your virtual space to your clients, online, around the clock. More sign-ups, fewer doubts."
+      },
+      {
+        "title": "Culture & Heritage",
+        "description": "Museums, galleries and cultural spaces: preserve your exhibitions and make them accessible to the world, forever. Your Moroccan heritage, shared and immortalised."
+      }
+    ],
     "services": [
       {
         "title": "Virtual Tour for Real Estate",

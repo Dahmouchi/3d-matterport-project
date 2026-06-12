@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import { Search, Sparkles, ScanEye, TrendingUp } from "lucide-react";
+import { Search, Sparkles, ScanEye, TrendingUp, Activity } from "lucide-react";
 
 type AboutStep = {
   title: string;
@@ -15,7 +15,7 @@ type AboutDict = {
   steps: AboutStep[];
 };
 
-const ICONS = [Search, Sparkles, ScanEye, TrendingUp];
+const ICONS = [Search, Activity, ScanEye, TrendingUp];
 
 export default function AboutUsSteps({
   dict,
@@ -30,7 +30,7 @@ export default function AboutUsSteps({
   }));
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#f6ba13] via-orange-400 to-orange-600 lg:py-20 py-0 lg:pb-10 pb-0">
+    <section className="relative overflow-hidden bg-black text-white lg:py-20 py-10 lg:pb-10 pb-0">
       {/* Background accents */}
       <div className="pointer-events-none absolute -top-32 -right-32 h-80 w-80 rounded-full bg-indigo-600/20 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-fuchsia-600/10 blur-3xl" />
@@ -78,13 +78,13 @@ export default function AboutUsSteps({
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white text-orange-600 px-6 py-3 font-bold shadow-lg hover:shadow-xl hover:bg-slate-50 transition transform hover:-translate-y-1"
+              className="inline-flex items-center justify-center rounded-md bg-[#FCA311] text-white px-6 py-3 font-bold shadow-lg hover:shadow-xl hover:bg-slate-50 transition transform hover:-translate-y-1"
             >
               {dict.ctaStart}
             </a>
             <a
               href="#portfolio"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-white/30 px-6 py-3 text-white font-medium hover:bg-white/10 transition"
+              className="inline-flex items-center justify-center rounded-md border-2 border-white/30 px-6 py-3 text-white font-medium hover:bg-white/10 transition"
             >
               {dict.ctaExamples}
             </a>
@@ -102,7 +102,7 @@ export default function AboutUsSteps({
             <li key={i} className="h-full w-full">
               <div className="group h-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:shadow-xl hover:shadow-orange-900/10">
                 <div className="flex flex-col gap-4">
-                  <div className="self-start rounded-xl text-orange-600 bg-white p-3 shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="self-start rounded-md text-white bg-[#FCA311] p-3 shadow-lg group-hover:scale-110 transition-transform">
                     <step.icon className="h-6 w-6" />
                   </div>
                   <div>

@@ -25,7 +25,7 @@ const HeroSection1 = ({ dict, rtl }: { dict: HeroDict; rtl: boolean }) => {
   }));
 
   return (
-    <div className="relative min-h-screen bg-gray-900 overflow-hidden">
+    <div className="relative min-h-screen bg-black overflow-hidden">
       <div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3 relative h-screen w-full text-white"
         style={{

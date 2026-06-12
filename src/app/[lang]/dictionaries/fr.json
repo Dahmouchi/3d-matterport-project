@@ -66,6 +66,24 @@
     "ctaQuote": "Demander un devis gratuit",
     "ctaRealisations": "Voir nos réalisations",
     "readyText": "Prêt à transformer vos espaces en expériences immersives ?",
+    "sectors": [
+      {
+        "title": "Immobilier & Résidentiel",
+        "description": "Appartements, villas, bureaux et maisons témoins : vos futurs acquéreurs explorent chaque pièce comme s'ils y étaient. Moins de visites inutiles, des prospects qualifiés et des ventes accélérées."
+      },
+      {
+        "title": "Hôtellerie & Tourisme",
+        "description": "Riads, hôtels, résidences et salles événementielles : montrez exactement ce qui attend vos clients. Plus de réservations directes, moins de commissions aux plateformes."
+      },
+      {
+        "title": "Commerce & Showrooms",
+        "description": "Showrooms, boutiques et salles de sport : amenez votre espace virtuel jusqu'à vos clients, en ligne, à toute heure. Plus d'inscriptions, moins de doutes."
+      },
+      {
+        "title": "Culture & Patrimoine",
+        "description": "Musées, galeries et espaces culturels : préservez vos expositions et rendez-les accessibles au monde entier, pour toujours. Votre patrimoine marocain, partagé et immortalisé."
+      }
+    ],
     "services": [
       {
         "title": "Visite Virtuelle pour l'Immobilier",

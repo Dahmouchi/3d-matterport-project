@@ -212,7 +212,7 @@ export default function Navbar1({
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-gray-100 hover:text-white transition-colors relative group ${color === "white" ? "text-gray-100" : "text-gray-900"}`}
+                className={`text-gray-100 transition-colors relative group ${color === "white" ? "text-gray-100 hover:text-white" : "text-gray-900 hover:text-black"}`}
               >
                 {item.title}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-600 to-orange-400 group-hover:w-full transition-all duration-300"></span>
@@ -239,7 +239,9 @@ export default function Navbar1({
           <div className="md:hidden flex items-center gap-4 z-50">
             {" "}
             <button
-              className="text-white z-50"
+              className={
+                color === "white" ? "text-white z-50" : "text-black z-50"
+              }
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
@@ -264,7 +266,7 @@ export default function Navbar1({
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
-                  fill="#fff"
+                  fill={color === "white" ? "#000" : "#000"}
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >

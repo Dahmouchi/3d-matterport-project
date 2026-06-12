@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cairo } from "next/font/google";
+import { Manrope, Geist_Mono, Cairo } from "next/font/google";
 import "../globals.css";
 import { AOSInit } from "@/components/aos";
 import { Toaster } from "@/components/ui/sonner";
 //import FloatingBee from "@/components/FloatingBee";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 const geistMono = Geist_Mono({
@@ -165,7 +165,7 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
-  const mainFontClass = lang === "ar" ? cairo.className : geistSans.className;
+  const mainFontClass = lang === "ar" ? cairo.className : manrope.className;
 
   return (
     // Correct: lang is set to French

@@ -261,7 +261,7 @@ const RealisationsPage = ({
     >
       {/* ── Hero ── */}
       <section
-        className="relative pt-32 pb-14 overflow-hidden bg-gray-900"
+        className="relative pt-32 pb-14 overflow-hidden bg-black"
         style={{
           backgroundImage: "url(/images/Vector.png)",
           backgroundSize: "cover",

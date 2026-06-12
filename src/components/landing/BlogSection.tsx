@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { blogPosts } from "@/lib/blog-data";
+import { ArrowRight } from "lucide-react";
 
 interface BlogSectionProps {
   dict: {
@@ -126,13 +127,28 @@ const BlogSection = ({ dict, lang }: BlogSectionProps) => {
         <div className="mt-16 text-center">
           <Link
             href={`/${lang}/blog`}
-            className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-[#f6ba13] via-orange-400 to-orange-600 text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 justify-center px-4 py-3 rounded-full bg-[#000] text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             {isRtl
               ? "عرض كل المقالات"
               : lang === "fr"
                 ? "Voir tous les articles"
                 : "View all articles"}
+            <div className="rounded-full border-2 bg-white p-2 text-black ">
+              <ArrowRight
+                className={`w-4 h-4 transition-transform -rotate-45 duration-300 group-hover/btn:translate-x-1 ${isRtl ? "rotate-180 group-hover/btn:-translate-x-1" : ""}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.5}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </ArrowRight>
+            </div>
           </Link>
         </div>
       </div>

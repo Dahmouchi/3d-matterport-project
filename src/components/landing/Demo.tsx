@@ -3,12 +3,7 @@
 "use client";
 import React, { useMemo, useState } from "react";
 import { motion } from "motion/react";
-import {
-  MapPin,
-  Users,
-  PiggyBank,
-  PlayCircle,
-} from "lucide-react";
+import { MapPin, Users, PiggyBank, PlayCircle } from "lucide-react";
 import {
   Dialog,
   DialogClose,
@@ -85,7 +80,7 @@ const Demo = ({ dict }: { dict: DemoDict }) => {
               </React.Fragment>
             ) : (
               part
-            )
+            ),
           )}
         </h2>
         <p className="lg:text-xl text-md dark:text-gray-300 text-gray-500 max-w-3xl mx-auto">
@@ -105,7 +100,7 @@ const Demo = ({ dict }: { dict: DemoDict }) => {
               >
                 {/* Number circle */}
                 <div className="relative flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r text-white from-[#f6ba13] to-orange-400 font-bold grid place-items-center shadow-md ring-4 ring-white/20">
+                  <div className="w-12 h-12 rounded-full bg-black text-white  font-bold grid place-items-center shadow-md ring-4 ring-white/20">
                     {stat.number}
                   </div>
                   {/* connector line (desktop) */}
@@ -119,7 +114,7 @@ const Demo = ({ dict }: { dict: DemoDict }) => {
                   <h3 className="text-gray-700 lg:font-black text-2xl font-bold lg:text-3xl flex items-center gap-2">
                     <span>{stat.title}</span>
                   </h3>
-                  <p className="text-orange-400 text-md lg:text-lg font-light mt-1">
+                  <p className="text-gray-400 text-md lg:text-lg font-light mt-1">
                     {stat.text}
                   </p>
                 </div>

@@ -49,7 +49,7 @@ const BlogPage = async ({ params }: Props) => {
                   href={`/${lang}/blog/${post.slug}`}
                   className="group"
                 >
-                  <div className="relative h-full flex flex-col bg-white dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-slate-800/50 rounded-[2.5rem] overflow-hidden hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2">
+                  <div className="relative h-full flex flex-col bg-white dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-slate-800/50 rounded-lg overflow-hidden hover:shadow-2xl hover:shadow-orange-500/10 transition-all duration-500 hover:-translate-y-2">
                     <div className="relative h-72 w-full overflow-hidden">
                       <Image
                         src={post.image}
@@ -61,7 +61,7 @@ const BlogPage = async ({ params }: Props) => {
                         {translation.category}
                       </div>
                     </div>
-                    <div className="p-8 flex-grow flex flex-col">
+                    <div className="p-4 flex-grow flex flex-col">
                       <div className="flex items-center gap-2 mb-4">
                         <span className="w-8 h-[2px] bg-orange-500"></span>
                         <span className="text-slate-500 text-xs font-medium uppercase tracking-widest">
